@@ -1,0 +1,7 @@
+---
+:ester: "[#6][CX3](=O)[OX2H0][#6]"
+:ketone: "[#6][CX3](=O)[#6]"
+:ether: "[OD2]([#6])[#6]"
+:amide: "[NX3][CX3](=[OX1])[#6]"
+:vinylic_carbon: "[$([CX3]=[CX3])]"
+:proton: "[H+]"
