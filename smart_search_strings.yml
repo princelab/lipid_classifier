@@ -1,8 +1,48 @@
 ---
-:ester: "[#6][CX3](=O)[OX2H0][#6]"
+:ester: "[#6][CX3](=O)[OX2H0][#6]" #Also hits anhydrides; won't hit formic anhydride.
 :ketone: "[#6][CX3](=O)[#6]"
 :ether: "[OD2]([#6])[#6]"
 :amide: "[NX3][CX3](=[OX1])[#6]"
 :vinylic_carbon: "[$([CX3]=[CX3])]"
 :proton: "[H+]"
 :cyano: "[CX2]#[NX1]"
+:alkyl_carbon: "[CX4]"
+:allenic_carbon: "[$([CX2](=C)=C)]"
+:acetylenic_carbon: "[$([CX2]#C)]"
+:carbonyl_1: "[CX3]=[OX1]" #Hits carboxylic acid, ester, ketone, aldehyde, carbonic acid/ester,anhydride, carbamic acid/ester, acyl halide, amide
+:carbonyl_2: "[$([CX3]=[OX1]),$([CX3+]-[OX1-])]" #Hits either resonance structure
+:carbonyl_with_carbon: "[CX3](=[OX1])C" #Hits aldehyde, ketone, carboxylic acid (except formic), anhydride (except formic), acyl halides (acid halides). Won't hit carbamic acid/ester, carbonic acid/ester
+:carbonyl_with_nitrogen: "[OX1]=CN" #Hits amide, carbamic acid/ester, poly peptide
+:carbonyl_with_oxygen: "[CX3](=[OX1])O" #Hits ester, carboxylic acid, carbonic acid or ester, carbamic acid or ester, anhydride Won't hit aldehyde or ketone
+:acyl_halide: "[CX3](=[OX1])[F,Cl,Br,I]" #acid halide, -oyl halide
+:aldehyde: "[CX3H1](=O)[#6]"
+:anhydride: "[CX3](=[OX1])[OX2][CX3](=[OX1])"
+:amide: "[NX3][CX3](=[OX1])[#6]"
+:amidinium: "[NX3][CX3]=[NX3+]"
+:carbamate: "[NX3,NX4+][CX3](=[OX1])[OX2,OX1-]" #Hits carbamic esters, acids, and zwitterions
+:carbamic_ester: "[NX3][CX3](=[OX1])[OX2H0]"
+:carbamic acid: "[NX3,NX4+][CX3](=[OX1])[OX2H,OX1-]" #Hits carbamic acids and zwitterions.
+:carboxylate_ion: "[CX3](=O)[O-]" #Hits conjugate bases of carboxylic, carbamic, and carbonic acids.
+:carbonic_acid_or_ester: "[CX3](=[OX1])(O)O" #Carbonic Acid, Carbonic Ester, or combination
+:carbonic_acid_or_carbonic_acid-ester: "[CX3](=[OX1])([OX2])[OX2H,OX1H0-1]" #Hits acid and conjugate base. Won't hit carbonic acid diester
+:carbonic_ester: "C[OX2][CX3](=[OX1])[OX2]C" #(carbonic acid diester), Won't hit carbonic acid or combination carbonic acid/ester
+:carboxylic_acid: "[CX3](=O)[OX2H1]" #-oic acid, COOH
+:carboxylic_acid_or_conjugate base: "[CX3](=O)[OX1H0-,OX2H1]"
+:cyanamide: "[NX3][CX2]#[NX1]"
+:hydrogen_atom: "[H]" #Hits SMILES that are hydrogen atoms: [H+] [2H] [H][H]
+:not_hydrogen: "[!#1]" #Hits SMILES that are not hydrogen atoms
+:mono_hydrogenated_cation: "[+H]" #Hits atoms that have a positive charge and exactly one attached hydrogen: F[C+](F)[H]
+:not_mono_hydrogenated: "[!H]" or "[!H1]" #Hits atoms that don't have exactly one attached hydrogen
+:primary_or_secondary_amine_not_amide: "[NX3;H2,H1;!$(NC=O)]" #not ammonium ion (N must be 3-connected), not ammonia (H count can't be 3). Primary or secondary is specified by N's H-count (H2 & H1 respectively). Also note that "&" (and) is the dafault opperator and is higher precedence that "," (or), which is higher precedence than ";" (and). Will hit cyanamides and thioamides
+:enamine: "[NX3][CX3]=[CX3]"
+:primary_amine_not_amide: "[NX3;H2;!$(NC=[!#6]);!$(NC#[!#6])][#6]" #Not amide (C not double bonded to a hetero-atom), not ammonium ion (N must be 3-connected), not ammonia (N's H-count can't be 3), not cyanamide (C not triple bonded to a hetero-atom)
+:two_primary_or_secondary_amines: "[NX3;H2,H1;!$(NC=O)].[NX3;H2,H1;!$(NC=O)]" #Here we use the disconnection symbol (".") to match two separate unbonded identical patterns.
+:enamine_or_aniline_nitrogen: "[NX3][$(C=C),$(cc)]"
+:azide_group: "[$(*-[NX2-]-[NX2+]#[NX1]),$(*-[NX2]=[NX2+]=[NX1-])]" #Hits any atom with an attached azide.
+:azide_ion: "[$([NX1-]=[NX2+]=[NX1-]),$([NX1]#[NX2+]-[NX1-2])]" #Hits N in azide ion
+:nitrogen: "[#7]" #Nitrogen in N-containing compound. aromatic or aliphatic. Most general interpretation of "azo"
+:azo_nitrogen_lowspec: "[NX2]=N" #Low specificity. Hits diazene, azoxy and some diazo structures
+:azo_nitrogen_diazene: "[NX2]=[NX2]" #(diaza alkene)
+:azoxy_nitrogen: "[$([NX2]=[NX3+]([O-])[#6]),$([NX2]=[NX3+0](=[O])[#6])]"
+:diazo_nitrogen: "[$([#6]=[N+]=[N-]),$([#6-]-[N+]#[N])]"
+:azole: "[$([nr5]:[nr5,or5,sr5]),$([nr5]:[cr5]:[nr5,or5,sr5])]" #5 member aromatic heterocycle w/ 2double bonds. contains N & another non C (N,O,S) subclasses are furo-, thio-, pyrro- (replace CH o' furfuran, thiophene, pyrrol w/ N)
