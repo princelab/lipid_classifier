@@ -46,3 +46,55 @@
 :azoxy_nitrogen: "[$([NX2]=[NX3+]([O-])[#6]),$([NX2]=[NX3+0](=[O])[#6])]"
 :diazo_nitrogen: "[$([#6]=[N+]=[N-]),$([#6-]-[N+]#[N])]"
 :azole: "[$([nr5]:[nr5,or5,sr5]),$([nr5]:[cr5]:[nr5,or5,sr5])]" #5 member aromatic heterocycle w/ 2double bonds. contains N & another non C (N,O,S) subclasses are furo-, thio-, pyrro- (replace CH o' furfuran, thiophene, pyrrol w/ N)
+:hydrazine: "[NX3][NX3]" #H2NNH2
+:hydrazone: "[NX3][NX2]=[*]"  #C=NNH2
+:substituted_imine: "[CX3;$([C]([#6])[#6]),$([CH][#6])]=[NX2][#6]" #Schiff base
+:substituted_or_unsubstituted imine: "[$([CX3]([#6])[#6]),$([CX3H][#6])]=[$([NX2][#6]),$([NX2H])]"
+:iminium: "[NX3+]=[CX3]"
+:unsubstituted_dicarboximide: "[CX3](=[OX1])[NX3H][CX3](=[OX1])"
+:substituted_dicarboximide: "[CX3](=[OX1])[NX3H0]([#6])[CX3](=[OX1])"
+:dicarboxdiimide: "[CX3](=[OX1])[NX3H0]([NX3H0]([CX3](=[OX1]))[CX3](=[OX1]))[CX3](=[OX1])"
+:nitrate_group: "[$([NX3](=[OX1])(=[OX1])O),$([NX3+]([OX1-])(=[OX1])O)]" #Also hits nitrate anion
+:nitrate_anion: "[$([OX1]=[NX3](=[OX1])[OX1-]),$([OX1]=[NX3+]([OX1-])[OX1-])]"
+:nitrile: "[NX1]#[CX2]"
+:isonitrile: "[CX1-]#[NX2+]"
+:nitro_group: "[$([NX3](=O)=O),$([NX3+](=O)[O-])][!#8]" #Hits both forms
+:two_nitro_groups: "[$([NX3](=O)=O),$([NX3+](=O)[O-])][!#8].[$([NX3](=O)=O),$([NX3+](=O)[O-])][!#8]"
+:nitroso_group: "[NX2]=[OX1]"
+:n_oxide: "[$([#7+][OX1-]),$([#7v5]=[OX1]);!$([#7](~[O])~[O]);!$([#7]=[#7])]" #Hits both forms. Won't hit azoxy, nitro, nitroso,or nitrate.
+:hydroxyl: "[OX2H]"
+:hydroxyl_in_alcohol: "[#6][OX2H]"
+:hydroxyl_in_carboxylic_acid: "[OX2H][CX3]=[OX1]"
+:hydroxyl_in_h_o_p: "[OX2H]P"
+:hydroxyl_acidic: "[$([OH]-*=[!#6])]" #An acidic hydroxyl is a hydroxyl bonded to an atom which is multiply bonded to a hetero atom, this includes carboxylic, sulphur, phosphorous, halogen and nitrogen oxyacids
+:enol: "[OX2H][#6X3]=[#6]"
+:phenol: "[OX2H][cX3]:[c]"
+:enol_or_phenol: "[OX2H][$(C=C),$(cc)]"
+:peroxide_groups: "[OX2,OX1-][OX2,OX1-]" #Also hits anions
+:phosphoric_acid_groups: "[$(P(=[OX1])([$([OX2H]),$([OX1-]),$([OX2]P)])([$([OX2H]),$([OX1-]),$([OX2]P)])[$([OX2H]),$([OX1-]),$([OX2]P)]),$([P+]([OX1-])([$([OX2H]),$([OX1-]),$([OX2]P)])([$([OX2H]),$([OX1-]),$([OX2]P)])[$([OX2H]),$([OX1-]),$([OX2]P)])]" #Hits both depiction forms. Hits orthophosphoric acid and polyphosphoric acid anhydrides. Doesn't hit monophosphoric acid anhydride esters (including acidic mono- & di- esters) but will hit some polyphosphoric acid anhydride esters (mono- esters on pyrophosphoric acid and longer, di- esters on linear triphosphoric acid and longer)
+:phosphoric_ester_groups: "[$(P(=[OX1])([OX2][#6])([$([OX2H]),$([OX1-]),$([OX2][#6])])[$([OX2H]),$([OX1-]),$([OX2][#6]),$([OX2]P)]),$([P+]([OX1-])([OX2][#6])([$([OX2H]),$([OX1-]),$([OX2][#6])])[$([OX2H]),$([OX1-]),$([OX2][#6]),$([OX2]P)])]" #Hits both depiction forms. Doesn't hit non-ester phosphoric_acid groups
+:carbo_thiocarboxylate: "[S-][CX3](=S)[#6]"
+:carbo_thioester: "S([#6])[CX3](=O)[#6]"
+:thio_analog_of_carbonyl: "[#6X3](=[SX1])([!N])[!N]" #Where S replaces O. Not a thioamide
+:thiol_sulfide_or_disulfide_sulfur: "[SX2]"
+:thiol: "[#16X2H]"
+:sulfur_with_atleast_one_hydrogen: "[#16!H0]"
+:thioamide: "[NX3][CX3]=[SX1]"
+:sulfide: "[#16X2H0]" #-alkylthio - hits disulfides. Won't hit thiols
+:mono_sulfide: "[#16X2H0][!#16]" #alkylthio- or alkoxy- Won't hit thiols. Won't hit disulfides.
+:disulfide: "[#16X2H0][#16X2H0]" #Won't hit thiols. Won't hit mono-sulfides
+:two_sulfides: "[#16X2H0][!#16].[#16X2H0][!#16]" #Won't hit thiols. Won't hit mono-sulfides. Won't hit disulfides.
+:sulfinate: "[$([#16X3](=[OX1])[OX2H0]),$([#16X3+]([OX1-])[OX2H0])]" #Won't hit Sulfinic Acid. Hits Both Depiction Forms.
+:sulfinic_acid: "[$([#16X3](=[OX1])[OX2H,OX1H0-]),$([#16X3+]([OX1-])[OX2H,OX1H0-])]" #Won't hit substituted Sulfinates. Hits Both Depiction Forms. Hits acid and conjugate base (sulfinate).
+:sulfone_low_specificity: "[$([#16X4](=[OX1])=[OX1]),$([#16X4+2]([OX1-])[OX1-])]" #Hits all sulfones, including heteroatom-substituted sulfones: sulfonic acid, sulfonate, sulfuric acid mono- & di- esters, sulfamic acid, sulfamate, sulfonamide... Hits Both Depiction Forms.
+:sulfone_high_specificity: "[$([#16X4](=[OX1])(=[OX1])([#6])[#6]),$([#16X4+2]([OX1-])([OX1-])([#6])[#6])]" #Only hits carbo- sulfones (Won't hit herteroatom-substituted molecules). Hits Both Depiction Forms.
+:sulfonic_acid_high_specificity: "[$([#16X4](=[OX1])(=[OX1])([#6])[OX2H,OX1H0-]),$([#16X4+2]([OX1-])([OX1-])([#6])[OX2H,OX1H0-])]" #Only hits carbo- sulfonic acids (Won't hit herteroatom-substituted molecules). Hits acid and conjugate base. Hits Both Depiction Forms. Hits Arene sulfonic acids.
+:sulfonate: "[$([#16X4](=[OX1])(=[OX1])([#6])[OX2H0]),$([#16X4+2]([OX1-])([OX1-])([#6])[OX2H0])]" #(sulfonic ester) Only hits carbon-substituted sulfur (Oxygen may be herteroatom-substituted). Hits Both Depiction Forms.
+:sulfonamide: "[$([#16X4]([NX3])(=[OX1])(=[OX1])[#6]),$([#16X4+2]([NX3])([OX1-])([OX1-])[#6])]" #Only hits carbo- sulfonamide. Hits Both Depiction Forms.
+:carbo_azosulfone: "[SX4](C)(C)(=O)=N" #Partial N-Analog of Sulfone
+:sulfonamide: "[$([SX4](=[OX1])(=[OX1])([!O])[NX3]),$([SX4+2]([OX1-])([OX1-])([!O])[NX3])]" #(sulf drugs) Won't hit sulfamic acid or sulfamate. Hits Both Depiction Forms.
+:sulfoxide_low_specificity: "[$([#16X3]=[OX1]),$([#16X3+][OX1-])]" #( sulfinyl, thionyl ) Analog of carbonyl where S replaces C. Hits all sulfoxides, including heteroatom-substituted sulfoxides, dialkylsulfoxides carbo-sulfoxides, sulfinate, sulfinic acids... Hits Both Depiction Forms. Won't hit sulfones.
+:sulfoxide_high_specificity: "[$([#16X3](=[OX1])([#6])[#6]),$([#16X3+]([OX1-])([#6])[#6])]" #(sulfinyl , thionyl) Analog of carbonyl where S replaces C. Only hits carbo-sulfoxides (Won't hit herteroatom-substituted molecules). Hits Both Depiction Forms. Won't hit sulfones.
+:sulfate: "[$([#16X4](=[OX1])(=[OX1])([OX2H,OX1H0-])[OX2][#6]),$([#16X4+2]([OX1-])([OX1-])([OX2H,OX1H0-])[OX2][#6])]" #(sulfuric acid monoester) Only hits when oxygen is carbon-substituted. Hits acid and conjugate base. Hits Both Depiction Forms.
+:sulfuric_acid_ester_low_specificity: "[$([SX4](=O)(=O)(O)O),$([SX4+2]([O-])([O-])(O)O)]" #(sulfate ester); Hits sulfuric acid, sulfuric acid monoesters (sulfuric acids) and diesters (sulfates). Hits acid and conjugate base. Hits Both Depiction Forms.
+:sulfuric_acid_diester: "[$([#16X4](=[OX1])(=[OX1])([OX2][#6])[OX2][#6]),$([#16X4](=[OX1])(=[OX1])([OX2][#6])[OX2][#6])]" #Only hits when oxygen is carbon-substituted. Hits Both Depiction Forms.
