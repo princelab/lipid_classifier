@@ -98,3 +98,11 @@
 :sulfate: "[$([#16X4](=[OX1])(=[OX1])([OX2H,OX1H0-])[OX2][#6]),$([#16X4+2]([OX1-])([OX1-])([OX2H,OX1H0-])[OX2][#6])]" #(sulfuric acid monoester) Only hits when oxygen is carbon-substituted. Hits acid and conjugate base. Hits Both Depiction Forms.
 :sulfuric_acid_ester_low_specificity: "[$([SX4](=O)(=O)(O)O),$([SX4+2]([O-])([O-])(O)O)]" #(sulfate ester); Hits sulfuric acid, sulfuric acid monoesters (sulfuric acids) and diesters (sulfates). Hits acid and conjugate base. Hits Both Depiction Forms.
 :sulfuric_acid_diester: "[$([#16X4](=[OX1])(=[OX1])([OX2][#6])[OX2][#6]),$([#16X4](=[OX1])(=[OX1])([OX2][#6])[OX2][#6])]" #Only hits when oxygen is carbon-substituted. Hits Both Depiction Forms.
+:sulfamate: "[$([#16X4]([NX3])(=[OX1])(=[OX1])[OX2][#6]),$([#16X4+2]([NX3])([OX1-])([OX1-])[OX2][#6])]" #Only hits when oxygen is carbon-substituted. Hits Both Depiction Forms.
+:sulfamic_acid: "[$([#16X4]([NX3])(=[OX1])(=[OX1])[OX2H,OX1H0-]),$([#16X4+2]([NX3])([OX1-])([OX1-])[OX2H,OX1H0-])]" #Hits acid and conjugate base. Hits Both Depiction Forms.
+:sulfenic_acid: "[#16X2][OX2H,OX1H0-]" #Hits acid and conjugate base.
+:sulfenate: "[#16X2][OX2H0]"
+:carbon_to_any_halogen: "[#6][F,Cl,Br,I]"
+:halogen: "[F,Cl,Br,I]"
+:three_halides_groups: "[F,Cl,Br,I].[F,Cl,Br,I].[F,Cl,Br,I]" #Hits SMILES that have three halides.
+:acyl_halide: "[CX3](=[OX1])[F,Cl,Br,I]" #(acid halide, -oyl halide)
