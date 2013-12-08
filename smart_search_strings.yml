@@ -106,3 +106,12 @@
 :halogen: "[F,Cl,Br,I]"
 :three_halides_groups: "[F,Cl,Br,I].[F,Cl,Br,I].[F,Cl,Br,I]" #Hits SMILES that have three halides.
 :acyl_halide: "[CX3](=[OX1])[F,Cl,Br,I]" #(acid halide, -oyl halide)
+
+
+#entering realm of "make up your own SMARTS" :/
+:phosphate: "[PX4]=[OX1]" #not too specific; may pick up other groups?
+:glycerol: "[OX2][CX4][CX4](-[OX2])[CX4][OX2]" #who knows
+:glucose: "[OX2]c1oc(-C-OX2)c(-[OX2])c(-[OX2])c1(-[OX2])c" #do the carbons need the implicit H's?
+
+#warning - this is the SMILE, not the SMART - would we rather break this down into smaller SMART components instead of doing a SMART for the whole thing?
+:phosphatidylcholine: "CCCCCCCCCCCCCCCC(=O)OC[C@H](COP([O-])(=O)OCC[N+](C)(C)C)OC(=O)CCCCCCCCCCCCCCC"
