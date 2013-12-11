@@ -109,8 +109,9 @@
 
 
 #entering realm of "make up your own SMARTS" :/
-:phosphate: "[PX4]=[OX1]" #not too specific; may pick up other groups?
-:glycerol: "[OX2][CX4][CX4](-[OX2])[CX4][OX2]" #who knows
+:phosphate: "[PX4](=[OX1])([OX2])([OX2])[OX2]" 
+:phosphate2: "[PX4]([OX1])([#8])([#8])([#8])"  
+:glycerol: "[CX4](-[OX2])[CX4](-[OX2])[CX4](-[OX2])" #who knows
 :glucose: "[OX2]c1oc(-C-OX2)c(-[OX2])c(-[OX2])c1(-[OX2])c" #do the carbons need the implicit H's?
 
 #warning - this is the SMILE, not the SMART - would we rather break this down into smaller SMART components instead of doing a SMART for the whole thing?
