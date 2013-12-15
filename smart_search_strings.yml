@@ -108,11 +108,24 @@
 :acyl_halide: "[CX3](=[OX1])[F,Cl,Br,I]" #(acid halide, -oyl halide)
 
 
-#entering realm of "make up your own SMARTS" :/
+#experimental SMARTS
 :phosphate: "[PX4](=[OX1])([OX2])([OX2])[OX2]" 
-:phosphate2: "[PX4]([OX1])([#8])([#8])([#8])"  
-:glycerol: "[CX4](-[OX2])[CX4](-[OX2])[CX4](-[OX2])" #who knows
-:glucose: "[OX2]c1oc(-C-OX2)c(-[OX2])c(-[OX2])c1(-[OX2])c" #do the carbons need the implicit H's?
+:phosphate2: "[PX4]([OX1])([#8])([#8])([#8])"
+:phosphate3: "[PX4]=[OX1]" #not specific
+:glycerol: "[CX4](-[OX2])[CX4](-[OX2])[CX4](-[OX2])"
+:glucose_cyclic: "C1(-[OX2])C(-[CX4OX2)]OC(-[OX2])C(-[OX2])C1(-[OX2])" #do the carbons need the implicit H's?
 
-#warning - this is the SMILE, not the SMART - would we rather break this down into smaller SMART components instead of doing a SMART for the whole thing?
-:phosphatidylcholine: "CCCCCCCCCCCCCCCC(=O)OC[C@H](COP([O-])(=O)OCC[N+](C)(C)C)OC(=O)CCCCCCCCCCCCCCC"
+:aldose: "[CX3H1](=[0X1])[CX4]" #aldopentose, aldohexose --> maybe just the aldehyde is sufficient?
+:aldopentose: "[CX3H1](=[0X1])[CX4](-[0X2])[CX4](-[0X2])[CX4](-[0X2])[CX4](-[0X2])" #open form of arabinose, lyxose, ribose
+:ketopentose: "[CX4](-[OX2])[CX3](=[OX1])[CX4](-[0X2])[CX4](-[0X2])[CX4](-[0X2])" #open form of ribulose and xylulose 
+:aldohexose: "[CX3H1](=[0X1])[CX4](-[0X2])[CX4](-[0X2])[CX4](-[0X2])[CX4](-[0X2])[CX4](-[0X2])" #hits open forms of glucose, allose, altrose, mannose, gulose, idose, galactose, talose
+:ketohexose: "[CX4](-[OX2])[CX3](=[OX1])[CX4](-[0X2])[CX4](-[0X2])[CX4](-[0X2])[CX4](-[0X2])" #fructose, psicose, sorbose, tagatose 
+
+:choline: "[CX4](-[OX2])[CX4][NX4](-[CX4])(-[CX4])(-[CX4])" #should we represent the positive N like this?
+:phosphocholine1: "[NX4](-[CX4])(-[CX4])(-[CX4])[CX4][CX4][OX2][PX4](=[OX1])([OX2H1])([OX2H1])" #hits just phosphocholine as independent lipid
+:phosphocholine2: "[NX4](-[CX4])(-[CX4])(-[CX4])[CX4][CX4][OX2][PX4](=[OX1])([OX2])([OX2])" #phosphocholine AND phosphatidylcholine...
+:phosphatidylcholine: "[CX3](=[OX1])[OX2][CX4][CX4](-[OX2][CX3](=[OX1]))[CX4][OX2][PX4](=[OX1])(-[#8])[OX2][CX4][CX4][NX4](-[CX4H1])(-[CX4H1])(-[CX4H1])" #doesn't include the two 15C side chains; the SMILE --> CCCCCCCCCCCCCCCC(=O)OC[C@H](COP([O-])(=O)OCC[N+](C)(C)C)OC(=O)CCCCCCCCCCCCCCC"
+
+:inositol: "C1(-[OX2])C(-[OX2])C(-[OX2])C(-[OX2])C(-[OX2])C1(-[OX2])" #a little fuzzy on cyclic SMARTS
+:sphingosine: "[CX4](-[OX2])[CX4](-[NX3])[CX4](-[OX2])[CX3]=[CX3]" #doesn't include last 13 carbons
+:epoxide_ring: "C1OC1" #???
