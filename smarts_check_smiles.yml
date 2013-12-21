@@ -1,12 +1,45 @@
 --- # Add more from http://www.daylight.com/dayhtml_tutorials/languages/smiles/smiles_examples.html
-:viagra: CCc1nn(C)c2c(=O)[nH]c(nc12)c3cc(ccc3OCC)S(=O)(=O)N4CCN(C)CC4
-:xanax: Cc1nnc2CN=C(c3ccccc3)c4cc(Cl)ccc4-n12
-:vitaminA: C/C(=C\CO)/C=C/C=C(/C)\C=C\C1=C(C)CCCC1(C)C
-:heroin: CN1CC[C@]23[C@H]4Oc5c3c(C[C@@H]1[C@@H]2C=C[C@@H]4OC(=O)C)ccc5OC(=O)C
-:caffeine: Cn1cnc2n(C)c(=O)n(C)c(=O)c12
-:acetic_acid: CC(=O)O
-:alanine: N[CH](C)C(=O)O
-:l_alanine: N[C@@H](C)C(=O)O
-:ethanol: CCO
-:hydrogen_cyanide: C#N
+:viagra: 
+  - "CCc1nn(C)c2c(=O)[nH]c(nc12)c3cc(ccc3OCC)S(=O)(=O)N4CCN(C)CC4"
+  - :sulfonyl
+  - :ketone
+  - :ether
+  - :quaternary_amine
+:xanax: 
+	- "Cc1nnc2CN=C(c3ccccc3)c4cc(Cl)ccc4-n12"
+  - :quaternary_amine
+  - :phenyl
+  - :chlorine
+:vitaminA: 
+	- "C/C(=C\CO)/C=C/C=C(/C)\C=C\C1=C(C)CCCC1(C)C"
+  - :isoprenoid
+  - :isoprenoid
+  - :primary_alcohol
+:heroin: 
+	- "CN1CC[C@]23[C@H]4Oc5c3c(C[C@@H]1[C@@H]2C=C[C@@H]4OC(=O)C)ccc5OC(=O)C"
+  - :ester
+  - :tertiary_amine
+  - :ether
+  - :phenyl
+:caffeine: 
+	- "Cn1cnc2n(C)c(=O)n(C)c(=O)c12"
+  - 
+:acetic_acid: 
+	- "CC(=O)O"
+  - :carboxylic_acid_or_conjugate_base
+  - :carbonyl_1
+:alanine: 
+	- "N[CH](C)C(=O)O"
+  - :generic_amino_acid
+  - :alanine_side_chain
+:l_alanine: 
+	- "N[C@@H](C)C(=O)O"
+  - :generic_amino_acid
+  - :alanine_side_chain
+:ethanol: 
+	- "CCO"
+  - :primary_alcohol
+:hydrogen_cyanide: 
+	- "C#N"
+  - :cyano
 
