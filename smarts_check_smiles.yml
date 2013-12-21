@@ -1,4 +1,6 @@
 --- # Add more from http://www.daylight.com/dayhtml_tutorials/languages/smiles/smiles_examples.html
+:acetone: "CC(=O)C"
+:glucose: "OC[C@@H](O1)[C@@H](O)[C@H](O)[C@@H](O)[C@@H](O)1"
 :viagra: 
   - "CCc1nn(C)c2c(=O)[nH]c(nc12)c3cc(ccc3OCC)S(=O)(=O)N4CCN(C)CC4"
   - :sulfonyl
@@ -16,14 +18,14 @@
   - :isoprenoid
   - :primary_alcohol
 :heroin: 
-	- "CN1CC[C@]23[C@H]4Oc5c3c(C[C@@H]1[C@@H]2C=C[C@@H]4OC(=O)C)ccc5OC(=O)C"
+  - "CN1CC[C@]23[C@H]4Oc5c3c(C[C@@H]1[C@@H]2C=C[C@@H]4OC(=O)C)ccc5OC(=O)C"
   - :ester
   - :tertiary_amine
   - :ether
   - :phenyl
 :caffeine: 
 	- "Cn1cnc2n(C)c(=O)n(C)c(=O)c12"
-  - 
+  - :carbon
 :acetic_acid: 
 	- "CC(=O)O"
   - :carboxylic_acid_or_conjugate_base
@@ -42,4 +44,19 @@
 :hydrogen_cyanide: 
 	- "C#N"
   - :cyano
+:nicotine: "CN1CCC[C@H]1c2cccnc2"
+:morphine: "CN1CC[C@]23[C@H]4Oc5c3c(C[C@@H]1[C@@H]2C=C[C@@H]4O)ccc5O"
+:LSD: "CCN(CC)C(=O)[C@H]1CN(C)[C@@H]2Cc3c[nH]c4cccc(C2=C1)c34"
+:lysergic acid: "CN1C[C@@H](C=C2[C@H]1Cc3c[nH]c4cccc2c34)C(=O)O"
+:quinine: "COc1ccc2nccc([C@@H](O)[C@H]3C[C@@H]4CCN3C[C@@H]4C=C)c2c1"
+:cocaine: "COC(=O)[C@H]1[C@@H]2CC[C@H](C[C@@H]1OC(=O)c3ccccc3)N2C"
+:cialis: "O=C1C[C@H]2OCC=C3CN4CC[C@@]56[C@H]4C[C@H]3[C@H]2[C@H]6N1c7ccccc75"
+:lipitor: "CC(C)c1c(C(=O)Nc2ccccc2)c(c(c3ccc(F)cc3)n1CC[C@@H]4C[C@@H](O)CC(=O)O4)c5ccccc5"
+:paxil: "Fc1ccc(cc1)C2CCNCC2COc3ccc4OCOc4c3"
+:vioxx: "CS(=O)(=O)c1ccc(cc1)C2=C(C(=O)OC2)c3ccccc3"
+:nexium: "COc1ccc2[nH]c(nc2c1)S(=O)Cc3ncc(C)c(OC)c3C"
+:ambien: "CN(C)C(=O)Cc1c(nc2ccc(C)cn12)c3ccc(C)cc3"
+:valium: "CN1C(=O)CN=C(c2ccccc2)c3cc(Cl)ccc13"
+:phentermine: "CC(C)(N)Cc1ccccc1"
+:xanax: "Cc1nnc2CN=C(c3ccccc3)c4cc(Cl)ccc4-n12"
 
