@@ -125,7 +125,7 @@ class TableExtractor
   def self.extract_details_table html
     doc = Nokogiri::HTML(html)
     resp = doc.xpath("//table[@class='datatable']//td").map.to_a
-    puts "SIZE is wrong in details table" unless resp.size == 9
+    putsv "SIZE is wrong in details table" unless resp.size == 9
     if resp.size == 0
       DetailsEntry.new  # THERE ARE NO DETAILS!
     else
@@ -166,6 +166,21 @@ def run
       protocol_name = de.protocol_link ? de.protocol_link.name : nil
       parsed_links[oe.lmid_link.name] = MasterEntry.new(de.lmid, oe.lmid_link.link, oe.name, oe.sysname, oe.cayman, oe.msms_link, oe.ion, de.ion_mode, de.instrument, de.ionization_type, de.declustering_potential, de.spray_V, de.collision_energy, protocol_name, protocol_file)
     end
+    begin #page.forms.last.fields.map(&:name).include?("lipidclass")
+      p page.forms.last.buttons
+      break unless page.forms.last.buttons.size > 0
+      page = page.forms.last.click_button
+      resp = TableExtractor.extract_overview_table(page.body)
+      details_resp = resp.map do |oe|
+        oe.conditions_link ? TableExtractor.extract_details_table(agent.get(oe.conditions_link.link).body) : nil
+      end
+      [resp, details_resp].transpose.map do |oe, de|
+        # MasterEntry = Struct.new(:lmid, :lmid_link, :name, :sysname, :cayman, :msms_link, :ion, :ion_mode, :instrument, :ionization_type, :declustering_potential, :spray_V, :collision_energy, :protocol_name, :protocol_file)
+        protocol_file = de.protocol_link ? wget_cmd(URLROOT + "/data/" + de.protocol_link.link) : nil
+        protocol_name = de.protocol_link ? de.protocol_link.name : nil
+        parsed_links[oe.lmid_link.name] = MasterEntry.new(de.lmid, oe.lmid_link.link, oe.name, oe.sysname, oe.cayman, oe.msms_link, oe.ion, de.ion_mode, de.instrument, de.ionization_type, de.declustering_potential, de.spray_V, de.collision_energy, protocol_name, protocol_file)
+      end
+    end while page.forms.last.fields.map(&:name).include?("lipidclass")
   end
   parsed_links
 end # run method
