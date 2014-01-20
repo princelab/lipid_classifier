@@ -1,175 +1,322 @@
 ---
-:ester: "[#6][CX3](=O)[OX2H0][#6]"
-:ketone: "[#6][CX3](=O)[#6]"
-:ether: "[OD2]([#6])[#6]"
-:amide: "[NX3][CX3](=[OX1])[#6]"
-:vinylic_carbon: "[$([CX3]=[CX3])]"
-:proton: "[H+]"
-:cyano: "[CX2]#[NX1]"
-:alkyl_carbon: "[CX4]"
-:allenic_carbon: "[$([CX2](=C)=C)]"
-:acetylenic_carbon: "[$([CX2]#C)]"
-:carbonyl_1: "[CX3]=[OX1]" #Hits carboxylic acid, ester, ketone, aldehyde, carbonic acid/ester,anhydride, carbamic acid/ester, acyl halide, amide
-:carbonyl_2: "[$([CX3]=[OX1]),$([CX3+]-[OX1-])]" #Hits either resonance structure
-:carbonyl_with_carbon: "[CX3](=[OX1])C" #Hits aldehyde, ketone, carboxylic acid (except formic), anhydride (except formic), acyl halides (acid halides). Won't hit carbamic acid/ester, carbonic acid/ester
-:carbonyl_with_nitrogen: "[OX1]=CN" #Hits amide, carbamic acid/ester, poly peptide
-:carbonyl_with_oxygen: "[CX3](=[OX1])O" #Hits ester, carboxylic acid, carbonic acid or ester, carbamic acid or ester, anhydride Won't hit aldehyde or ketone
-:acyl_halide: "[CX3](=[OX1])[F,Cl,Br,I]" #acid halide, -oyl halide
-:aldehyde: "[CX3H1](=O)[#6]"
-:anhydride: "[CX3](=[OX1])[OX2][CX3](=[OX1])"
-:amidinium: "[NX3][CX3]=[NX3+]"
-:carbamate: "[NX3,NX4+][CX3](=[OX1])[OX2,OX1-]" #Hits carbamic esters, acids, and zwitterions
-:carbamic_ester: "[NX3][CX3](=[OX1])[OX2H0]"
-:carbamic_acid: "[NX3,NX4+][CX3](=[OX1])[OX2H,OX1-]" #Hits carbamic acids and zwitterions.
-:carboxylate_ion: "[CX3](=O)[O-]" #Hits conjugate bases of carboxylic, carbamic, and carbonic acids.
-:carbonic_acid_or_ester: "[CX3](=[OX1])(O)O" #Carbonic Acid, Carbonic Ester, or combination
-:carbonic_acid_or_carbonic_acid-ester: "[CX3](=[OX1])([OX2])[OX2H,OX1H0-1]" #Hits acid and conjugate base. Won't hit carbonic acid diester
-:carbonic_ester: "C[OX2][CX3](=[OX1])[OX2]C" #(carbonic acid diester), Won't hit carbonic acid or combination carbonic acid/ester
-:carboxylic_acid: "[CX3](=O)[OX2H1]" #-oic acid, COOH
-:carboxylic_acid_or_conjugate_base: "[CX3](=O)[OX1H0-,OX2H1]"
-:cyanamide: "[NX3][CX2]#[NX1]"
-:hydrogen_atom: "[H]" #Hits SMILES that are hydrogen atoms: [H+] [2H] [H][H]
-:not_hydrogen: "[!#1]" #Hits SMILES that are not hydrogen atoms
-:mono_hydrogenated_cation: "[+H]" #Hits atoms that have a positive charge and exactly one attached hydrogen: F[C+](F)[H]
-:not_mono_hydrogenated1: "[!H]" #Hits atoms that don't have exactly one attached hydrogen
-:not_mono_hydrogenated2: "[!H1]" #Hits atoms that don't have exactly one attached hydrogen
-:primary_or_secondary_amine_not_amide: "[NX3;H2,H1;!$(NC=O)]" #not ammonium ion (N must be 3-connected), not ammonia (H count can't be 3). Primary or secondary is specified by N's H-count (H2 & H1 respectively). Also note that "&" (and) is the dafault opperator and is higher precedence that "," (or), which is higher precedence than ";" (and). Will hit cyanamides and thioamides
-:enamine: "[NX3][CX3]=[CX3]"
-:primary_amine_not_amide: "[NX3;H2;!$(NC=[!#6]);!$(NC#[!#6])][#6]" #Not amide (C not double bonded to a hetero-atom), not ammonium ion (N must be 3-connected), not ammonia (N's H-count can't be 3), not cyanamide (C not triple bonded to a hetero-atom)
-:two_primary_or_secondary_amines: "[NX3;H2,H1;!$(NC=O)].[NX3;H2,H1;!$(NC=O)]" #Here we use the disconnection symbol (".") to match two separate unbonded identical patterns.
-:enamine_or_aniline_nitrogen: "[NX3][$(C=C),$(cc)]"
-:azide_group: "[$(*-[NX2-]-[NX2+]#[NX1]),$(*-[NX2]=[NX2+]=[NX1-])]" #Hits any atom with an attached azide.
-:azide_ion: "[$([NX1-]=[NX2+]=[NX1-]),$([NX1]#[NX2+]-[NX1-2])]" #Hits N in azide ion
-:nitrogen: "[#7]" #Nitrogen in N-containing compound. aromatic or aliphatic. Most general interpretation of "azo"
-:azo_nitrogen_lowspec: "[NX2]=N" #Low specificity. Hits diazene, azoxy and some diazo structures
-:azo_nitrogen_diazene: "[NX2]=[NX2]" #(diaza alkene)
-:azoxy_nitrogen: "[$([NX2]=[NX3+]([O-])[#6]),$([NX2]=[NX3+0](=[O])[#6])]"
-:diazo_nitrogen: "[$([#6]=[N+]=[N-]),$([#6-]-[N+]#[N])]"
-:azole: "[$([nr5]:[nr5,or5,sr5]),$([nr5]:[cr5]:[nr5,or5,sr5])]" #5 member aromatic heterocycle w/ 2double bonds. contains N & another non C (N,O,S) subclasses are furo-, thio-, pyrro- (replace CH o' furfuran, thiophene, pyrrol w/ N)
-:hydrazine: "[NX3][NX3]" #H2NNH2
-:hydrazone: "[NX3][NX2]=[*]"  #C=NNH2
-:substituted_imine: "[CX3;$([C]([#6])[#6]),$([CH][#6])]=[NX2][#6]" #Schiff base
-:substituted_or_unsubstituted_imine: "[$([CX3]([#6])[#6]),$([CX3H][#6])]=[$([NX2][#6]),$([NX2H])]"
-:iminium: "[NX3+]=[CX3]"
-:unsubstituted_dicarboximide: "[CX3](=[OX1])[NX3H][CX3](=[OX1])"
-:substituted_dicarboximide: "[CX3](=[OX1])[NX3H0]([#6])[CX3](=[OX1])"
-:dicarboxdiimide: "[CX3](=[OX1])[NX3H0]([NX3H0]([CX3](=[OX1]))[CX3](=[OX1]))[CX3](=[OX1])"
-:nitrate_group: "[$([NX3](=[OX1])(=[OX1])O),$([NX3+]([OX1-])(=[OX1])O)]" #Also hits nitrate anion
-:nitrate_anion: "[$([OX1]=[NX3](=[OX1])[OX1-]),$([OX1]=[NX3+]([OX1-])[OX1-])]"
-:nitrile: "[NX1]#[CX2]"
-:isonitrile: "[CX1-]#[NX2+]"
-:nitro_group: "[$([NX3](=O)=O),$([NX3+](=O)[O-])][!#8]" #Hits both forms
-:two_nitro_groups: "[$([NX3](=O)=O),$([NX3+](=O)[O-])][!#8].[$([NX3](=O)=O),$([NX3+](=O)[O-])][!#8]"
-:nitroso_group: "[NX2]=[OX1]"
-:n_oxide: "[$([#7+][OX1-]),$([#7v5]=[OX1]);!$([#7](~[O])~[O]);!$([#7]=[#7])]" #Hits both forms. Won't hit azoxy, nitro, nitroso,or nitrate.
-:hydroxyl: "[OX2H]"
-:hydroxyl_in_alcohol: "[#6][OX2H]"
-:hydroxyl_in_carboxylic_acid: "[OX2H][CX3]=[OX1]"
-:hydroxyl_in_h_o_p: "[OX2H]P"
-:hydroxyl_acidic: "[$([OH]-*=[!#6])]" #An acidic hydroxyl is a hydroxyl bonded to an atom which is multiply bonded to a hetero atom, this includes carboxylic, sulphur, phosphorous, halogen and nitrogen oxyacids
-:enol: "[OX2H][#6X3]=[#6]"
-:phenol: "[OX2H][cX3]:[c]"
-:enol_or_phenol: "[OX2H][$(C=C),$(cc)]"
-:peroxide_groups: "[OX2,OX1-][OX2,OX1-]" #Also hits anions
-:phosphoric_acid_groups: "[$(P(=[OX1])([$([OX2H]),$([OX1-]),$([OX2]P)])([$([OX2H]),$([OX1-]),$([OX2]P)])[$([OX2H]),$([OX1-]),$([OX2]P)]),$([P+]([OX1-])([$([OX2H]),$([OX1-]),$([OX2]P)])([$([OX2H]),$([OX1-]),$([OX2]P)])[$([OX2H]),$([OX1-]),$([OX2]P)])]" #Hits both depiction forms. Hits orthophosphoric acid and polyphosphoric acid anhydrides. Doesn't hit monophosphoric acid anhydride esters (including acidic mono- & di- esters) but will hit some polyphosphoric acid anhydride esters (mono- esters on pyrophosphoric acid and longer, di- esters on linear triphosphoric acid and longer)
-:phosphoric_ester_groups: "[$(P(=[OX1])([OX2][#6])([$([OX2H]),$([OX1-]),$([OX2][#6])])[$([OX2H]),$([OX1-]),$([OX2][#6]),$([OX2]P)]),$([P+]([OX1-])([OX2][#6])([$([OX2H]),$([OX1-]),$([OX2][#6])])[$([OX2H]),$([OX1-]),$([OX2][#6]),$([OX2]P)])]" #Hits both depiction forms. Doesn't hit non-ester phosphoric_acid groups
-:carbo_thiocarboxylate: "[S-][CX3](=S)[#6]"
-:carbo_thioester: "S([#6])[CX3](=O)[#6]"
-:thio_analog_of_carbonyl: "[#6X3](=[SX1])([!N])[!N]" #Where S replaces O. Not a thioamide
-:thiol_sulfide_or_disulfide_sulfur: "[SX2]"
-:thiol: "[#16X2H]"
-:sulfur_with_atleast_one_hydrogen: "[#16!H0]"
-:thioamide: "[NX3][CX3]=[SX1]"
-:sulfide: "[#16X2H0]" #-alkylthio - hits disulfides. Won't hit thiols
-:mono_sulfide: "[#16X2H0][!#16]" #alkylthio- or alkoxy- Won't hit thiols. Won't hit disulfides.
-:disulfide: "[#16X2H0][#16X2H0]" #Won't hit thiols. Won't hit mono-sulfides
-:two_sulfides: "[#16X2H0][!#16].[#16X2H0][!#16]" #Won't hit thiols. Won't hit mono-sulfides. Won't hit disulfides.
-:sulfinate: "[$([#16X3](=[OX1])[OX2H0]),$([#16X3+]([OX1-])[OX2H0])]" #Won't hit Sulfinic Acid. Hits Both Depiction Forms.
-:sulfinic_acid: "[$([#16X3](=[OX1])[OX2H,OX1H0-]),$([#16X3+]([OX1-])[OX2H,OX1H0-])]" #Won't hit substituted Sulfinates. Hits Both Depiction Forms. Hits acid and conjugate base (sulfinate).
-:sulfone_low_specificity: "[$([#16X4](=[OX1])=[OX1]),$([#16X4+2]([OX1-])[OX1-])]" #Hits all sulfones, including heteroatom-substituted sulfones: sulfonic acid, sulfonate, sulfuric acid mono- & di- esters, sulfamic acid, sulfamate, sulfonamide... Hits Both Depiction Forms.
-:sulfone_high_specificity: "[$([#16X4](=[OX1])(=[OX1])([#6])[#6]),$([#16X4+2]([OX1-])([OX1-])([#6])[#6])]" #Only hits carbo- sulfones (Won't hit herteroatom-substituted molecules). Hits Both Depiction Forms.
-:sulfonic_acid_high_specificity: "[$([#16X4](=[OX1])(=[OX1])([#6])[OX2H,OX1H0-]),$([#16X4+2]([OX1-])([OX1-])([#6])[OX2H,OX1H0-])]" #Only hits carbo- sulfonic acids (Won't hit herteroatom-substituted molecules). Hits acid and conjugate base. Hits Both Depiction Forms. Hits Arene sulfonic acids.
-:sulfonate: "[$([#16X4](=[OX1])(=[OX1])([#6])[OX2H0]),$([#16X4+2]([OX1-])([OX1-])([#6])[OX2H0])]" #(sulfonic ester) Only hits carbon-substituted sulfur (Oxygen may be herteroatom-substituted). Hits Both Depiction Forms.
-:sulfonamide: "[$([#16X4]([NX3])(=[OX1])(=[OX1])[#6]),$([#16X4+2]([NX3])([OX1-])([OX1-])[#6])]" #Only hits carbo- sulfonamide. Hits Both Depiction Forms.
-:carbo_azosulfone: "[SX4](C)(C)(=O)=N" #Partial N-Analog of Sulfone
-:sulfonamide: "[$([SX4](=[OX1])(=[OX1])([!O])[NX3]),$([SX4+2]([OX1-])([OX1-])([!O])[NX3])]" #(sulf drugs) Won't hit sulfamic acid or sulfamate. Hits Both Depiction Forms.
-:sulfoxide_low_specificity: "[$([#16X3]=[OX1]),$([#16X3+][OX1-])]" #( sulfinyl, thionyl ) Analog of carbonyl where S replaces C. Hits all sulfoxides, including heteroatom-substituted sulfoxides, dialkylsulfoxides carbo-sulfoxides, sulfinate, sulfinic acids... Hits Both Depiction Forms. Won't hit sulfones.
-:sulfoxide_high_specificity: "[$([#16X3](=[OX1])([#6])[#6]),$([#16X3+]([OX1-])([#6])[#6])]" #(sulfinyl , thionyl) Analog of carbonyl where S replaces C. Only hits carbo-sulfoxides (Won't hit herteroatom-substituted molecules). Hits Both Depiction Forms. Won't hit sulfones.
-:sulfate: "[$([#16X4](=[OX1])(=[OX1])([OX2H,OX1H0-])[OX2][#6]),$([#16X4+2]([OX1-])([OX1-])([OX2H,OX1H0-])[OX2][#6])]" #(sulfuric acid monoester) Only hits when oxygen is carbon-substituted. Hits acid and conjugate base. Hits Both Depiction Forms.
-:sulfuric_acid_ester_low_specificity: "[$([SX4](=O)(=O)(O)O),$([SX4+2]([O-])([O-])(O)O)]" #(sulfate ester); Hits sulfuric acid, sulfuric acid monoesters (sulfuric acids) and diesters (sulfates). Hits acid and conjugate base. Hits Both Depiction Forms.
-:sulfuric_acid_diester: "[$([#16X4](=[OX1])(=[OX1])([OX2][#6])[OX2][#6]),$([#16X4](=[OX1])(=[OX1])([OX2][#6])[OX2][#6])]" #Only hits when oxygen is carbon-substituted. Hits Both Depiction Forms.
-:sulfamate: "[$([#16X4]([NX3])(=[OX1])(=[OX1])[OX2][#6]),$([#16X4+2]([NX3])([OX1-])([OX1-])[OX2][#6])]" #Only hits when oxygen is carbon-substituted. Hits Both Depiction Forms.
-:sulfamic_acid: "[$([#16X4]([NX3])(=[OX1])(=[OX1])[OX2H,OX1H0-]),$([#16X4+2]([NX3])([OX1-])([OX1-])[OX2H,OX1H0-])]" #Hits acid and conjugate base. Hits Both Depiction Forms.
-:sulfenic_acid: "[#16X2][OX2H,OX1H0-]" #Hits acid and conjugate base.
-:sulfenate: "[#16X2][OX2H0]"
-:carbon_to_any_halogen: "[#6][F,Cl,Br,I]"
-:halogen: "[F,Cl,Br,I]"
-:three_halides_groups: "[F,Cl,Br,I].[F,Cl,Br,I].[F,Cl,Br,I]" #Hits SMILES that have three halides.
-:acyl_halide: "[CX3](=[OX1])[F,Cl,Br,I]" #(acid halide, -oyl halide)
+:ester:
+  - "[#6][CX3](=O)[OX2H0][#6]"
+  - "[#6][CX3](=O)[OX2H0]"
+:ketone:
+  - "[#6][CX3](=O)[#6]"
+:ether:
+  - "[OD2]([#6])[#6]"
+:amide:
+  - "[NX3][CX3](=[OX1])[#6]"
+:vinylic_carbon:
+  - "[$([CX3]=[CX3])]"
+:proton:
+  - "[H+]"
+:cyano:
+  - "[CX2]#[NX1]"
+:alkyl_carbon:
+  - "[CX4]"
+:allenic_carbon:
+  - "[$([CX2](=C)=C)]"
+:acetylenic_carbon:
+  - "[$([CX2]#C)]"
+:carbonyl:
+  - "[CX3]=[OX1]" #Hits carboxylic acid, ester, ketone, aldehyde, carbonic acid/ester,anhydride, carbamic acid/ester, acyl halide, amide
+  - "[$([CX3]=[OX1]),$([CX3+]-[OX1-])]" #Hits either resonance structure
+:carbonyl_with_carbon:
+  - "[CX3](=[OX1])C" #Hits aldehyde, ketone, carboxylic acid (except formic), anhydride (except formic), acyl halides (acid halides). Won't hit carbamic acid/ester, carbonic acid/ester
+:carbonyl_with_nitrogen:
+  - "[OX1]=CN" #Hits amide, carbamic acid/ester, poly peptide
+:carbonyl_with_oxygen:
+  - "[CX3](=[OX1])O" #Hits ester, carboxylic acid, carbonic acid or ester, carbamic acid or ester, anhydride Won't hit aldehyde or ketone
+:acyl_halide:
+  - "[CX3](=[OX1])[F,Cl,Br,I]" #acid halide, -oyl halide
+:aldehyde:
+  - "[CX3H1](=O)[#6]"
+:anhydride:
+  - "[CX3](=[OX1])[OX2][CX3](=[OX1])"
+:amidinium:
+  - "[NX3][CX3]=[NX3+]"
+:carbamate:
+  - "[NX3,NX4+][CX3](=[OX1])[OX2,OX1-]" #Hits carbamic esters, acids, and zwitterions
+:carbamic_ester:
+  - "[NX3][CX3](=[OX1])[OX2H0]"
+:carbamic_acid:
+  - "[NX3,NX4+][CX3](=[OX1])[OX2H,OX1-]" #Hits carbamic acids and zwitterions.
+:carboxylate_ion:
+  - "[CX3](=O)[O-]" #Hits conjugate bases of carboxylic, carbamic, and carbonic acids.
+:carbonic_acid_or_ester:
+  - "[CX3](=[OX1])(O)O" #Carbonic Acid, Carbonic Ester, or combination
+:carbonic_acid_or_carbonic_acid_ester: 
+  - "[CX3](=[OX1])([OX2])[OX2H,OX1H0-1]" #Hits acid and conjugate base. Won't hit carbonic acid diester
+:carbonic_ester:
+  - "C[OX2][CX3](=[OX1])[OX2]C" #(carbonic acid diester), Won't hit carbonic acid or combination carbonic acid/ester
+:carboxylic_acid:
+  - "[CX3](=O)[OX2H1]" #-oic acid, COOH
+:carboxylic_acid_or_conjugate_base:
+  - "[CX3](=O)[OX1H0-,OX2H1]"
+:cyanamide:
+  - "[NX3][CX2]#[NX1]"
+:hydrogen_atom:
+  - "[H]" #Hits SMILES that are hydrogen atoms: [H+] [2H] [H][H]
+:not_hydrogen:
+  - "[!#1]" #Hits SMILES that are not hydrogen atoms
+:mono_hydrogenated_cation:
+  - "[+H]" #Hits atoms that have a positive charge and exactly one attached hydrogen: F[C+](F)[H]
+:not_mono_hydrogenated:
+  - "[!H]" #Hits atoms that don't have exactly one attached hydrogen
+  - "[!H1]" #Hits atoms that don't have exactly one attached hydrogen
+:primary_or_secondary_amine_not_amide: ## NOTE
+  - "[NX3;H2,H1;!$(NC=O)]" #not ammonium ion (N must be 3-connected), not ammonia (H count can't be 3). Primary or secondary is specified by N's H-count (H2 & H1 respectively). Also note that "&" (and) is the dafault opperator and is higher precedence that "," (or), which is higher precedence than ";" (and). Will hit cyanamides and thioamides
+:enamine:
+  - "[NX3][CX3]=[CX3]"
+:primary_amine_not_amide:
+  - "[NX3;H2;!$(NC=[!#6]);!$(NC#[!#6])][#6]" #Not amide (C not double bonded to a hetero-atom), not ammonium ion (N must be 3-connected), not ammonia (N's H-count can't be 3), not cyanamide (C not triple bonded to a hetero-atom)
+:two_primary_or_secondary_amines:  ### NOTE to fix!
+  - "[NX3;H2,H1;!$(NC=O)].[NX3;H2,H1;!$(NC=O)]" #Here we use the disconnection symbol (".") to match two separate unbonded identical patterns.
+:enamine_or_aniline_nitrogen:
+  - "[NX3][$(C=C),$(cc)]"
+:azide_group:
+  - "[$(*-[NX2-]-[NX2+]#[NX1]),$(*-[NX2]=[NX2+]=[NX1-])]" #Hits any atom with an attached azide.
+:azide_ion:
+  - "[$([NX1-]=[NX2+]=[NX1-]),$([NX1]#[NX2+]-[NX1-2])]" #Hits N in azide ion
+:nitrogen:
+  - "[#7]" #Nitrogen in N-containing compound. aromatic or aliphatic. Most general interpretation of "azo"
+:azo_nitrogen_lowspec:
+  - "[NX2]=N" #Low specificity. Hits diazene, azoxy and some diazo structures
+:azo_nitrogen_diazene:
+  - "[NX2]=[NX2]" #(diaza alkene)
+:azoxy_nitrogen:
+  - "[$([NX2]=[NX3+]([O-])[#6]),$([NX2]=[NX3+0](=[O])[#6])]"
+:diazo_nitrogen:
+  - "[$([#6]=[N+]=[N-]),$([#6-]-[N+]#[N])]"
+:azole:
+  - "[$([nr5]:[nr5,or5,sr5]),$([nr5]:[cr5]:[nr5,or5,sr5])]" #5 member aromatic heterocycle w/ 2double bonds. contains N & another non C (N,O,S) subclasses are furo-, thio-, pyrro- (replace CH o' furfuran, thiophene, pyrrol w/ N)
+:hydrazine:
+  - "[NX3][NX3]" #H2NNH2
+:hydrazone:
+  - "[NX3][NX2]=[*]"  #C=NNH2
+:substituted_imine:
+  - "[CX3;$([C]([#6])[#6]),$([CH][#6])]=[NX2][#6]" #Schiff base
+:substituted_or_unsubstituted_imine:
+  - "[$([CX3]([#6])[#6]),$([CX3H][#6])]=[$([NX2][#6]),$([NX2H])]"
+:iminium:
+  - "[NX3+]=[CX3]"
+:unsubstituted_dicarboximide:
+  - "[CX3](=[OX1])[NX3H][CX3](=[OX1])"
+:substituted_dicarboximide:
+  - "[CX3](=[OX1])[NX3H0]([#6])[CX3](=[OX1])"
+:dicarboxdiimide:
+  - "[CX3](=[OX1])[NX3H0]([NX3H0]([CX3](=[OX1]))[CX3](=[OX1]))[CX3](=[OX1])"
+:nitrate_group:
+  - "[$([NX3](=[OX1])(=[OX1])O),$([NX3+]([OX1-])(=[OX1])O)]" #Also hits nitrate anion
+:nitrate_anion:
+  - "[$([OX1]=[NX3](=[OX1])[OX1-]),$([OX1]=[NX3+]([OX1-])[OX1-])]"
+:nitrile:
+  - "[NX1]#[CX2]"
+:isonitrile:
+  - "[CX1-]#[NX2+]"
+:nitro_group:
+  - "[$([NX3](=O)=O),$([NX3+](=O)[O-])][!#8]" #Hits both forms
+:two_nitro_groups: ## NOTE
+  - "[$([NX3](=O)=O),$([NX3+](=O)[O-])][!#8].[$([NX3](=O)=O),$([NX3+](=O)[O-])][!#8]"
+:nitroso_group:
+  - "[NX2]=[OX1]"
+:n_oxide:
+  - "[$([#7+][OX1-]),$([#7v5]=[OX1]);!$([#7](~[O])~[O]);!$([#7]=[#7])]" #Hits both forms. Won't hit azoxy, nitro, nitroso,or nitrate.
+:hydroxyl:
+  - "[OX2H]"
+:hydroxyl_in_alcohol:
+  - "[#6][OX2H]"
+:hydroxyl_in_carboxylic_acid:
+  - "[OX2H][CX3]=[OX1]"
+:hydroxyl_in_h_o_p:
+  - "[OX2H]P"
+:hydroxyl_acidic:
+  - "[$([OH]-*=[!#6])]" #An acidic hydroxyl is a hydroxyl bonded to an atom which is multiply bonded to a hetero atom, this includes carboxylic, sulphur, phosphorous, halogen and nitrogen oxyacids
+:enol:
+  - "[OX2H][#6X3]=[#6]"
+:phenol:
+  - "[OX2H][cX3]:[c]"
+:enol_or_phenol:
+  - "[OX2H][$(C=C),$(cc)]"
+:peroxide_groups:
+  - "[OX2,OX1-][OX2,OX1-]" #Also hits anions
+:phosphoric_acid_groups:
+  - "[$(P(=[OX1])([$([OX2H]),$([OX1-]),$([OX2]P)])([$([OX2H]),$([OX1-]),$([OX2]P)])[$([OX2H]),$([OX1-]),$([OX2]P)]),$([P+]([OX1-])([$([OX2H]),$([OX1-]),$([OX2]P)])([$([OX2H]),$([OX1-]),$([OX2]P)])[$([OX2H]),$([OX1-]),$([OX2]P)])]" #Hits both depiction forms. Hits orthophosphoric acid and polyphosphoric acid anhydrides. Doesn't hit monophosphoric acid anhydride esters (including acidic mono- & di- esters) but will hit some polyphosphoric acid anhydride esters (mono- esters on pyrophosphoric acid and longer, di- esters on linear triphosphoric acid and longer)
+:phosphoric_ester_groups:
+  - "[$(P(=[OX1])([OX2][#6])([$([OX2H]),$([OX1-]),$([OX2][#6])])[$([OX2H]),$([OX1-]),$([OX2][#6]),$([OX2]P)]),$([P+]([OX1-])([OX2][#6])([$([OX2H]),$([OX1-]),$([OX2][#6])])[$([OX2H]),$([OX1-]),$([OX2][#6]),$([OX2]P)])]" #Hits both depiction forms. Doesn't hit non-ester phosphoric_acid groups
+:carbo_thiocarboxylate:
+  - "[S-][CX3](=S)[#6]"
+:carbo_thioester:
+  - "S([#6])[CX3](=O)[#6]"
+:thio_analog_of_carbonyl:
+  - "[#6X3](=[SX1])([!N])[!N]" #Where S replaces O. Not a thioamide
+:thiol_sulfide_or_disulfide_sulfur:
+  - "[SX2]"
+:thiol:
+  - "[#16X2H]"
+:sulfur_with_atleast_one_hydrogen:
+  - "[#16!H0]"
+:thioamide:
+  - "[NX3][CX3]=[SX1]"
+:sulfide:
+  - "[#16X2H0]" #-alkylthio - hits disulfides. Won't hit thiols
+:mono_sulfide:
+  - "[#16X2H0][!#16]" #alkylthio- or alkoxy- Won't hit thiols. Won't hit disulfides.
+:disulfide:
+  - "[#16X2H0][#16X2H0]" #Won't hit thiols. Won't hit mono-sulfides
+:two_sulfides: ## NOTE
+  - "[#16X2H0][!#16].[#16X2H0][!#16]" #Won't hit thiols. Won't hit mono-sulfides. Won't hit disulfides.
+:sulfinate:
+  - "[$([#16X3](=[OX1])[OX2H0]),$([#16X3+]([OX1-])[OX2H0])]" #Won't hit Sulfinic Acid. Hits Both Depiction Forms.
+:sulfinic_acid:
+  - "[$([#16X3](=[OX1])[OX2H,OX1H0-]),$([#16X3+]([OX1-])[OX2H,OX1H0-])]" #Won't hit substituted Sulfinates. Hits Both Depiction Forms. Hits acid and conjugate base (sulfinate).
+:sulfone_low_specificity:
+  - "[$([#16X4](=[OX1])=[OX1]),$([#16X4+2]([OX1-])[OX1-])]" #Hits all sulfones, including heteroatom-substituted sulfones: sulfonic acid, sulfonate, sulfuric acid mono- & di- esters, sulfamic acid, sulfamate, sulfonamide... Hits Both Depiction Forms.
+:sulfone_high_specificity:
+  - "[$([#16X4](=[OX1])(=[OX1])([#6])[#6]),$([#16X4+2]([OX1-])([OX1-])([#6])[#6])]" #Only hits carbo- sulfones (Won't hit herteroatom-substituted molecules). Hits Both Depiction Forms.
+:sulfonic_acid_high_specificity:
+  - "[$([#16X4](=[OX1])(=[OX1])([#6])[OX2H,OX1H0-]),$([#16X4+2]([OX1-])([OX1-])([#6])[OX2H,OX1H0-])]" #Only hits carbo- sulfonic acids (Won't hit herteroatom-substituted molecules). Hits acid and conjugate base. Hits Both Depiction Forms. Hits Arene sulfonic acids.
+:sulfonate:
+  - "[$([#16X4](=[OX1])(=[OX1])([#6])[OX2H0]),$([#16X4+2]([OX1-])([OX1-])([#6])[OX2H0])]" #(sulfonic ester) Only hits carbon-substituted sulfur (Oxygen may be herteroatom-substituted). Hits Both Depiction Forms.
+:sulfonamide:
+  - "[$([#16X4]([NX3])(=[OX1])(=[OX1])[#6]),$([#16X4+2]([NX3])([OX1-])([OX1-])[#6])]" #Only hits carbo- sulfonamide. Hits Both Depiction Forms.
+:carbo_azosulfone:
+  - "[SX4](C)(C)(=O)=N" #Partial N-Analog of Sulfone
+:sulfonamide:
+  - "[$([SX4](=[OX1])(=[OX1])([!O])[NX3]),$([SX4+2]([OX1-])([OX1-])([!O])[NX3])]" #(sulf drugs) Won't hit sulfamic acid or sulfamate. Hits Both Depiction Forms.
+:sulfoxide_low_specificity:
+  - "[$([#16X3]=[OX1]),$([#16X3+][OX1-])]" #( sulfinyl, thionyl ) Analog of carbonyl where S replaces C. Hits all sulfoxides, including heteroatom-substituted sulfoxides, dialkylsulfoxides carbo-sulfoxides, sulfinate, sulfinic acids... Hits Both Depiction Forms. Won't hit sulfones.
+:sulfoxide_high_specificity:
+  - "[$([#16X3](=[OX1])([#6])[#6]),$([#16X3+]([OX1-])([#6])[#6])]" #(sulfinyl , thionyl) Analog of carbonyl where S replaces C. Only hits carbo-sulfoxides (Won't hit herteroatom-substituted molecules). Hits Both Depiction Forms. Won't hit sulfones.
+:sulfate:
+  - "[$([#16X4](=[OX1])(=[OX1])([OX2H,OX1H0-])[OX2][#6]),$([#16X4+2]([OX1-])([OX1-])([OX2H,OX1H0-])[OX2][#6])]" #(sulfuric acid monoester) Only hits when oxygen is carbon-substituted. Hits acid and conjugate base. Hits Both Depiction Forms.
+:sulfuric_acid_ester_low_specificity:
+  - "[$([SX4](=O)(=O)(O)O),$([SX4+2]([O-])([O-])(O)O)]" #(sulfate ester); Hits sulfuric acid, sulfuric acid monoesters (sulfuric acids) and diesters (sulfates). Hits acid and conjugate base. Hits Both Depiction Forms.
+:sulfuric_acid_diester:
+  - "[$([#16X4](=[OX1])(=[OX1])([OX2][#6])[OX2][#6]),$([#16X4](=[OX1])(=[OX1])([OX2][#6])[OX2][#6])]" #Only hits when oxygen is carbon-substituted. Hits Both Depiction Forms.
+:sulfamate:
+  - "[$([#16X4]([NX3])(=[OX1])(=[OX1])[OX2][#6]),$([#16X4+2]([NX3])([OX1-])([OX1-])[OX2][#6])]" #Only hits when oxygen is carbon-substituted. Hits Both Depiction Forms.
+:sulfamic_acid:
+  - "[$([#16X4]([NX3])(=[OX1])(=[OX1])[OX2H,OX1H0-]),$([#16X4+2]([NX3])([OX1-])([OX1-])[OX2H,OX1H0-])]" #Hits acid and conjugate base. Hits Both Depiction Forms.
+:sulfenic_acid:
+  - "[#16X2][OX2H,OX1H0-]" #Hits acid and conjugate base.
+:sulfenate:
+  - "[#16X2][OX2H0]"
+:carbon_to_any_halogen:
+  - "[#6][F,Cl,Br,I]"
+:halogen:
+  - "[F,Cl,Br,I]"
+:three_halides_groups: ## NOTE
+  - "[F,Cl,Br,I].[F,Cl,Br,I].[F,Cl,Br,I]" #Hits SMILES that have three halides.
+:acyl_halide:
+  - "[CX3](=[OX1])[F,Cl,Br,I]" #(acid halide, -oyl halide)
 
 #experimental SMARTS
-:phosphate: "[PX4](=[OX1])([OX2])([OX2])[OX2]" 
-:phosphate2: "[PX4]([OX1])([#8])([#8])([#8])"
-:phosphate3: "[PX4]=[OX1]" #not specific
-:glycerol: "[CX4](-[OX2])[CX4](-[OX2])[CX4](-[OX2])"
-:glucose_cyclic: "C1(-[OX2])C(-[CX4OX2)]OC(-[OX2])C(-[OX2])C1(-[OX2])" #do the carbons need the implicit H's?
-
-:aldose: "[CX3H1](=[0X1])[CX4]" #aldopentose, aldohexose --> maybe just the aldehyde is sufficient?
-:aldopentose: "[CX3H1](=[0X1])[CX4](-[0X2])[CX4](-[0X2])[CX4](-[0X2])[CX4](-[0X2])" #open form of arabinose, lyxose, ribose
-:ketopentose: "[CX4](-[OX2])[CX3](=[OX1])[CX4](-[0X2])[CX4](-[0X2])[CX4](-[0X2])" #open form of ribulose and xylulose 
-:aldohexose: "[CX3H1](=[0X1])[CX4](-[0X2])[CX4](-[0X2])[CX4](-[0X2])[CX4](-[0X2])[CX4](-[0X2])" #hits open forms of glucose, allose, altrose, mannose, gulose, idose, galactose, talose
-:ketohexose: "[CX4](-[OX2])[CX3](=[OX1])[CX4](-[0X2])[CX4](-[0X2])[CX4](-[0X2])[CX4](-[0X2])" #fructose, psicose, sorbose, tagatose 
-
-:choline: "[CX4](-[OX2])[CX4][NX4](-[CX4])(-[CX4])(-[CX4])" #should we represent the positive N like this?
-:phosphocholine1: "[NX4](-[CX4])(-[CX4])(-[CX4])[CX4][CX4][OX2][PX4](=[OX1])([OX2H1])([OX2H1])" #hits just phosphocholine as independent lipid
-:phosphocholine2: "[NX4](-[CX4])(-[CX4])(-[CX4])[CX4][CX4][OX2][PX4](=[OX1])([OX2])([OX2])" #phosphocholine AND phosphatidylcholine...
-:phosphatidylcholine: "[CX3](=[OX1])[OX2][CX4][CX4](-[OX2][CX3](=[OX1]))[CX4][OX2][PX4](=[OX1])(-[#8])[OX2][CX4][CX4][NX4](-[CX4H1])(-[CX4H1])(-[CX4H1])" #doesn't include the two 15C side chains; the SMILE --> CCCCCCCCCCCCCCCC(=O)OC[C@H](COP([O-])(=O)OCC[N+](C)(C)C)OC(=O)CCCCCCCCCCCCCCC"
-
-:inositol: "C1(-[OX2])C(-[OX2])C(-[OX2])C(-[OX2])C(-[OX2])C1(-[OX2])" #a little fuzzy on cyclic SMARTS
-:sphingosine: "[CX4](-[OX2])[CX4](-[NX3])[CX4](-[OX2])[CX3]=[CX3]" #doesn't include last 13 carbons
-:epoxide_ring: "C1OC1" #???
-
-
+:phosphate:
+  - "[PX4](=[OX1])([OX2])([OX2])[OX2]" 
+  - "[PX4]([OX1])([#8])([#8])([#8])"
+  - "[PX4]=[OX1]" #not specific
+:glycerol:
+  - "[CX4](-[OX2])[CX4](-[OX2])[CX4](-[OX2])"
+:glucose_cyclic:
+  - "C1(-[OX2])C(-[CX4OX2)]OC(-[OX2])C(-[OX2])C1(-[OX2])" #do the carbons need the implicit H's?
+:aldose:
+  - "[CX3H1](=[0X1])[CX4]" #aldopentose, aldohexose --> maybe just the aldehyde is sufficient?
+:aldopentose:
+  - "[CX3H1](=[0X1])[CX4](-[0X2])[CX4](-[0X2])[CX4](-[0X2])[CX4](-[0X2])" #open form of arabinose, lyxose, ribose
+:ketopentose:
+  - "[CX4](-[OX2])[CX3](=[OX1])[CX4](-[0X2])[CX4](-[0X2])[CX4](-[0X2])" #open form of ribulose and xylulose 
+:aldohexose:
+  - "[CX3H1](=[0X1])[CX4](-[0X2])[CX4](-[0X2])[CX4](-[0X2])[CX4](-[0X2])[CX4](-[0X2])" #hits open forms of glucose, allose, altrose, mannose, gulose, idose, galactose, talose
+:ketohexose:
+  - "[CX4](-[OX2])[CX3](=[OX1])[CX4](-[0X2])[CX4](-[0X2])[CX4](-[0X2])[CX4](-[0X2])" #fructose, psicose, sorbose, tagatose 
+:choline:
+  - "[CX4](-[OX2])[CX4][NX4](-[CX4])(-[CX4])(-[CX4])" #should we represent the positive N like this?
+:phosphocholine:
+  - "[NX4](-[CX4])(-[CX4])(-[CX4])[CX4][CX4][OX2][PX4](=[OX1])([OX2H1])([OX2H1])" #hits just phosphocholine as independent lipid
+  - "[NX4](-[CX4])(-[CX4])(-[CX4])[CX4][CX4][OX2][PX4](=[OX1])([OX2])([OX2])" #phosphocholine AND phosphatidylcholine...
+:phosphatidylcholine:
+  - "[CX3](=[OX1])[OX2][CX4][CX4](-[OX2][CX3](=[OX1]))[CX4][OX2][PX4](=[OX1])(-[#8])[OX2][CX4][CX4][NX4](-[CX4H1])(-[CX4H1])(-[CX4H1])" #doesn't include the two 15C side chains; the SMILE --> CCCCCCCCCCCCCCCC(=O)OC[C@H](COP([O-])(=O)OCC[N+](C)(C)C)OC(=O)CCCCCCCCCCCCCCC"
+:inositol:
+  - "C1(-[OX2])C(-[OX2])C(-[OX2])C(-[OX2])C(-[OX2])C1(-[OX2])" #a little fuzzy on cyclic SMARTS
+:sphingosine:
+  - "[CX4](-[OX2])[CX4](-[NX3])[CX4](-[OX2])[CX3]=[CX3]" #doesn't include last 13 carbons
+:epoxide_ring:
+  - "C1OC1" #???
 
 # Ryan's additions
-:tertiary_amine: "NX3"
-:quaternary_amine: "[NX4+]"
-:sulfonyl: "[SX4](=O)(=O)"
-:phenyl: "cccccc"
-:para_phenyl: "[cX3]cc[cX3]cc"
-:ortho_phenyl: "[cX3][cX3]cccc"
-:meta_phenyl: "[cX3]c[cX3]ccc"
-:isoprenoid: "[CX3](CH3)=[CX3][CX4]"
-:turpenoid: "[CX3](CH3)=[CX3][CX4]"
-:isoprene: "CC(=O)C=C"
-:cyclohexane: "C1CCCCCC1"
-:chlorine: "Cl"
-:hexanone: "cccccc(=O)"
-:primary_alcohol: "[CX4]([OX2H])"
-:pyrrole: "n1ccc1"
-
-# Amino Acids?
-:proline: "[$([NX3H,NX4H2+]),$([NX3](C)(C)(C))]1[CX4H]([CH2][CH2][CH2]1)[CX3](=[OX1])[OX2H,OX1-,N]"
-:proline2: "N1[CX4H]([CH2][CH2][CH2]1)[CX3](=[OX1])[O,N]"
-:glycine: "[$([$([NX3H2,NX4H3+]),$([NX3H](C)(C))][CX4H2][CX3](=[OX1])[OX2H,OX1-,N])]"
-:generic_amino_acid: "[$([NX3H2,NX4H3+]),$([NX3H](C)(C))][CX4H]([*])[CX3](=[OX1])[OX2H,OX1-,N]"
-:arginine_side_chain: "[CH2X4][CH2X4][CH2X4][NHX3][CH0X3](=[NH2X3+,NHX2+0])[NH2X3]"
-:aspargine_side_chain: "[CH2X4][CX3](=[OX1])[NX3H2]"
-:aspartate_side_chain: "[CH2X4][CX3](=[OX1])[OH0-,OH]"
-:cysteine_side_chain: "[CH2X4][SX2H,SX1H0-]"
-:glutamate_side_chain: "[CH2X4][CH2X4][CX3](=[OX1])[OH0-,OH]"
-:histidine_side_chain: "[CH2X4][#6X3]1:[$([#7X3H+,#7X2H0+0]:[#6X3H]:[#7X3H]),$([#7X3H])]:[#6X3H]:[$([#7X3H+,#7X2H0+0]:[#6X3H]:[#7X3H]),$([#7X3H])]:[#6X3H]1"
-:histidine_side_chain2: "[CH2X4][#6X3]1:[$([#7X3H+,#7X2H0+0]:[#6X3H]:[#7X3H]),$([#7X3H])]:[#6X3H]:"
-:isoleucine_side_chain: "[CHX4]([CH3X4])[CH2X4][CH3X4]"
-:leucine_side_chain: "[CH2X4][CHX4]([CH3X4])[CH3X4]"
-:lysine_side_chain: "[CH2X4][CH2X4][CH2X4][CH2X4][NX4+,NX3+0]"
-:methionine_side_chain: "[CH2X4][CH2X4][SX2][CH3X4]"
-:phenylalanine_side_chain: "[CH2X4][cX3]1[cX3H][cX3H][cX3H][cX3H][cX3H]1"
-:serine_side_chain: "[CH2X4][OX2H]"
-:thioamide: "[NX3][CX3]=[SX1]"
-:threonine_side_chain: "[CHX4]([CH3X4])[OX2H]"
-:tryptophan_side_chain: "[CH2X4][cX3]1[cX3H][nX3H][cX3]2[cX3H][cX3H][cX3H][cX3H][cX3]12"
-:tyrosine_side_chain: "[CH2X4][cX3]1[cX3H][cX3H][cX3]([OHX2,OH0X1-])[cX3H][cX3H]1"
-:valine_side_chain: "[CHX4]([CH3X4])[CH3X4]"
-:alanine_side_chain: "[CH3X4]"
+:tertiary_amine:
+  - "NX3"
+:quaternary_amine:
+  - "[NX4+]"
+:sulfonyl:
+  - "[SX4](=O)(=O)"
+:phenyl:
+  - "cccccc"
+:para_phenyl:
+  - "[cX3]cc[cX3]cc"
+:ortho_phenyl:
+  - "[cX3][cX3]cccc"
+:meta_phenyl:
+  - "[cX3]c[cX3]ccc"
+:isoprenoid:
+  - "[CX3](CH3)=[CX3][CX4]"
+:turpenoid:
+  - "[CX3](CH3)=[CX3][CX4]"
+:isoprene:
+  - "CC(=O)C=C"
+:cyclohexane:
+  - "C1CCCCCC1"
+:chlorine:
+  - "Cl"
+:hexanone:
+  - "cccccc(=O)"
+:primary_alcohol:
+  - "[CX4]([OX2H])"
+:pyrrole:
+  - "n1ccc1"
+:saturated_fatty_acid_unit:
+  - "[CX4H2]"
+:unsaturated_fatty_acid_unit:
+  - "[CX4H1]"
+:four_carbon_saturated_FA:
+  - "[CX4H2][CX4H2][CX4H2][CX4H2]" 
+:six_carbon_saturated_FA:
+  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]"
+:eight_carbon_saturated_FA:
+  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]"
+:ten_carbon_saturated_FA:
+  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]"
+:twelve_carbon_saturated_FA:
+  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]"
+:fourteen_carbon_saturated_FA:
+  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]"
+:sixteen_carbon_saturated_FA:
+  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]"
+:eighteen_carbon_saturated_FA:
+  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]"
+:twenty_carbon_saturated_FA:
+  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]"
+:twenty_two_carbon_saturated_FA:
+  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]"
+:twenty_four_carbon_saturated_FA:
+  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]" 
+:five_carbon_saturated_FA:
+  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]"
+:seven_carbon_saturated_FA:
+  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]"
+:nine_carbon_saturated_FA:
+  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]" 
+:eleven_carbon_saturated_FA:
+  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]"
+:thirteen_carbon_saturated_FA:
+  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]"
+:fifteen_carbon_saturated_FA:
+  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]"
+:seventeen_carbon_saturated_FA:
+  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]"
+:nineteen_carbon_saturated_FA:
+  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]" 
 

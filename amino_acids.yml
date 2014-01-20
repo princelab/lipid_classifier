@@ -1,46 +1,46 @@
 ---
+:amino_acids:
+  :glycine:
+  - "[$([$([NX3H2,NX4H3+]),$([NX3H](C)(C))][CX4H2][CX3](=[OX1])[OX2H,OX1-,N])]"
+  - "N[CX4H2][CX3](=[OX1])[O,N]"
+  :proline:
+  - "[$([NX3H,NX4H2+]),$([NX3](C)(C)(C))]1[CX4H]([CH2][CH2][CH2]1)[CX3](=[OX1])[OX2H,OX1-,N]"
+  - "N1[CX4H]([CH2][CH2][CH2]1)[CX3](=[OX1])[O,N]"
 :generic_amino_acid: "[$([NX3H2,NX4H3+]),$([NX3H](C)(C))][CX4H]([*])[CX3](=[OX1])[OX2H,OX1-,N]"
-:arginine_side_chain:
-- "[CH2X4][CH2X4][CH2X4][NHX3][CH0X3](=[NH2X3+,NHX2+0])[NH2X3]"
-:aspargine_side_chain:
-- "[CH2X4][CX3](=[OX1])[NX3H2]"
-:aspartate_side_chain:
-- "[CH2X4][CX3](=[OX1])[OH0-,OH]"
-:cysteine_side_chain:
-- "[CH2X4][SX2H,SX1H0-]"
-:glutamate_side_chain:
-- "[CH2X4][CH2X4][CX3](=[OX1])[OH0-,OH]"
-:glycine:
-- "[$([$([NX3H2,NX4H3+]),$([NX3H](C)(C))][CX4H2][CX3](=[OX1])[OX2H,OX1-,N])]"
-- "N[CX4H2][CX3](=[OX1])[O,N]"
-:histidine_side_chain:
-- "[CH2X4][#6X3]1:[$([#7X3H+,#7X2H0+0]:[#6X3H]:[#7X3H]),$([#7X3H])]:[#6X3H]:[$([#7X3H+,#7X2H0+0]:[#6X3H]:[#7X3H]),$([#7X3H])]:[#6X3H]1"
-- "[CH2X4][#6X3]1:[$([#7X3H+,#7X2H0+0]:[#6X3H]:[#7X3H]),$([#7X3H])]:[#6X3H]:"
-:isoleucine_side_chain:
-- "[CHX4]([CH3X4])[CH2X4][CH3X4]"
-:leucine_side_chain:
-- "[CH2X4][CHX4]([CH3X4])[CH3X4]"
-:lysine_side_chain:
-- "[CH2X4][CH2X4][CH2X4][CH2X4][NX4+,NX3+0]"
-:methionine_side_chain:
-- "[CH2X4][CH2X4][SX2][CH3X4]"
-:phenylalanine_side_chain:
-- "[CH2X4][cX3]1[cX3H][cX3H][cX3H][cX3H][cX3H]1"
-:proline:
-- "[$([NX3H,NX4H2+]),$([NX3](C)(C)(C))]1[CX4H]([CH2][CH2][CH2]1)[CX3](=[OX1])[OX2H,OX1-,N]"
-- "N1[CX4H]([CH2][CH2][CH2]1)[CX3](=[OX1])[O,N]"
-:serine_side_chain:
-- "[CH2X4][OX2H]"
-:thioamide:
-- "[NX3][CX3]=[SX1]"
-:threonine_side_chain:
-- "[CHX4]([CH3X4])[OX2H]"
-:tryptophan_side_chain:
-- "[CH2X4][cX3]1[cX3H][nX3H][cX3]2[cX3H][cX3H][cX3H][cX3H][cX3]12"
-:tyrosine_side_chain:
-- "[CH2X4][cX3]1[cX3H][cX3H][cX3]([OHX2,OH0X1-])[cX3H][cX3H]1"
-:valine_side_chain:
-- "[CHX4]([CH3X4])[CH3X4]"
-:alanine_side_chain:
-- "[CH3X4]"
+:side_chains:
+  :arginine_side_chain:
+  - "[CH2X4][CH2X4][CH2X4][NHX3][CH0X3](=[NH2X3+,NHX2+0])[NH2X3]"
+  :aspargine_side_chain:
+  - "[CH2X4][CX3](=[OX1])[NX3H2]"
+  :aspartate_side_chain:
+  - "[CH2X4][CX3](=[OX1])[OH0-,OH]"
+  :cysteine_side_chain:
+  - "[CH2X4][SX2H,SX1H0-]"
+  :glutamate_side_chain:
+  - "[CH2X4][CH2X4][CX3](=[OX1])[OH0-,OH]"
+  :histidine_side_chain:
+  - "[CH2X4][#6X3]1:[$([#7X3H+,#7X2H0+0]:[#6X3H]:[#7X3H]),$([#7X3H])]:[#6X3H]:[$([#7X3H+,#7X2H0+0]:[#6X3H]:[#7X3H]),$([#7X3H])]:[#6X3H]1"
+  - "[CH2X4][#6X3]1:[$([#7X3H+,#7X2H0+0]:[#6X3H]:[#7X3H]),$([#7X3H])]:[#6X3H]:"
+  :isoleucine_side_chain:
+  - "[CHX4]([CH3X4])[CH2X4][CH3X4]"
+  :leucine_side_chain:
+  - "[CH2X4][CHX4]([CH3X4])[CH3X4]"
+  :lysine_side_chain:
+  - "[CH2X4][CH2X4][CH2X4][CH2X4][NX4+,NX3+0]"
+  :methionine_side_chain:
+  - "[CH2X4][CH2X4][SX2][CH3X4]"
+  :phenylalanine_side_chain:
+  - "[CH2X4][cX3]1[cX3H][cX3H][cX3H][cX3H][cX3H]1"
+  :serine_side_chain:
+  - "[CH2X4][OX2H]"
+  :threonine_side_chain:
+  - "[CHX4]([CH3X4])[OX2H]"
+  :tryptophan_side_chain:
+  - "[CH2X4][cX3]1[cX3H][nX3H][cX3]2[cX3H][cX3H][cX3H][cX3H][cX3]12"
+  :tyrosine_side_chain:
+  - "[CH2X4][cX3]1[cX3H][cX3H][cX3]([OHX2,OH0X1-])[cX3H][cX3H]1"
+  :valine_side_chain:
+  - "[CHX4]([CH3X4])[CH3X4]"
+  :alanine_side_chain:
+  - "[CH3X4]"
 
