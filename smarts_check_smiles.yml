@@ -1,5 +1,6 @@
 --- # Add more from http://www.daylight.com/dayhtml_tutorials/languages/smiles/smiles_examples.html
 :acetone: "CC(=O)C"
+:benzene: "cccccc"
 :glucose: "OC[C@@H](O1)[C@@H](O)[C@H](O)[C@@H](O)[C@@H](O)1"
 :viagra: 
   - "CCc1nn(C)c2c(=O)[nH]c(nc12)c3cc(ccc3OCC)S(=O)(=O)N4CCN(C)CC4"
@@ -44,7 +45,9 @@
 :hydrogen_cyanide: 
 	- "C#N"
   - :cyano
-:nicotine: "CN1CCC[C@H]1c2cccnc2"
+:nicotine: 
+  - "CN1CCC[C@H]1c2cccnc2"
+  - :pyrrole
 :morphine: "CN1CC[C@]23[C@H]4Oc5c3c(C[C@@H]1[C@@H]2C=C[C@@H]4O)ccc5O"
 :LSD: "CCN(CC)C(=O)[C@H]1CN(C)[C@@H]2Cc3c[nH]c4cccc(C2=C1)c34"
 :lysergic acid: "CN1C[C@@H](C=C2[C@H]1Cc3c[nH]c4cccc2c34)C(=O)O"
