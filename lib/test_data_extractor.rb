@@ -5,12 +5,12 @@ require 'pry'
 
 TrainingSetNode = Struct.new(:lmid, :href, :classification) 
 
-CategoryCodeToNameMap = {}
+CategoryCodeToNameMap = {:FA=>"Fatty Acyls", :GL=>"Glycerolipids", :GP=>"Glycerophospholipids", :SP=>"Sphingolipids", :ST=>"Sterol Lipids", :PR=>"Prenol Lipids", :SL=>"Saccharolipids", :PK=>"Polyketides"}
 SubcategoryCodeToNameMap = {}
 agent = Mechanize.new
 
 root_page = agent.get("http://www.lipidmaps.org/data/classification/LM_classification_exp.php")
-categories = root_page.search('h2').map {|a| arr = a.text.scan(/(.*)\s\[(\w*)\]/).first; CategoryCodeToNameMap[arr.last.to_sym] = arr.first }
+#categories = root_page.search('h2').map {|a| arr = a.text.scan(/(.*)\s\[(\w*)\]/).first; CategoryCodeToNameMap[arr.last.to_sym] = arr.first }
 
 Classification = Struct.new(:name, :category_code, :class_code, :subclass_code, :class_level4_code, :identifier)
 def parse_classification_from_LMID(string) # add case fixing, and symbols where possible?
@@ -46,6 +46,9 @@ if $0 == __FILE__
   
   #Write the output
   File.open("trainingset.yml", "w") do |outputstream|
+    File.open("trainingset_structs.yml", "w") do |outputstream2|
+      outputstream2.puts YAML.dump parsed_links
+    end
     outputstream.puts YAML.dump parsed_links.map(&:to_h)
   end
 end

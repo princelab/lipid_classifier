@@ -1,7 +1,6 @@
 ---
 :ester:
   - "[#6][CX3](=O)[OX2H0][#6]"
-  - "[#6][CX3](=O)[OX2H0]"
 :ketone:
   - "[#6][CX3](=O)[#6]"
 :ether:
@@ -248,7 +247,7 @@
 
 # Ryan's additions
 :tertiary_amine:
-  - "NX3"
+  - "[NX3]"
 :quaternary_amine:
   - "[NX4+]"
 :sulfonyl:
