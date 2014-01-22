@@ -65,14 +65,14 @@
 :not_mono_hydrogenated:
   - "[!H]" #Hits atoms that don't have exactly one attached hydrogen
   - "[!H1]" #Hits atoms that don't have exactly one attached hydrogen
-:primary_or_secondary_amine_not_amide: ## NOTE
-  - "[NX3;H2,H1;!$(NC=O)]" #not ammonium ion (N must be 3-connected), not ammonia (H count can't be 3). Primary or secondary is specified by N's H-count (H2 & H1 respectively). Also note that "&" (and) is the dafault opperator and is higher precedence that "," (or), which is higher precedence than ";" (and). Will hit cyanamides and thioamides
+#:primary_or_secondary_amine_not_amide: ## NOTE
+#  - "[NX3;H2,H1;!$(NC=O)]" #not ammonium ion (N must be 3-connected), not ammonia (H count can't be 3). Primary or secondary is specified by N's H-count (H2 & H1 respectively). Also note that "&" (and) is the dafault opperator and is higher precedence that "," (or), which is higher precedence than ";" (and). Will hit cyanamides and thioamides
 :enamine:
   - "[NX3][CX3]=[CX3]"
 :primary_amine_not_amide:
   - "[NX3;H2;!$(NC=[!#6]);!$(NC#[!#6])][#6]" #Not amide (C not double bonded to a hetero-atom), not ammonium ion (N must be 3-connected), not ammonia (N's H-count can't be 3), not cyanamide (C not triple bonded to a hetero-atom)
-:two_primary_or_secondary_amines:  ### NOTE to fix!
-  - "[NX3;H2,H1;!$(NC=O)].[NX3;H2,H1;!$(NC=O)]" #Here we use the disconnection symbol (".") to match two separate unbonded identical patterns.
+#:two_primary_or_secondary_amines:  ### NOTE to fix!
+#  - "[NX3;H2,H1;!$(NC=O)].[NX3;H2,H1;!$(NC=O)]" #Here we use the disconnection symbol (".") to match two separate unbonded identical patterns.
 :enamine_or_aniline_nitrogen:
   - "[NX3][$(C=C),$(cc)]"
 :azide_group:
@@ -117,8 +117,8 @@
   - "[CX1-]#[NX2+]"
 :nitro_group:
   - "[$([NX3](=O)=O),$([NX3+](=O)[O-])][!#8]" #Hits both forms
-:two_nitro_groups: ## NOTE
-  - "[$([NX3](=O)=O),$([NX3+](=O)[O-])][!#8].[$([NX3](=O)=O),$([NX3+](=O)[O-])][!#8]"
+#:two_nitro_groups: ## NOTE
+#  - "[$([NX3](=O)=O),$([NX3+](=O)[O-])][!#8].[$([NX3](=O)=O),$([NX3+](=O)[O-])][!#8]"
 :nitroso_group:
   - "[NX2]=[OX1]"
 :n_oxide:
@@ -165,8 +165,8 @@
   - "[#16X2H0][!#16]" #alkylthio- or alkoxy- Won't hit thiols. Won't hit disulfides.
 :disulfide:
   - "[#16X2H0][#16X2H0]" #Won't hit thiols. Won't hit mono-sulfides
-:two_sulfides: ## NOTE
-  - "[#16X2H0][!#16].[#16X2H0][!#16]" #Won't hit thiols. Won't hit mono-sulfides. Won't hit disulfides.
+#:two_sulfides: ## NOTE
+#  - "[#16X2H0][!#16].[#16X2H0][!#16]" #Won't hit thiols. Won't hit mono-sulfides. Won't hit disulfides.
 :sulfinate:
   - "[$([#16X3](=[OX1])[OX2H0]),$([#16X3+]([OX1-])[OX2H0])]" #Won't hit Sulfinic Acid. Hits Both Depiction Forms.
 :sulfinic_acid:
@@ -207,8 +207,8 @@
   - "[#6][F,Cl,Br,I]"
 :halogen:
   - "[F,Cl,Br,I]"
-:three_halides_groups: ## NOTE
-  - "[F,Cl,Br,I].[F,Cl,Br,I].[F,Cl,Br,I]" #Hits SMILES that have three halides.
+#:three_halides_groups: ## NOTE
+#  - "[F,Cl,Br,I].[F,Cl,Br,I].[F,Cl,Br,I]" #Hits SMILES that have three halides.
 :acyl_halide:
   - "[CX3](=[OX1])[F,Cl,Br,I]" #(acid halide, -oyl halide)
 
@@ -219,8 +219,8 @@
   - "[PX4]=[OX1]" #not specific
 :glycerol:
   - "[CX4](-[OX2])[CX4](-[OX2])[CX4](-[OX2])"
-:glucose_cyclic:
-  - "C1(-[OX2])C(-[CX4OX2)]OC(-[OX2])C(-[OX2])C1(-[OX2])" #do the carbons need the implicit H's?
+#:glucose_cyclic:
+#  - "C1(-[OX2])C(-[CX4OX2)]OC(-[OX2])C(-[OX2])C1(-[OX2])" #do the carbons need the implicit H's?
 :aldose:
   - "[CX3H1](=[0X1])[CX4]" #aldopentose, aldohexose --> maybe just the aldehyde is sufficient?
 :aldopentose:
@@ -260,10 +260,10 @@
   - "[cX3][cX3]cccc"
 :meta_phenyl:
   - "[cX3]c[cX3]ccc"
-:isoprenoid:
-  - "[CX3](CH3)=[CX3][CX4]"
-:turpenoid:
-  - "[CX3](CH3)=[CX3][CX4]"
+#:isoprenoid:
+#  - "[CX3](CH3)=[CX3][CX4]"
+#:turpenoid:
+#  - "[CX3](CH3)=[CX3][CX4]"
 :isoprene:
   - "CC(=O)C=C"
 :cyclohexane:

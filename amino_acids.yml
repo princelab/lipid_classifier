@@ -20,7 +20,7 @@
   - "[CH2X4][CH2X4][CX3](=[OX1])[OH0-,OH]"
   :histidine_side_chain:
   - "[CX4H2][#6X3]1:[$([#7X3H+,#7X2H0+0]:[#6X3H]:[#7X3H]),$([#7X3H])]:[#6X3H]:[$([#7X3H+,#7X2H0+0]:[#6X3H]:[#7X3H]),$([#7X3H])]:[#6X3H]1"
-  - "[CX4H2][#6X3]1:[$([#7X3H+,#7X2H0+0]:[#6X3H]:[#7X3H]),$([#7X3H])]:[#6X3H]:"
+#  - "[CX4H2][#6X3]1:[$([#7X3H+,#7X2H0+0]:[#6X3H]:[#7X3H]),$([#7X3H])]:[#6X3H]:"
   :isoleucine_side_chain:
   - "[CHX4]([CH3X4])[CH2X4][CH3X4]"
   :leucine_side_chain:
