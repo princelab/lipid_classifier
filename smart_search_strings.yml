@@ -279,43 +279,109 @@
 :saturated_fatty_acid_unit:
   - "[CX4H2]"
 :unsaturated_fatty_acid_unit:
-  - "[CX4H1]"
-:four_carbon_saturated_FA:
-  - "[CX4H2][CX4H2][CX4H2][CX4H2]" 
-:six_carbon_saturated_FA:
-  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]"
-:eight_carbon_saturated_FA:
-  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]"
-:ten_carbon_saturated_FA:
-  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]"
-:twelve_carbon_saturated_FA:
-  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]"
-:fourteen_carbon_saturated_FA:
-  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]"
-:sixteen_carbon_saturated_FA:
-  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]"
-:eighteen_carbon_saturated_FA:
-  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]"
-:twenty_carbon_saturated_FA:
-  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]"
-:twenty_two_carbon_saturated_FA:
-  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]"
-:twenty_four_carbon_saturated_FA:
-  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]" 
-:five_carbon_saturated_FA:
-  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]"
-:seven_carbon_saturated_FA:
-  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]"
-:nine_carbon_saturated_FA:
-  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]" 
-:eleven_carbon_saturated_FA:
-  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]"
-:thirteen_carbon_saturated_FA:
-  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]"
-:fifteen_carbon_saturated_FA:
-  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]"
-:seventeen_carbon_saturated_FA:
-  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]"
-:nineteen_carbon_saturated_FA:
-  - "[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2]" 
-
+  - "[CX3H1]"
+  - "[CX3H1]=[CX3H1]"
+:four_carbon_terminal_ended_saturated_FA:
+  - "O[CX3](=O)[CX4H2][CX4H2][CX4H3]" 
+:six_carbon_terminal_ended_saturated_FA:
+  - "O[CX3](=O)[CX4H2][CX4H2][CX4H2][CX4H2][CX4H3]"
+:eight_carbon_terminal_ended_saturated_FA:
+  - "O[CX3](=O)[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H3]"
+:ten_carbon_terminal_ended_saturated_FA:
+  - "O[CX3](=O)[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H3]"
+:twelve_carbon_terminal_ended_saturated_FA:
+  - "O[CX3](=O)[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H3]"
+:fourteen_carbon_terminal_ended_saturated_FA:
+  - "O[CX3](=O)[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H3]"
+:sixteen_carbon_terminal_ended_saturated_FA:
+  - "O[CX3](=O)[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H3]"
+:eighteen_carbon_terminal_ended_saturated_FA:
+  - "O[CX3](=O)[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H3]"
+:twenty_carbon_terminal_ended_saturated_FA:
+  - "O[CX3](=O)[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H3]"
+:twenty_two_carbon_terminal_ended_saturated_FA:
+  - "O[CX3](=O)[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H3]"
+:twenty_four_carbon_terminal_ended_saturated_FA:
+  - "O[CX3](=O)[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H3]" 
+:five_carbon_terminal_ended_saturated_FA:
+  - "O[CX3](=O)[CX4H2][CX4H2][CX4H2][CX4H3]"
+:seven_carbon_terminal_ended_saturated_FA:
+  - "O[CX3](=O)[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H3]"
+:nine_carbon_terminal_ended_saturated_FA:
+  - "O[CX3](=O)[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H3]" 
+:eleven_carbon_terminal_ended_saturated_FA:
+  - "O[CX3](=O)[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H3]"
+:thirteen_carbon_terminal_ended_saturated_FA:
+  - "O[CX3](=O)[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H3]"
+:fifteen_carbon_terminal_ended_saturated_FA:
+  - "O[CX3](=O)[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H3]"
+:seventeen_carbon_terminal_ended_saturated_FA:
+  - "O[CX3](=O)[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H3]"
+:nineteen_carbon_terminal_ended_saturated_FA:
+  - "O[CX3](=O)[CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H2][CX4H3]" 
+:three_member_heterocyclic_ring:
+  - "[!#6;r3][r3][r3]"
+:four_member_heterocyclic_ring:
+  - "[!#6;r4][r4][r4][r4]"
+:five_member_heterocyclic_ring:
+  - "[!#6;r5][r5][r5][r5][r5]"
+:six_member_heterocyclic_ring:
+  - "[!#6;r6][r6][r6][r6][r6][r6]"
+:seven_member_heterocyclic_ring:
+  - "[!#6;r7][r7][r7][r7][r7][r7][r7]"
+:eight_member_heterocyclic_ring:
+  - "[!#6;r8][r8][r8][r8][r8][r8][r8][r8]"
+:nine_member_heterocyclic_ring:
+  - "[!#6;r9][r9][r9][r9][r9][r9][r9][r9][r9]"
+:ten_member_heterocyclic_ring:
+  - "[!#6;r10][r10][r10][r10][r10][r10][r10][r10][r10][r10]"
+:eleven_member_heterocyclic_ring:
+  - "[!#6;r11][r11][r11][r11][r11][r11][r11][r11][r11][r11][r11]"
+:twelve_member_heterocyclic_ring:
+  - "[!#6;r12][r12][r12][r12][r12][r12][r12][r12][r12][r12][r12][r12]"
+:three_member_aliphatic_carbon_ring:
+  - "[C;r3][C;r3][C;r3]"
+:four_member_aliphatic_carbon_ring:
+  - "[C;r4][C;r4][C;r4][C;r4]"
+:five_member_aliphatic_carbon_ring:
+  - "[C;r5][C;r5][C;r5][C;r5][C;r5]"
+:six_member_aliphatic_carbon_ring:
+  - "[C;r6][C;r6][C;r6][C;r6][C;r6][C;r6]"
+:seven_member_aliphatic_carbon_ring:
+  - "[C;r7][C;r7][C;r7][C;r7][C;r7][C;r7][C;r7]"
+:eight_member_aliphatic_carbon_ring:
+  - "[C;r8][C;r8][C;r8][C;r8][C;r8][C;r8][C;r8][C;r8]"
+:nine_member_aliphatic_carbon_ring:
+  - "[C;r9][C;r9][C;r9][C;r9][C;r9][C;r9][C;r9][C;r9][C;r9]"
+:ten_member_aliphatic_carbon_ring:
+  - "[C;r10][C;r10][C;r10][C;r10][C;r10][C;r10][C;r10][C;r10][C;r10][C;r10]"
+:eleven_member_aliphatic_carbon_ring:
+  - "[C;r11][C;r11][C;r11][C;r11][C;r11][C;r11][C;r11][C;r11][C;r11][C;r11][C;r11]"
+:twelve_member_aliphatic_carbon_ring:
+  - "[C;r12][C;r12][C;r12][C;r12][C;r12][C;r12][C;r12][C;r12][C;r12][C;r12][C;r12][C;r12]"
+:bicyclic_aliphatic_carbon:
+  - "[C;R2]"
+:tricyclic_aliphatic_carbon:
+  - "[C;R3]"
+:polycyclic_aliphatic_carbon:
+  - "[C;R4]"
+:three_member_aromatic_ring:
+  - "[a;r3][a;r3][a;r3]"
+:four_member_aromatic_ring:
+  - "[a;r4][a;r4][a;r4][a;r4]"
+:five_member_aromatic_ring:
+  - "[a;r5][a;r5][a;r5][a;r5][a;r5]"
+:six_member_aromatic_ring:
+  - "[a;r6][a;r6][a;r6][a;r6][a;r6][a;r6]"
+:seven_member_aromatic_ring:
+  - "[a;r7][a;r7][a;r7][a;r7][a;r7][a;r7][a;r7]"
+:eight_member_aromatic_ring:
+  - "[a;r8][a;r8][a;r8][a;r8][a;r8][a;r8][a;r8][a;r8]"
+:nine_member_aromatic_ring:
+  - "[a;r9][a;r9][a;r9][a;r9][a;r9][a;r9][a;r9][a;r9][a;r9]"
+:ten_member_aromatic_ring:
+  - "[a;r10][a;r10][a;r10][a;r10][a;r10][a;r10][a;r10][a;r10][a;r10][a;r10]"
+:eleven_member_aromatic_ring:
+  - "[a;r11][a;r11][a;r11][a;r11][a;r11][a;r11][a;r11][a;r11][a;r11][a;r11][a;r11]"
+:twelve_member_aromatic_ring:
+  - "[a;r12][a;r12][a;r12][a;r12][a;r12][a;r12][a;r12][a;r12][a;r12][a;r12][a;r12][a;r12]"
