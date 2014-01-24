@@ -2,13 +2,18 @@ $:.unshift(File.dirname(__FILE__))
 require 'lipid_classifier'
 require 'booleans'
 require 'utilities/progress'
+require 'fileutils'
 
 Dir.glob(File.join(File.dirname(File.absolute_path(__FILE__)),"rules", "*.rb")).map {|rfile| require rfile }
+
 
 
 NumberNames = {1 =>  "single", 2 =>  "double", 3 =>  "triple", 4 =>  "quadruple"}
 class LipidClassifier
   class Rules    
+    #PARAMETERS
+    AARuleMax = 2
+    SMRuleMax = 3
     # Helpers
     def self.lambda_smart_match_bool(searches, match_count = 1)
       lambda do |molecule| 
@@ -25,9 +30,24 @@ class LipidClassifier
         searches.map {|search| molecule.matches(search, uniq: true).size } 
       end
     end
+    def self.lambda_smart_match_bool_both(searches, count = 0)
+      lambda do |molecule|
+        searches.map {|search| molecule.matches(search, uniq: true) > count}.reduce {|r,e| r && e}
+      end
+    end
+    def self.lambda_smart_match_count_both(searches)
+      lambda do |molecule| 
+        resp = searches.map {|search| molecule.matches(search, uniq: true).size }
+        resp.reduce(true) {|r,e| r && e > 0 }
+      end
+    end
     def self.method_add_to_hash_from_smarts_and_count(hash, smart_key, number, lookup_hash = Smarts)
       new_key = [NumberNames[number], smart_key.to_s].join("_").to_sym
       hash[new_key] = lambda_smart_match_bool_by_count(lookup_hash[smart_key], number)
+    end
+    def self.method_add_to_hash_from_smarts_and_count_for_amino_acids(hash, smart_key, number, lookup_hash = Smarts)
+      new_key = [NumberNames[number], smart_key.to_s].join("_").to_sym
+      hash[new_key] = lambda_smart_match_bool_both(lookup_hash[smart_key], number)
     end
 
     # BOOLEAN responses, or numbers
@@ -61,7 +81,7 @@ class LipidClassifier
         rescue => e
           errors <<  "Rule contains an invalid smarts string:\n\t#{rule.first}\n\t\t#{e}"
         end
-        File.open('short.log', 'a') {|i| i.puts errors }
+        File.open('smart_error.log', 'w') {|i| i.puts errors }
       end
       analysis
     end
@@ -75,26 +95,30 @@ class LipidClassifier
       total = lmids.size
       count,num = 0,0
       step = total/100.0
-      lmids.map do |lmid| 
+      resp = lmids.map do |lmid| 
         if count > step *(num+1)
           num = ((count/total.to_f)*100.0).to_i
           prog.update(num)
         end
         analyze_lmid(lmid)
       end
+      prog.finish!
+      resp
     end
     def self.analyze_classifications(array) 
       prog = Utilities::Progress.new("Analyzing all classifications")
       total = array.size
       count,num = 0,0
       step = total/100.0
-      array.map do |hash| 
+      resp = array.map do |hash| 
         if count > step *(num+1)
           num = ((count/total.to_f)*100.0).to_i
           prog.update(num)
         end
         analyze_lmid(hash[:lmid])
       end
+      prog.finish!
+      resp
     end
     def self.write_analysis_to_csv_file(array, file = "testing.csv")
       array = [array] unless array.is_a?(Array)
@@ -154,12 +178,65 @@ class LipidClassifier
         end
       end
     end
+    def investigate_layer(root_hash, root_folder, id_symbol_to_sort_by)
+      keys = root_hash.keys.uniq
+      keys.each {|k| new_folder = FileUtils.mkdir_p(File.join(root_folder, k.to_s)) }
+      root_hash.each do |k,v|
+        filename = File.join(root_folder, "#{k.to_s}.arff")
+        layer = Hash.new {|h,k| h[k] = [] }
+        v.map {|a| layer[a[id_symbol_to_sort_by]] << a }
+        write_analysis_to_arff_file(v, filename)
+      end
+      layer
+    end
+    def self.write_layers_to_distributed_arffs(array, folder = "layers")
+      FileUtils.mkdir_p folder
+      category_layers = Hash.new {|h,k| h[k] = [] }
+      LipidClassifier::CategoryCodeToNameMap.keys.map do |key| 
+        array.map {|entry_hash| category_layers[key] << entry_hash if entry_hash[:category_code].to_sym == key }
+      end
+      categories = category_layers.keys
+      #  RECURSIVE IS THE PROBLEM... investigate_layer(category_layers, folder, :class_code)
+      category_layers.each do |k,v|
+        cat_folder = File.join(folder, k.to_s)
+        FileUtils.mkdir_p cat_folder
+        filename = File.join(folder,"#{k.to_s}.arff")
+        write_analysis_to_arff_file(v, filename)
+        class_layers = Hash.new {|h,k| h[k] = [] }
+        v.map {|a| class_layers[a[:class_code]] << a }
+        class_layers.each do |k,v|
+           class_folder = FileUtils.mkdir_p(File.join(cat_folder, k.to_s))
+           filename = File.join(cat_folder, "#{k.to_s}.arff")
+           write_analysis_to_arff_file(v, filename)
+           subclass_layers = Hash.new {|h,k| h[k] = [] }
+           v.map {|a| subclass_layers[a[:subclass_code]] << a }
+           subclass_layers.each do |k,v|
+             filename = File.join(class_folder, "#{k.to_s}.arff")
+             write_analysis_to_arff_file(v, filename)
+             class4_layers = Hash.new {|h,k| h[k] = [] }
+             v.map {|a| class4_layers[a[:class_level4_code]] << a }
+             if class4_layers.size > 1
+               subclass_folder = FileUtils.mkdir_p(File.join(class_folder, k.to_s))
+               # do this stuff again
+             end
+           end
+        end
+      end
+    end
     def self.create_set_of_rules_from_smart(smart_key, rule_set = Smarts)
       # returns a hash of generated rules
       hsh = {}
       hsh[smart_key] = lambda_smart_match_bool(rule_set[smart_key])
-      (1..4).to_a.map {|i| method_add_to_hash_from_smarts_and_count(hsh, smart_key, i, rule_set) }
+      (1..SMRuleMax).to_a.map {|i| method_add_to_hash_from_smarts_and_count(hsh, smart_key, i, rule_set) }
       hsh[[smart_key.to_s,"count"].join("_").to_sym] = lambda_smart_match_count(rule_set[smart_key])
+      hsh
+    end
+    def self.create_amino_acid_rules_from_smart(smart_key, rule_set = AminoAcids)
+      # returns a hash of generated rules
+      hsh = {}
+      hsh[smart_key] = lambda_smart_match_bool_both(rule_set[smart_key])
+      (1..AARuleMax).to_a.map {|i| method_add_to_hash_from_smarts_and_count_for_amino_acids(hsh, smart_key, i, rule_set) }
+      hsh[[smart_key.to_s,"count"].join("_").to_sym] = lambda_smart_match_count_both(rule_set[smart_key])
       hsh
     end
 
@@ -169,7 +246,7 @@ class LipidClassifier
       Smarts.merge! create_set_of_rules_from_smart(k, FunctionalGroups)
     end
     AminoAcids.each do |k,v|
-      Smarts.merge! create_set_of_rules_from_smart(k, AminoAcids)
+      Smarts.merge! create_amino_acid_rules_from_smart(k, AminoAcids)
     end
   end
 end
@@ -182,16 +259,14 @@ if $0 == __FILE__
   mol = Rubabel["LMFA01010001", :lmid]
   classifier = LipidClassifier::Rules
   #analysis = classifier.analyze mol, "LMFA01010001"
-  analysis = classifier.analyze_set_of_lmids([mol, Rubabel["LMFA01010002", :lmid]],["LMFA01010001", "LMFA01010002"])
+  #analysis = classifier.analyze_set_of_lmids(["LMFA01010001", "LMFA01010002","LMGP01010001"])
   
-  classifier.write_analysis_to_csv_file(analysis, "testing.csv")
-  classifier.write_analysis_to_arff_file(analysis, "testing.arff")
+  #classifier.write_analysis_to_csv_file(analysis, "testing.csv")
+  #classifier.write_analysis_to_arff_file(analysis, "testing.arff")
+  #classifier.write_layers_to_distributed_arffs(analysis)
 
-
-
-  abort
-  puts "Should be true: #{LipidClassifier::Rules::TestBlock[:test].call Rubabel["C1=CC=CC=C1"]}"
-  puts "ARE YOU SURE? You'll have to comment out the code to run these..."
+  #puts "Should be true: #{LipidClassifier::Rules::TestBlock[:test].call Rubabel["C1=CC=CC=C1"]}"
+  #puts "ARE YOU SURE? You'll have to comment out the code to run these..."
   #File.open("amino_acids.yml", "w") {|f| f.write YAML.dump LipidClassifier::Rules::AminoAcids}
   #File.open("smart_search_strings.yml", "w") {|f| f.write YAML.dump LipidClassifier::Rules::SmartSearchStrings}
 end

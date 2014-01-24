@@ -12,7 +12,10 @@ classifier_optparse = OptionParser.new do |opts|
     options[:struct_file] = file
   end
   opts.on("-v", "--[no-]verbose", "Run verbosely") do |v|
-    options.verbose = v
+    options[:verbose] = v
+  end
+  opts.on("-d", "--distribute [FOLDER]", "Run the analysis and create a set of distributed files for each category, class, subclass, and level4 class") do |d|
+    options[:distribute] = d
   end
   opts.on_tail("-h", "--help", "Show this message") do 
     puts opts
@@ -28,6 +31,9 @@ if options[:struct_file]
   classifications = YAML.load_file(options[:struct_file])
   analysis = LipidClassifier::Rules.analyze_classifications(classifications)
   putsv "Outputting files *arff and *yml, #{options[:struct_file].gsub(".yml", ".arff")} and #{options[:struct_file].gsub(".yml", ".csv")}"
+  if options[:distribute]
+    LipidClassifier::Rules.write_layers_to_distributed_arffs(analysis, options[:distribute])
+  end
   LipidClassifier::Rules.write_analysis_to_arff_file(analysis, options[:struct_file].gsub(".yml", ".arff"))
   LipidClassifier::Rules.write_analysis_to_csv_file(analysis, options[:struct_file].gsub(".yml", ".csv"))
 end
