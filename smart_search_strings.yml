@@ -385,3 +385,5 @@
   - "[a;r11][a;r11][a;r11][a;r11][a;r11][a;r11][a;r11][a;r11][a;r11][a;r11][a;r11]"
 :twelve_member_aromatic_ring:
   - "[a;r12][a;r12][a;r12][a;r12][a;r12][a;r12][a;r12][a;r12][a;r12][a;r12][a;r12][a;r12]"
+:benzene:
+  - "c1ccccc1"
