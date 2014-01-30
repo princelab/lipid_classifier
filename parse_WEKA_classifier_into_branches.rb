@@ -45,8 +45,8 @@ class LipidClassifier
     end
 
     # @return proc object which can be called to classify at that level
-    def self.write_classifier_to_ruby_code(rows, level, filename = nil)
-      filename ||= "WEKA_#{level}_classifer.rb"
+    def self.write_classifier_to_ruby_code(rows, classification_level, filename = nil)
+      filename ||= "WEKA_#{classification_level}_classifer.rb"
       to_code = [] 
       # Introductory code goes here
       to_code << "lambda do |molecule_hash|"

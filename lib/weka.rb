@@ -1,31 +1,84 @@
-DEBUG = true
 class LipidClassifier
   class WEKA
     def self.bind_into_class 
       binding
     end
     TOFILE = false
+    WEKADEBUG = true
     LogicRow = Struct.new(:layer, :level, :parameter, :logic_operator, :number, :assignment, :correct_count, :wrong_count)
     Assignment = Struct.new(:category, :class, :subclass, :class_level4) do 
       def to_s
         "LM#{@category.to_s}#{@class}#{@subclass}#{@class_level4}"
       end
     end
+    ClassifierStruct = Struct.new(:layer, :layer_classification, :file, :parents, :classification_lambda)
 
     Categories = %w{FA GL ST PR SL PK SP GP}
     def self.determine_current_level_by_filestructure(files_match)
-      # files_match should start with a category
-      file_levels = files_match.split(/(\\|\/)/)
-
+      # Requires a valid path
+      raise ArgumentError unless File.exists?(File.expand_path(files_match))
+      file_levels = files_match.split(File::SEPARATOR).delete_if{|a| File.extname(a) == ".arff"}
+      #path = File.absolute_path(files_match).split(File::SEPARATOR)[1..-2]
+      #while not Categories.include?(file_levels[upper_directories.size])
+       # file_levels.unshift path.pop 
+        #break if file_levels.size > 4
+      #end
+      file_levels = file_levels.drop_while {|a| not Categories.include?(a)}
+      resp = case file_levels.size
+      when 0
+        "category"
+      when 1
+        "class"
+      when 2
+        "subclass"
+      when 3
+        "class_level4"
+      end
+      resp 
+    end
+    def self.parse_ontology_from_filestructure(files_match)
+      raise ArgumentError unless File.exists?(File.expand_path(files_match))
+      file_levels = files_match.split(File::SEPARATOR).delete_if{|a| File.extname(a) == ".arff"}
+      #path = File.absolute_path(files_match).split(File::SEPARATOR)[1..-2]
+      #while not Categories.include?(file_levels[upper_directories.size])
+       # file_levels.unshift path.pop 
+        #break if file_levels.size > 4
+      #end
+      file_levels = file_levels.drop_while {|a| not Categories.include?(a)}
+      current_level = case file_levels.size
+      when 0
+        "category"
+      when 1
+        "class"
+      when 2
+        "subclass"
+      when 3
+        "class_level4"
+      end
+      parents = file_levels[0..-1]
+      str = ClassifierStruct.new(current_level, File.basename(files_match).gsub(File.extname(files_match),""), files_match, parents)
+      str
     end
 
     def self.load_classifications(directory)
       files = Dir.glob(directory + "/**/*.arff").map{|a| a.sub(directory + '/','') }
       @classifiers = {}
+      binding.pry
+      files.map do |file|
+        # take each file and grab the content from it.  I need an intelligent nomenclature scheme for these @classifier keys
+        struct = parse_ontology_from_filestructure(file)
+        name = "#{struct.current_level}_#{struct.parents.join("-")}-#{struct.layer_classification}"
+        p name 
+        struct.classification_lambda = write_classifier_to_ruby_code(read_file_for_lines(file),struct.current_level)
+        @classifiers[name.to_sym] = struct
+
+      end
     end
 
-    def self.identify_lipid(lmid)
+    def self.classify_lipid_by_lmid(lmid)
       load_classifications unless @classifiers
+      hash = LipidClassifier::Rules.analyze_lmid(lmid)
+      lm_classification = LipidClassifier.parse_classification_from_lmid(lmid)
 
     end
     def self.read_file_for_lines(file)
@@ -77,7 +130,7 @@ class LipidClassifier
 
       if TOFILE
         # Add debugging code
-        if DEBUG
+        if WEKADEBUG
           to_code << <<-EOT
 \nif $0 == __FILE__
   $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), 'lib'))

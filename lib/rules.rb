@@ -1,6 +1,7 @@
 $:.unshift(File.dirname(__FILE__))
+
 require 'lipid_classifier'
-require 'booleans'
+require 'utilities/booleans'
 require 'utilities/progress'
 require 'fileutils'
 

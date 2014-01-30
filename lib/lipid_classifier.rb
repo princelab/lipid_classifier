@@ -1,8 +1,10 @@
-require 'rubabel'
-require 'pry'
 require 'yaml'
 
-Dir.glob("lib/**/*.rb").map {|f| require f.gsub(".rb", "") }
+Dir.glob(File.dirname(__FILE__) + "*.rb").map {|f| require f }
+
+# Library requires
+require 'weka'
+
 def putsv(thing)
   puts thing if LCVERBOSE
 end
