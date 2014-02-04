@@ -88,7 +88,7 @@ class LipidClassifier
     end
 
     def self.analyze_lmid(lmid)
-      analyze(Rubabel[lmid, :lmid], lmid)
+      analyze(::Rubabel[lmid, :lmid], lmid)
     end
     def self.analyze_set_of_lmids(lmids)
       #returns an array of hashes
@@ -197,6 +197,7 @@ class LipidClassifier
         array.map {|entry_hash| category_layers[key] << entry_hash if entry_hash[:category_code].to_sym == key }
       end
       categories = category_layers.keys
+      write_analysis_to_arff_file(array, File.join(folder, "root.arff"))
       #  RECURSIVE IS THE PROBLEM... investigate_layer(category_layers, folder, :class_code)
       category_layers.each do |k,v|
         cat_folder = File.join(folder, k.to_s)

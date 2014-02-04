@@ -1,9 +1,12 @@
+require 'bundler/setup'
+require 'rubabel'
 require 'yaml'
 
 Dir.glob(File.dirname(__FILE__) + "*.rb").map {|f| require f }
 
 # Library requires
 require 'weka'
+require 'lipidmaps'
 
 def putsv(thing)
   puts thing if LCVERBOSE

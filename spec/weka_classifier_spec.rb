@@ -32,4 +32,20 @@ describe LipidClassifier::WEKA do
       expect {LipidClassifier::WEKA.parse_ontology_from_filestructure(error_test)}.to raise_error(ArgumentError)
     end
   end
+  describe "#load_classifications" do 
+    it "should load up ~359 classifiers from code" do 
+      resp = LipidClassifier::WEKA.load_classifications("full_layers")
+    end
+  end
+  describe "#line_filter" do 
+    it "should handle normal cases" do 
+      truth = LipidClassifier::WEKA::LogicRow.new(0, "category", "valine_count", ">", "0", "FA", '100')
+      teststring = "valine_count > 0: FA (100)"
+      ans = LipidClassifier::WEKA.line_filter(teststring, "category")
+
+      ans.should == truth
+    end
+  end
 end
+
+
