@@ -1,5 +1,6 @@
 require_relative "lipid_classifier"
 require_relative "lipidmaps"
+require 'utilities/colorize'
 require 'open3'
 require 'pry'
 
@@ -11,9 +12,9 @@ class LipidClassifier
     TOFILE = false
     WEKADEBUG = false
     LogicRow = Struct.new(:layer, :level, :parameter, :logic_operator, :number, :assignment, :correct_count, :wrong_count)
-    Assignment = Struct.new(:category, :class, :subclass, :class_level4) do 
-      def to_s
-        "LM#{@category.to_s}#{@class}#{@subclass}#{@class_level4}"
+    Assignment = Struct.new(:category, :lclass, :subclass, :class_level4) do 
+      def to_compare_classification
+        "LM#{category}#{'%02d' % lclass.to_i}#{'%02d' % subclass.to_i}#{'%02d' % class_level4.to_i}????"
       end
     end
     ClassifierStruct = Struct.new(:current_layer, :layer_classification, :file, :parents, :classification_lambda)
@@ -61,18 +62,18 @@ class LipidClassifier
         current_level = case file_levels.size
         when 0
           "category"
-        when 1
-          "class"
         when 2
-          "subclass"
+          "class"
         when 3
+          "subclass"
+        when 4
           "class_level4"
         end
+        # shouldn't this be the child layer?  Rather, I think I need the child layer
         current_layer = File.basename(files_match).gsub("_classifier"+File.extname(files_match),"")
       end
       parents = file_levels[0..-2]
       str = ClassifierStruct.new(current_level, current_layer, files_match, parents)
-      str
     end
 
     def self.run_weka_on_arff_file(file, class_level)
@@ -100,12 +101,34 @@ class LipidClassifier
       #2 Nominalize
       #3 Reorder
       #4 Classify with J48
-      system "java weka.filters.unsupervised.attribute.Remove -R #{remove_string} -i #{input_file} -o #{tmp_file1}"
-      system "java weka.filters.unsupervised.attribute.NumericToNominal -R first -i #{tmp_file1} -o #{tmp_file2}"
-      system "java weka.filters.unsupervised.attribute.Reorder -R 2-last,1 -i  #{tmp_file2} -o #{output_file}"
+      r,e,s = Open3.capture3 "java weka.filters.unsupervised.attribute.Remove -R #{remove_string} -i #{input_file} -o #{tmp_file1}"
+      File.open("weka_parse_errors.log", "a") {|io| io.puts "*"*80; io.puts e; io.puts input_file } if e.size > 0
+      r,e,s = Open3.capture3 "java weka.filters.unsupervised.attribute.NumericToNominal -R first -i #{tmp_file1} -o #{tmp_file2}"
+      File.open("weka_parse_errors.log", "a") {|io| io.puts "*"*80; io.puts e; io.puts input_file } if e.size > 0
+      r,e,s = Open3.capture3 "java weka.filters.unsupervised.attribute.Reorder -R 2-last,1 -i  #{tmp_file2} -o #{output_file}"
+      File.open("weka_parse_errors.log", "a") {|io| io.puts "*"*80; io.puts e; io.puts input_file } if e.size > 0
       resp,error,status = Open3.capture3("java weka.classifiers.trees.J48 -C 0.25 -M 2 -t #{output_file} > #{model_file}")
-      if error.size > 0
-        # right now I handle this downstream
+      if error.size > 0 
+        #find the assignment
+        #Catch other errors... 
+        if e[/Unable to determine structure as arff/]
+          line_error_number = e[/Unable to determine structure as arff \(Reason: java.io.IOException: premature end of file, read Token\[EOF\], line (\d)\)./,1]
+          File.open("weka_parse_errors.log", "a") {|io| io.puts "*"*80; io.puts e; io.puts input_file }
+        elsif error[/: Cannot handle unary class!/]
+          codes = File.readlines(output_file).select {|a| a[/^@attribute \w*_code/] }
+          if codes.size == 1
+            assignment = codes.first[/_code {(.*)}/,1]
+            File.open(model_file, "w") do |fileio|
+              fileio.puts "------------------"
+              fileio.puts ": #{assignment} (100)"
+              fileio.puts nil
+            end
+          else
+            puts "ERROR2!!!" 
+            binding.pry
+            abort
+          end
+        end
       end
       model_file
     end
@@ -124,13 +147,12 @@ class LipidClassifier
       files = Dir.glob(File.join(directory, "*_classifier.txt"))
       files <<  Dir.glob(File.join(directory, "*","*_classifier.txt"))
       files <<  Dir.glob(File.join(directory, "*","**","*_classifier.txt"))
+      conversion_hash = {root: "category", category: "lclass", class: "subclass", subclass: "class_level4", class_level4: "identifier"}
       files.flatten.map do |file|
         lines = parse_classifier_from_raw_weka_output(file)
         struct = parse_ontology_from_filestructure(file)
         name = "#{struct.current_layer}_#{struct.parents.join("-")}-#{struct.layer_classification}"
-        conversion_hash = {root: "category", category: "class", class: "subclass", subclass: "class_level4"}
-        struct.classification_lambda = write_classifier_to_ruby_code(read_lines(lines, struct.current_layer),conversion_hash[struct.current_layer.to_sym], "#{name}.rb")
-        puts "CURR_LAYER: #{ struct.current_layer}"
+        struct.classification_lambda = read_classifier_to_ruby_code(read_lines(lines, struct.current_layer),conversion_hash[struct.current_layer.to_sym], "#{name}.rb", struct.layer_classification)
         case struct.current_layer 
         when "root"
           @classifiers[:root] = struct
@@ -150,12 +172,13 @@ class LipidClassifier
     def self.parse_classifier_from_raw_weka_output(file)
       if File.zero?(file)
         lines = [File.basename(file).sub(File.extname(file), "")]
+      else
+        lines = File.readlines(file)
       end
-      lines = File.readlines(file)
       send_on_lines = []
       parse = false
       lines.each do |line|
-        parse = false if line == "\n"
+        parse = false if line[/Number of Leaves/]
         if parse
           send_on_lines << line
         end
@@ -167,21 +190,27 @@ class LipidClassifier
     def self.classify_unknown_lipid(molecule)
       raise ArgumentError unless @classifiers
       analysis = LipidClassifier::Rules.analyze(molecule)
-      classification = LipidClassifier::Classification.new
-      binding.pry
-      classification.category_code = @classifiers[:root].classification_lambda.call analysis
-      classification.class_code = @classifiers[:class][classification.category_code.to_sym].classification_lambda.call analysis
-      classification.subclass_code = @classifiers[:subclass][[classification.category_code, classification.class_code].join("-").to_sym].classification_lambda.call analysis
-      classification.class_level4_code = @classifiers[:class_level4][[classification.category_code, classification.class_code,classification.subclass_code].join("-").to_sym].classification_lambda.call analysis
-      classification
+      assignment = LipidClassifier::WEKA::Assignment.new
+      assignment.category = @classifiers[:root].classification_lambda.call analysis
+      assignment.lclass = @classifiers[:category][assignment.category].classification_lambda.call analysis
+      assignment.subclass = @classifiers[:class][[assignment.category, assignment.lclass].join("-").to_sym].classification_lambda.call analysis
+      assignment.class_level4 = @classifiers[:subclass][[assignment.category, assignment.lclass,assignment.subclass].join("-").to_sym].classification_lambda.call analysis
+      assignment
     end
 
-    def self.classify_lipid_vs_lmid(lmid)
+    def self.classify_lipid_vs_lmid(lmid, file = nil)
       raise ArgumentError unless @classifiers
       hash = LipidClassifier::Rules.analyze_lmid(lmid)
       lm_classification = LipidClassifier::LipidMaps.parse_classification_from_lmid(lmid)
       weka_classification = classify_unknown_lipid(Rubabel[lmid,:lmid])
-      [lm_classification, weka_classification]
+      arr = [lm_classification.to_compare_classification, weka_classification.to_compare_classification]
+      boolean = arr.first == arr.last
+      str = "LMID: #{lmid} was classified as '#{arr.last}', which means it #{boolean ? "was" : "wasn't" } classified correctly"
+      if file
+        File.open(file,"a") {|i| i.puts "#{lmid}\tas\t#{arr.last}" } unless boolean
+      else 
+        puts boolean ? str.green : str.red
+      end
     end
 
     def self.read_file_for_lines(file)
@@ -200,18 +229,24 @@ class LipidClassifier
       if arr.empty?
         arr = [nil, nil, nil]
       end
-      arr2 = line.scan(/: ([A-Z]*) \((\d*.\d*)\/(\d*.\d*)\)/)
-      arr2 = line.scan(/: ([A-Z]*) \((\d*.\d*)\)/) if arr2.empty?
-      LogicRow.new(*[layer, level, arr, arr2].flatten)
+      arr2 = line.scan(/: (\S*) \((\d*.\d*)\/(\d*.\d*)\)/)
+      arr2 = line.scan(/: (\S*) \((\d*.\d*)\)/) if arr2.empty?
+      row = LogicRow.new(*[layer, level, arr, arr2].flatten)
+      row
     end
 
     # @return proc object which can be called to classify at that level
-    def self.write_classifier_to_ruby_code(rows, level, filename = nil)
+    def self.read_classifier_to_ruby_code(rows, level, filename = nil, assignment_if_blank)
       filename ||= "WEKA_#{level}_classifier.rb"
       to_code = [] 
       # Introductory code goes here
       to_code << "lambda do |molecule_hash|"
       to_code << "  assignment = Assignment.new"
+
+      if rows.empty?
+        # put the assignment in
+          to_code << "#{"  "*(1)}assignment.#{level} = \"#{assignment_if_blank}\""
+      end
 
       # Here's the parsed stuff
       curr_layer = 1
@@ -225,16 +260,22 @@ class LipidClassifier
           to_code << "#{"  "*row.layer}if molecule_hash[:#{row.parameter}].first #{row.logic_operator} #{row.number}"
         end
         if row.assignment
-          to_code << "#{"  "*(row.layer+1)}assignment.#{level} = :#{row.assignment}"
+          string =  "#{"  "*(row.layer+1)}assignment.#{level} = "
+          if Categories.include?(row.assignment) 
+            string << ":#{row.assignment}"
+          else
+            string << %Q|"#{row.assignment}"|
+          end
+          to_code << string
         end
+        binding.pry unless level 
       end # rows.map
       while curr_layer > 0
         to_code << "#{"  "*(curr_layer)}end"
         curr_layer -= 1
       end
       # close out the introductory code`
-      to_code.insert(-2,"  assignment.to_s")
-
+      to_code.insert(-2,"  assignment.#{level}")
       if TOFILE
         # Add debugging code
         if WEKADEBUG
@@ -264,7 +305,7 @@ end
           abort
         end
       end
-    end # self.write_classifier_to_ruby_code
+    end # self.read_classifier_to_ruby_code
   end # WEKA
 end #LipidClassifier
 
@@ -276,9 +317,17 @@ if $0 == __FILE__
   lines = File.readlines("category_classifier_from_WEKA.txt")
 
   #LipidClassifier::WEKA.grab_arffs("tmp_layers")
-  LipidClassifier::WEKA.load_classifications("tmp_layers")
-  p LipidClassifier::WEKA.classify_lipid_vs_lmid("LMFA01010001")
-  p LipidClassifier::WEKA.classify_unknown_lipid(Rubabel["LMFA01010001",:lmid])
+  #  LipidClassifier::WEKA.grab_arffs("layersf")
+  LipidClassifier::WEKA.load_classifications("layersf")
+  LipidClassifier::WEKA.classify_lipid_vs_lmid("LMFA01010001")
+  LipidClassifier::WEKA.classify_lipid_vs_lmid("LMST01010001")
+  LipidClassifier::WEKA.classify_lipid_vs_lmid("LMPR01010001")
+  LipidClassifier::WEKA.classify_lipid_vs_lmid("LMGL00000122")
+  LipidClassifier::WEKA.classify_lipid_vs_lmid("LMPK06000002")
+  LipidClassifier::WEKA.classify_lipid_vs_lmid("LMGL00000124")
+  LipidClassifier::WEKA.classify_lipid_vs_lmid("LMGL00000127")
+  LipidClassifier::WEKA.classify_lipid_vs_lmid("LMGL00000126")
+  LipidClassifier::WEKA.classify_lipid_vs_lmid("LMGL00000123")
   abort
 
 
@@ -287,7 +336,7 @@ if $0 == __FILE__
 
   extracted_lines = testlines.map {|a| LipidClassifier::WEKA.line_filter(a.chomp, "category")}
 
-  category_classifier_lambda = LipidClassifier::WEKA.write_classifier_to_ruby_code extracted_lines, 'category'
+  category_classifier_lambda = LipidClassifier::WEKA.read_classifier_to_ruby_code extracted_lines, 'category'
   p ::Rubabel["LMFA01010001", :lmid]
   p category_classifier_lambda.call LipidClassifier::Rules.analyze_lmid("LMFA01010001")
 end

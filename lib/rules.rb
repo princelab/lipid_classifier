@@ -59,8 +59,12 @@ class LipidClassifier
     def self.analyze(molecule, lmid = nil)
       # returns a hash, so no association is lost.  
       analysis = {:csmiles => molecule.csmiles, :mass => molecule.mass}
+      if analysis[:csmiles].size < 1
+        analysis[:csmiles] = "undetermined"
+        return nil
+      end
       if lmid
-        analysis[:lmid] = lmid ? lmid : nil
+        analysis[:lmid] = lmid ? lmid : "PLACE_HOLDER_LMID"
         classification = LipidClassifier.parse_classification_from_LMID(lmid)
         analysis[:category_code] = classification.category_code
         analysis[:class_code] = classification.class_code.to_i
@@ -104,7 +108,7 @@ class LipidClassifier
         analyze_lmid(lmid)
       end
       prog.finish!
-      resp
+      resp.compact
     end
     def self.analyze_classifications(array) 
       prog = Utilities::Progress.new("Analyzing all classifications")

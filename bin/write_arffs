@@ -1,0 +1,39 @@
+#!/usr/bin/env ruby
+$LOAD_PATH << File.expand_path("../../lib", __FILE__)
+require 'lipid_classifier'
+
+require 'optparse'
+
+options = {}
+classifier_optparse = OptionParser.new do |opts|
+  opts.banner = "Usage: #{__FILE__} -f FILE [options] "
+  opts.banner = %Q{This tool will classify lipids based upon the input files.  By default, input a yaml file containing 'Classification' structs, which this can parse for you. Additional functionality will come in the future }
+  opts.on('-f', '--struct_file FILE', 'Parses the yaml file for Classification structs') do |file|
+    options[:struct_file] = file
+  end
+  opts.on("-v", "--[no-]verbose", "Run verbosely") do |v|
+    options[:verbose] = v
+  end
+  opts.on("-d", "--distribute [FOLDER]", "Run the analysis and create a set of distributed files for each category, class, subclass, and level4 class") do |d|
+    options[:distribute] = d
+  end
+  opts.on_tail("-h", "--help", "Show this message") do 
+    puts opts
+    exit
+  end
+end
+
+classifier_optparse.parse!(ARGV)
+LCVERBOSE = options[:verbose]
+
+if options[:struct_file]
+  Classification = LipidClassifier::Classification
+  classifications = YAML.load_file(options[:struct_file])
+  analysis = LipidClassifier::Rules.analyze_classifications(classifications)
+  putsv "Outputting files *arff and *yml, #{options[:struct_file].gsub(".yml", ".arff")} and #{options[:struct_file].gsub(".yml", ".csv")}"
+  if options[:distribute]
+    LipidClassifier::Rules.write_layers_to_distributed_arffs(analysis, options[:distribute])
+  end
+  LipidClassifier::Rules.write_analysis_to_arff_file(analysis, options[:struct_file].gsub(".yml", ".arff"))
+  LipidClassifier::Rules.write_analysis_to_csv_file(analysis, options[:struct_file].gsub(".yml", ".csv"))
+end
