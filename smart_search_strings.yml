@@ -1,6 +1,10 @@
 ---
-:ester:
-  - "[#6][CX3](=O)[OX2H0][#6]"
+#:ester:
+ # - "[#6][CX3](=O)[OX2H0][#6]" #also hits anhydrides but not formic anhydrides
+:ester_terminal:
+- "[#6][CX3](=O)[OX2H1]"
+:ester_internal:
+- "[#6][CX3](=O)[OX2][#6]"
 :ketone:
   - "[#6][CX3](=O)[#6]"
 :ether:
@@ -387,3 +391,16 @@
   - "[a;r12][a;r12][a;r12][a;r12][a;r12][a;r12][a;r12][a;r12][a;r12][a;r12][a;r12][a;r12]"
 :benzene:
   - "c1ccccc1"
+  
+#carbon counts; I have seen 10, 15, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 40 carbon counts but they aren't in a straight chain...
+#:carbon_count:
+#- ""
+
+:acid_anhydride:
+- "[#6][CX3](=O)[OX2][CX3]{=O)[#6]" #should we take off the flanking C's?
+:trigylceride: #not sure if will work
+- "[CX4][CX3](=O)[OX2][CX4][CX4]([OX2][CX3](=O)[CX4])[CX4][OX2][CX3](=O)[CX4]"
+:glycerophosphate:  #2,3-dihydroxypropyl phosphate
+- "[PX4](-[OX2])(=O)(-[OX2])[OX2][CX4][CX4](-[OX2H1])[CX4][OX2H1]"
+#:terpene:
+#- ""
