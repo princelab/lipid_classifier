@@ -1,10 +1,12 @@
 ---
 #:ester:
- # - "[#6][CX3](=O)[OX2H0][#6]" #also hits anhydrides but not formic anhydrides
+# - "[#6][CX3](=O)[OX2H0][#6]" #also hits anhydrides but not formic anhydrides
 :ester_terminal:
-- "[#6][CX3](=O)[OX2H1]"
+  - "[#6][CX3](=O)[OX2H1]"
 :ester_internal:
-- "[#6][CX3](=O)[OX2][#6]"
+  - "[#6][CX3](=O)[OX2][#6]"
+:ester_excludes_anhydrides:
+  - "[CX4]([!O])[CX3](=O)[OX2][CX4]([!O])"
 :ketone:
   - "[#6][CX3](=O)[#6]"
 :ether:
