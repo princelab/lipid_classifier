@@ -408,3 +408,9 @@
 #- ""
 :carbon:
   - "[#6]"
+:not_carbon_or_hydrogen_or_oxygen:
+  - "[!#6,!#1,!#8]"
+:branched_carbon:
+  - "[$([CD3]);!$(C([!C]))]"
+:tert_carbon:
+  - "[$([CD4]);!$(C([!C]))]"

@@ -198,7 +198,17 @@ class LipidClassifier
       FileUtils.mkdir_p folder
       category_layers = Hash.new {|h,k| h[k] = [] }
       LipidClassifier::CategoryCodeToNameMap.keys.map do |key| 
-        array.map {|entry_hash| category_layers[key] << entry_hash if entry_hash[:category_code].to_sym == key }
+        array[1] = nil
+        array.map do |entry_hash| 
+          begin
+            category_layers[key] << entry_hash if entry_hash[:category_code].to_sym == key 
+          rescue NoMethodError => e
+            if entry_hash.nil?
+              puts "EMPTY ENTRY_HASH"
+              next
+            end
+          end
+        end
       end
       categories = category_layers.keys
       write_analysis_to_arff_file(array, File.join(folder, "root.arff"))
