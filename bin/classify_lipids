@@ -28,10 +28,22 @@ classifier_optparse = OptionParser.new do |opts|
   opts.on("-t", "--time", "Time the runtime") do |t|
     options[:time]
   end
+  opts.on("--run_weka [DIRECTORY]", "Run the WEKA classifier on the designated folder") do |weka|
+    options[:weka] = weka
+    options[:weka] ||= options[:directory]
+  end
+end
+
+if ARGV.size == 0
+  puts classifier_optparse
+  exit
 end
 
 classifier_optparse.parse!(ARGV)
 LCVERBOSE = options[:verbose]
+if options[:weka]
+  LipidClassifier::WEKA.grab_arffs(options[:weka])
+end
 
 default_directory = "layersf"
 options[:directory] ||= default_directory
@@ -50,7 +62,9 @@ elsif options[:list]
     begin
       LipidClassifier::WEKA.classify_lipid_vs_lmid(lmid, 'misclassified.txt')
     rescue NoMethodError => e
+      p lmid
       p e
+      p e.backtrace
     end
   end
   puts "Took #{Time.now-t} seconds" if options[:time]

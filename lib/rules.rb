@@ -92,7 +92,13 @@ class LipidClassifier
     end
 
     def self.analyze_lmid(lmid)
-      analyze(::Rubabel[lmid, :lmid], lmid)
+      begin
+        analyze(::Rubabel[lmid, :lmid], lmid)
+      rescue ArgumentError => e
+        puts e
+        puts lmid
+        nil
+      end
     end
     def self.analyze_set_of_lmids(lmids)
       #returns an array of hashes
@@ -123,7 +129,7 @@ class LipidClassifier
         analyze_lmid(hash[:lmid])
       end
       prog.finish!
-      resp
+      resp.compact
     end
     def self.write_analysis_to_csv_file(array, file = "testing.csv")
       array = [array] unless array.is_a?(Array)
@@ -131,6 +137,7 @@ class LipidClassifier
         parsing_keys = array.first.keys
         outputter.puts parsing_keys.join(',')
         array.each do |hash|
+          next if hash.nil?
           entries = []
           parsing_keys.each do |key|
             v = hash[key]
@@ -169,6 +176,7 @@ class LipidClassifier
         end
         outputter.puts "@DATA"
         array.map do |hash|
+          next if hash.nil?
           entry = []
           parsing_keys.map do |k|
             if hash[k].class == Array
