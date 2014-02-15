@@ -11,6 +11,10 @@ class TrueClass
   def >(n)
     self.to_i > n
   end
+  # A part of me dies inside as I do this... but...
+  def first
+    true
+  end
 end
 
 class FalseClass
@@ -25,5 +29,9 @@ class FalseClass
   end
   def >(n)
     self.to_i > n
+  end
+  # A part of me dies inside as I do this... but...
+  def first
+    false
   end
 end
