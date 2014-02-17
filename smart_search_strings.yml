@@ -221,8 +221,8 @@
 #experimental SMARTS
 :phosphate:
   - "[PX4](=[OX1])([OX2])([OX2])[OX2]" 
-  - "[PX4]([OX1])([#8])([#8])([#8])"
-  - "[PX4]=[OX1]" #not specific
+  - "[PX4](=[OX1])([#8])([#8])([#8])"
+  - "[PX4](=[OX2])" #not specific
 :glycerol:
   - "[CX4](-[OX2])[CX4](-[OX2])[CX4](-[OX2])"
 #:glucose_cyclic:
@@ -238,7 +238,8 @@
 :ketohexose:
   - "[CX4](-[OX2])[CX3](=[OX1])[CX4](-[0X2])[CX4](-[0X2])[CX4](-[0X2])[CX4](-[0X2])" #fructose, psicose, sorbose, tagatose 
 :choline:
-  - "[CX4](-[OX2])[CX4][NX4](-[CX4])(-[CX4])(-[CX4])" #should we represent the positive N like this?
+#  - "[CX4](-[OX2])[CX4][NX4](-[CX4])(-[CX4])(-[CX4])" #should we represent the positive N like this?
+  - "[NX4](-CX4)(-CX4)(-CX4)[CX4][CX4][OX2]"
 :phosphocholine:
   - "[NX4](-[CX4])(-[CX4])(-[CX4])[CX4][CX4][OX2][PX4](=[OX1])([OX2H1])([OX2H1])" #hits just phosphocholine as independent lipid
   - "[NX4](-[CX4])(-[CX4])(-[CX4])[CX4][CX4][OX2][PX4](=[OX1])([OX2])([OX2])" #phosphocholine AND phosphatidylcholine...
@@ -271,7 +272,7 @@
 #:turpenoid:
 #  - "[CX3](CH3)=[CX3][CX4]"
 :isoprene:
-  - "CC(=O)C=C"
+  - "CC(=C)C=C"
 :cyclohexane:
   - "C1CCCCCC1"
 :chlorine:
