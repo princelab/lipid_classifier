@@ -404,8 +404,9 @@
 
 :acid_anhydride:
   - "[#6][CX3](=O)[OX2][CX3](=O)[#6]" #should we take off the flanking C's?
-:trigylceride: #not sure if will work
-  - "[CX4][CX3](=O)[OX2][CX4][CX4]([OX2][CX3](=O)[CX4])[CX4][OX2][CX3](=O)[CX4]"
+:triglyceride: #not sure if will work
+#  - "[CX4][CX3](=O)[OX2][CX4][CX4]([OX2][CX3](=O)[CX4])[CX4][OX2][CX3](=O)[CX4]"
+ - "[CX4](-[OX2][CX3](=O)[CX4])[CX4](-[OX2][CX3](=O)[CX4])[CX4](-[OX2][CX3](=O)[CX4])"
 :glycerophosphate:  #2,3-dihydroxypropyl phosphate
   - "[PX4](-[OX2])(=O)(-[OX2])[OX2][CX4][CX4](-[OX2H1])[CX4][OX2H1]"
 #:terpene:
