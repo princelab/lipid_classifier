@@ -239,12 +239,12 @@
   - "[CX4](-[OX2])[CX3](=[OX1])[CX4](-[0X2])[CX4](-[0X2])[CX4](-[0X2])[CX4](-[0X2])" #fructose, psicose, sorbose, tagatose 
 :choline:
 #  - "[CX4](-[OX2])[CX4][NX4](-[CX4])(-[CX4])(-[CX4])" #should we represent the positive N like this?
-  - "[NX4](-CX4)(-CX4)(-CX4)[CX4][CX4][OX2]"
+  - "[NX4](-[CX4])(-[CX4])(-[CX4])[CX4][CX4][OX2]"
 :phosphatidate:
  - "[PX4](=[OX1])([#8])([#8])[#8][CX4][CX4](-[OX2][CX3](=O))[CX4][OX2][CX3](=O)"
 :phosphocholine:
-  - "[NX4](-[CX4])(-[CX4])(-[CX4])[CX4][CX4][OX2][PX4](=[OX1])([OX2H1])([OX2H1])" #hits just phosphocholine as independent lipid
-  - "[NX4](-[CX4])(-[CX4])(-[CX4])[CX4][CX4][OX2][PX4](=[OX1])([OX2])([OX2])" #phosphocholine AND phosphatidylcholine...
+#  - "[NX4](-[CX4])(-[CX4])(-[CX4])[CX4][CX4][OX2][PX4](=[OX1])([OX2H1])([OX2H1])" #hits just phosphocholine as independent lipid
+  - "[NX4](-[CX4])(-[CX4])(-[CX4])[CX4][CX4][OX2][PX4](=O)(-[#8])(-[#8])" #phosphocholine AND phosphatidylcholine...
 :phosphatidylcholine:
   - "[CX3](=[OX1])[OX2][CX4][CX4](-[OX2][CX3](=[OX1]))[CX4][OX2][PX4](=[OX1])(-[#8])[OX2][CX4][CX4][NX4](-[CX4H1])(-[CX4H1])(-[CX4H1])" #doesn't include the two 15C side chains; the SMILE --> CCCCCCCCCCCCCCCC(=O)OC[C@H](COP([O-])(=O)OCC[N+](C)(C)C)OC(=O)CCCCCCCCCCCCCCC"
 :inositol:
