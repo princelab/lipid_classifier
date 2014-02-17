@@ -240,6 +240,8 @@
 :choline:
 #  - "[CX4](-[OX2])[CX4][NX4](-[CX4])(-[CX4])(-[CX4])" #should we represent the positive N like this?
   - "[NX4](-CX4)(-CX4)(-CX4)[CX4][CX4][OX2]"
+:phosphatidate:
+ - "[PX4](=[OX1])([#8])([#8])[#8][CX4][CX4](-[OX2][CX3](=O))[CX4][OX2][CX3](=O)"
 :phosphocholine:
   - "[NX4](-[CX4])(-[CX4])(-[CX4])[CX4][CX4][OX2][PX4](=[OX1])([OX2H1])([OX2H1])" #hits just phosphocholine as independent lipid
   - "[NX4](-[CX4])(-[CX4])(-[CX4])[CX4][CX4][OX2][PX4](=[OX1])([OX2])([OX2])" #phosphocholine AND phosphatidylcholine...
@@ -248,7 +250,8 @@
 :inositol:
   - "C1(-[OX2])C(-[OX2])C(-[OX2])C(-[OX2])C(-[OX2])C1(-[OX2])" #a little fuzzy on cyclic SMARTS
 :sphingosine:
-  - "[CX4](-[OX2])[CX4](-[NX3])[CX4](-[OX2])[CX3]=[CX3]" #doesn't include last 13 carbons
+ # - "[CX4](-[OX2])[CX4](-[NX3])[CX4](-[OX2])[CX3]=[CX3]" #doesn't include last 13 carbons
+  - "[#8][CX4][CX4](-[#7])[CX4](-[#8])[CX3]=[CX3][CX4]"
 :epoxide_ring:
   - "C1OC1" #???
 
