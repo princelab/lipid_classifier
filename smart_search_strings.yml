@@ -246,7 +246,7 @@
 #  - "[NX4](-[CX4])(-[CX4])(-[CX4])[CX4][CX4][OX2][PX4](=[OX1])([OX2H1])([OX2H1])" #hits just phosphocholine as independent lipid
   - "[NX4](-[CX4])(-[CX4])(-[CX4])[CX4][CX4][OX2][PX4](=O)(-[#8])(-[#8])" #phosphocholine AND phosphatidylcholine...
 :phosphatidylcholine:
-  - "[CX3](=[OX1])[OX2][CX4][CX4](-[OX2][CX3](=[OX1]))[CX4][OX2][PX4](=[OX1])(-[#8])[OX2][CX4][CX4][NX4](-[CX4H1])(-[CX4H1])(-[CX4H1])" #doesn't include the two 15C side chains; the SMILE --> CCCCCCCCCCCCCCCC(=O)OC[C@H](COP([O-])(=O)OCC[N+](C)(C)C)OC(=O)CCCCCCCCCCCCCCC"
+  - "[CX3](=[OX1])[OX2][CX4][CX4](-[OX2][CX3](=[OX1]))[CX4][OX2][PX4](=[OX1])(-[#8])[OX2][CX4][CX4][NX4](-[CX4])(-[CX4])(-[CX4])" #doesn't include the two 15C side chains; the SMILE --> CCCCCCCCCCCCCCCC(=O)OC[C@H](COP([O-])(=O)OCC[N+](C)(C)C)OC(=O)CCCCCCCCCCCCCCC"
 :inositol:
   - "C1(-[OX2])C(-[OX2])C(-[OX2])C(-[OX2])C(-[OX2])C1(-[OX2])" #a little fuzzy on cyclic SMARTS
 :sphingosine:

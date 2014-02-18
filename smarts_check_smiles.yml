@@ -1,6 +1,6 @@
 --- # Add more from http://www.daylight.com/dayhtml_tutorials/languages/smiles/smiles_examples.html
 :complex_tests:
-    :acetone: 
+  :acetone: 
     - "CC(=O)C"
     - :carbonyl 
     - :ketone
@@ -22,7 +22,7 @@
     - :chlorine
     - :halogen
   :vitaminA: 
-    - "C/C(=C\CO)/C=C/C=C(/C)\C=C\C1=C(C)CCCC1(C)C"
+    - "C/C(=C\\CO)/C=C/C=C(/C)\\C=C\\C1=C(C)CCCC1(C)C"
     - :isoprenoid
     - :isoprenoid
     - :primary_alcohol
@@ -97,13 +97,19 @@
   :thirteen_carbon_terminal_ended_saturated_FA_check:
     - "CCCCCCCCCCCCC(=O)O"
   :ketone_check:
-    - "CC(=O)"
+    - "CC(=O)C"
   :phosphate_check:
     - "[O-]P(=O)([O-])[O-]"
     - "OP(=O)([O-])O"
     - "[O-]P(=O)([O-])O"
     - "COP(=O)([O-])OC"
     - "NOP(=O)([O-])ON"
+  :phosphocholine_check:
+    - "C[N+](C)(C)CCOP(O)(O)=O"
+  :choline_check:
+    - "C[N+](C)(C)CCO"
+  :phosphatidylcholine_check:
+    - "C[N+](C)(C)CCOP(O)(=O)OCC(COC(=O)C)(OC(=O)C)"
 :amino_acids:
   :glycine: 
     - "SMILES_STRING_REPRESENTING_GLYCINE"
