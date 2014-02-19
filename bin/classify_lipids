@@ -60,7 +60,7 @@ elsif options[:list]
   list = File.readlines(options[:list]).map(&:chomp)
   list.map do |lmid|
     begin
-      LipidClassifier::WEKA.classify_lipid_vs_lmid(lmid, 'misclassified.txt')
+      LipidClassifier::WEKA.classify_lipid_vs_lmid(lmid, File.join(options[:directory], "misclassified.txt"))
     rescue NoMethodError => e
       p lmid
       p e
