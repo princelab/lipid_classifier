@@ -420,4 +420,8 @@
 :tert_carbon:
   - "[$([CD4]);!$(C([!C]))]"
 :methoxy:
- - "[#6](-[OX2][CD1])"
+  - "[#6](-[OX2][CD1])"
+:prostaglandin:
+  - "[$([r5]);!$(CO);$([C@@C])]"
+:mycolic_acid:
+  - "OC(=O)[CX4](C)[CX4](O)(C)"
