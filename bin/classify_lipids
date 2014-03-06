@@ -2,6 +2,7 @@
 $LOAD_PATH << File.expand_path("../../lib", __FILE__)
 require 'lipid_classifier'
 require 'weka'
+require 'fileutils'
 
 require 'optparse'
 
@@ -58,9 +59,11 @@ if options[:lmids]
 elsif options[:list]
   t = Time.now
   list = File.readlines(options[:list]).map(&:chomp)
+  outfile = File.join(options[:directory], "misclassified.txt")
+  FileUtils.touch outfile if File.exists? outfile
   list.map do |lmid|
     begin
-      LipidClassifier::WEKA.classify_lipid_vs_lmid(lmid, File.join(options[:directory], "misclassified.txt"))
+      LipidClassifier::WEKA.classify_lipid_vs_lmid(lmid, outfile )
     rescue NoMethodError => e
       p lmid
       p e
