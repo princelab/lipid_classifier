@@ -219,9 +219,11 @@
   - "[CX3](=[OX1])[F,Cl,Br,I]" #(acid halide, -oyl halide)
 
 #experimental SMARTS
-:phosphate:
-  - "[PX4](=[OX1])([OX2])([OX2])[OX2]" 
+:phosphate1:
+  - "[PX4](=[OX1])([OX2])([OX2])[OX2]"
+:phosphate2:
   - "[PX4](=[OX1])([#8])([#8])([#8])"
+:phosphate_nonspecific:  
   - "[PX4](=[OX2])" #not specific
 :glycerol:
   - "[CX4](-[OX2])[CX4](-[OX2])[CX4](-[OX2])"
