@@ -9,6 +9,7 @@ files << Dir.glob(File.join(dir, "*","*","*_for_analysis.arff"))
 files << Dir.glob(File.join(dir, "*","*","*","*_for_analysis.arff"))
 files.flatten!
 files.compact!
+files.uniq!
 files.delete_if {|f| File.zero?(f)}
 
 files.each do |file|
