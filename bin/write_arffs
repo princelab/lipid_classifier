@@ -23,6 +23,11 @@ classifier_optparse = OptionParser.new do |opts|
   end
 end
 
+if ARGV.size == 0
+  puts classifier_optparse
+  exit
+end
+
 classifier_optparse.parse!(ARGV)
 LCVERBOSE = options[:verbose]
 
@@ -35,5 +40,7 @@ if options[:struct_file]
     LipidClassifier::Rules.write_layers_to_distributed_arffs(analysis, options[:distribute])
   end
   LipidClassifier::Rules.write_analysis_to_arff_file(analysis, options[:struct_file].gsub(".yml", ".arff"))
-  LipidClassifier::Rules.write_analysis_to_csv_file(analysis, options[:struct_file].gsub(".yml", ".csv"))
+  if options[:csv]
+    LipidClassifier::Rules.write_analysis_to_csv_file(analysis, options[:struct_file].gsub(".yml", ".csv"))
+  end
 end

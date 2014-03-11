@@ -4,5 +4,5 @@ gemspec
 
 gem 'rspec'
 gem 'pry'
-gem 'rubabel'
+gem 'rubabel', :path => "~/Dropbox/coding/rubabel"
 
