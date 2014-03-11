@@ -255,9 +255,7 @@
  # - "[CX4](-[OX2])[CX4](-[NX3])[CX4](-[OX2])[CX3]=[CX3]" #doesn't include last 13 carbons
   - "[#8][CX4][CX4](-[#7])[CX4](-[#8])[CX3]=[CX3][CX4]"
 :epoxide_ring:
-  - "C1OC1" #???
-:expoxide_ring_updated:
-  - "[OX2r3]1[#6r3][#6r3]1"
+  - "c1Oc1" #???
 
 # Ryan's additions
 :tertiary_amine:
