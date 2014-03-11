@@ -429,3 +429,5 @@
   - "[$([r5]);!$(CO);$([C@@C])]"
 :mycolic_acid:
   - "OC(=O)[CX4](C)[CX4](O)(C)"
+:ethanolamine:
+  - "[#7][CX4][CX4][OX2][HX1]"
