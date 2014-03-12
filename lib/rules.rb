@@ -3,6 +3,7 @@ $:.unshift(File.dirname(__FILE__))
 require 'lipid_classifier'
 require 'utilities/booleans'
 require 'utilities/progress'
+require 'utilities/thread-pool'
 require 'fileutils'
 
 Dir.glob(File.join(File.dirname(File.absolute_path(__FILE__)),"rules", "*.rb")).map {|rfile| require rfile }
@@ -218,35 +219,68 @@ class LipidClassifier
           end
         end
       end
-      categories = category_layers.keys
       write_analysis_to_arff_file(array, File.join(folder, "root.arff"))
       #  RECURSIVE IS THE PROBLEM... investigate_layer(category_layers, folder, :class_code)
-      category_layers.each do |k,v|
+      write_layers_to_arffs(folder, category_layers) # ADD THREAD POOL TO MAKE WRITING LESS IO dependent
+    end
+    def self.write_layer_to_arffs(folder, hash, key_code)
+      resp = nil
+      hash.each do |k,v|
+        subfolder = File.join(folder, k.to_s)
+        filename = File.join(folder, "#{k.to_s}.arff")
+        p filename
+        #next if File.exists? filename
+        write_analysis_to_arff_file(v, filename)
+        subhash = Hash.new {|h,k| h[k] = [] }
+        v.map {|a| subhash[a[key_code]] << a }
+        FileUtils.mkdir_p subfolder if v.size > 0
+        resp = [subfolder, subhash]
+      end
+      resp
+    end
+    def self.write_layers_to_arffs(folder, hash)
+      #category
+      cat_folder, class_layers = write_layer_to_arffs(folder, hash, :class_code)
+      class_folder, subclass_layers = write_layer_to_arffs(cat_folder, class_layers, :subclass_code)
+      subclass_folder, class4_layers = write_layer_to_arffs(class_folder, subclass_layers, :class_level4_code)
+    end
+=begin
+    def write_layers_to_arffs(folder, hash)
+      hash.each do |k,v|
         cat_folder = File.join(folder, k.to_s)
         FileUtils.mkdir_p cat_folder
         filename = File.join(folder,"#{k.to_s}.arff")
+        next if File.exists?(filename)
         write_analysis_to_arff_file(v, filename)
         class_layers = Hash.new {|h,k| h[k] = [] }
         v.map {|a| class_layers[a[:class_code]] << a }
         class_layers.each do |k,v|
-           class_folder = FileUtils.mkdir_p(File.join(cat_folder, k.to_s))
-           filename = File.join(cat_folder, "#{k.to_s}.arff")
-           write_analysis_to_arff_file(v, filename)
-           subclass_layers = Hash.new {|h,k| h[k] = [] }
-           v.map {|a| subclass_layers[a[:subclass_code]] << a }
-           subclass_layers.each do |k,v|
-             filename = File.join(class_folder, "#{k.to_s}.arff")
-             write_analysis_to_arff_file(v, filename)
-             class4_layers = Hash.new {|h,k| h[k] = [] }
-             v.map {|a| class4_layers[a[:class_level4_code]] << a }
-             if class4_layers.size > 1
-               subclass_folder = FileUtils.mkdir_p(File.join(class_folder, k.to_s))
-               # do this stuff again
-             end
-           end
+          class_folder = FileUtils.mkdir_p(File.join(cat_folder, k.to_s))
+          filename = File.join(cat_folder, "#{k.to_s}.arff")
+          next if File.exists?(filename)
+          write_analysis_to_arff_file(v, filename)
+          subclass_layers = Hash.new {|h,k| h[k] = [] }
+          v.map {|a| subclass_layers[a[:subclass_code]] << a }
+          subclass_layers.each do |k,v|
+            filename = File.join(class_folder, "#{k.to_s}.arff")
+            next if File.exists?(filename)
+            write_analysis_to_arff_file(v, filename)
+            class4_layers = Hash.new {|h,k| h[k] = [] }
+            v.map {|a| class4_layers[a[:class_level4_code]] << a }
+            if class4_layers.size > 1
+              class4_layers.each do |k,v|
+                subclass_folder = FileUtils.mkdir_p(File.join(class_folder, k.to_s))
+                # do this stuff again
+                filename = File.join(subclass_folder, "#{k.to_s}.arff")
+                next if File.exists?(filename)
+                write_analysis_to_arff_file(v, filename)
+              end
+            end
+          end
         end
       end
     end
+=end
     def self.create_set_of_rules_from_smart(smart_key, rule_set = Smarts)
       # returns a hash of generated rules
       hsh = {}
