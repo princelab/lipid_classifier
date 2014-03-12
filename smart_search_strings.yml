@@ -521,7 +521,7 @@
   - "[NX2;$([H0][#6])]=[CX3;$([H0][#6])]"
 
 :Isocyanide:
-  - "[N+]#[C- ]"
+  - "[N+]#[C-]"
 :Nitrile:
   - "[NX1]#[CX2]"
 :Thiosemicarbazone:
@@ -541,7 +541,7 @@
 :Azoxy:
   - "[#6][$([NX2]=[NX3+]([O- ])[#6]),$([NX2]=[NX3+0](=[O])[#6])]"
 :Carbamate:
-  - "[NX3,NX4+][CX3](=[OX1])[OX2,OX1- ]"
+  - "[NX3,NX4+][CX3](=[OX1])[OX2,OX1-]"
 :Cyanate:
   - "[OX2][CX2]#[NX1]"
 :Enamide:
@@ -561,13 +561,13 @@
 :Lactam:
   - "[#6R][#6X3R](=[OX1])[#7X3H2,#7X3H1,#7X3H0]"
 :Nitrate:
-  - "[NX3+]([OX1- ])(=[OX1])([OX1- ])"
+  - "[NX3+]([OX1- ])(=[OX1])([OX1-])"
 :Nitrite:
-  - "[NX2](=[OX1])[O;$([X2]),$([X1- ])]"
+  - "[NX2](=[OX1])[O;$([X2]),$([X1-])]"
 :Nitro:
-  - "[$([NX3](=O)=O),$([NX3+](=O)[O- ])][!#8]"
+  - "[$([NX3](=O)=O),$([NX3+](=O)[O-])][!#8]"
 :Nitrone:
-  - "[NX3+;$([H1][OX1- ]),$([H0][OX1- ])]=[C]"
+  - "[NX3+;$([H1][OX1- ]),$([H0][OX1-])]=[C]"
 :Nitroso:
   - "[NX2](=[OX1])[!#7;!#8]"
 :Nitrosamine:
@@ -585,7 +585,7 @@
 :Urea:
   - "[NX3][CX3](=[OX1])[NX3]"
 :Urethane:
-  - "[NX3,NX4+][CX3](=[OX1])[OX2,OX1- ]"
+  - "[NX3,NX4+][CX3](=[OX1])[OX2,OX1-]"
 
 :Acetal:
   - "[CX4][OX2][CX4H1]([#6])[OX2][CX4]"
@@ -601,13 +601,13 @@
   - "[OX2H][CX4;$([H0])]"
 
 :AminoAlcohol_1_2:
-  - "[OX2H][CX4;!$(C([OX2H])[O,S,#7,#15,F,Cl,Br,I])][CX4;!$(C([N])[O,S,#7,#15])][NX3,NX4+;!$(NC=[O,S,N])]"- 1- 2
+  - "[OX2H][CX4;!$(C([OX2H])[O,S,#7,#15,F,Cl,Br,I])][CX4;!$(C([N])[O,S,#7,#15])][NX3,NX4+;!$(NC=[O,S,N])]"
 :Carbonate:
   - "[CX3](=[OX1])([OX2][CX4])[OX2][CX4]"
 :Diol_1_2:
-  - "[OX2H][CX4;!$(C([OX2H])[O,S,#7,#15])][CX4;!$(C([OX2H])[O,S,#7,#15])][OX2H]"- 1- 2
+  - "[OX2H][CX4;!$(C([OX2H])[O,S,#7,#15])][CX4;!$(C([OX2H])[O,S,#7,#15])][OX2H]"
 :Diol_1_1:
-  - "[OX2H][CX4;!$(C([OX2H])([OX2H])[O,S,#7,#15])][OX2H]"- 1- 1
+  - "[OX2H][CX4;!$(C([OX2H])([OX2H])[O,S,#7,#15])][OX2H]"
 :Carbonyl:
   - "[CX3]=[OX1]"
 :Aldehyde:
@@ -618,9 +618,9 @@
   - "[CX3]=[CX3]~[CX3;$([R0][#6]),$([H1R0])](=[OX1])[CX4]"
 
 :CarboxylicAcidDerivative:
-  - "[CX3;$([R0][#6]),$([H1R0])](=[OX1])[$([OX2H]),$([OX1- ]),$([OX2][#6;!$(C=[O,N,S])])]"
+  - "[CX3;$([R0][#6]),$([H1R0])](=[OX1])[$([OX2H]),$([OX1-]),$([OX2][#6;!$(C=[O,N,S])])]"
 :CarboxylicAcid:
-  - "[CX3;$([R0][#6]),$([H1R0])](=[OX1])[$([OX2H]),$([OX1- ])]"
+  - "[CX3;$([R0][#6]),$([H1R0])](=[OX1])[$([OX2H]),$([OX1-])]"
 :CarboxylicEster:
   - "[CX3;$([R0][#6]),$([H1R0])](=[OX1])[OX2][#6;!$(C=[O,N,S])]"
 
@@ -643,8 +643,8 @@
 :Lactone:
   - "[#6][#6X3R](=[OX1])[#8X2][#6;!$(C=[O,N,S])]"
 :Peroxide:
-  - "[OX2,OX1- ][OX2,OX1- ]"
-:	Hydroperoxide:
+  - "[OX2,OX1- ][OX2,OX1-]"
+:Hydroperoxide:
   - "[OX2H][OX2]"
 
 #Halogens
@@ -759,7 +759,7 @@
 :Titanium2Ion:
   - "[Ti++]"
 
-:	Titanium Samrts:
+:Titanium_smarts:
   - "[TiX4,TiX3]"
 :VanadiumIon:
   - "[V+++++,V++++,V+++,V++]"
