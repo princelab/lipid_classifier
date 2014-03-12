@@ -52,7 +52,7 @@
   - "[CX3](=O)[O-]" #Hits conjugate bases of carboxylic, carbamic, and carbonic acids.
 :carbonic_acid_or_ester:
   - "[CX3](=[OX1])(O)O" #Carbonic Acid, Carbonic Ester, or combination
-:carbonic_acid_or_carbonic_acid_ester: 
+:carbonic_acid_or_carbonic_acid_ester:
   - "[CX3](=[OX1])([OX2])[OX2H,OX1H0-1]" #Hits acid and conjugate base. Won't hit carbonic acid diester
 :carbonic_ester:
   - "C[OX2][CX3](=[OX1])[OX2]C" #(carbonic acid diester), Won't hit carbonic acid or combination carbonic acid/ester
@@ -703,7 +703,7 @@
 :ArylIodide:
   - "c1ccccc1[IX1]"
 
-:Organometallic
+#:Organometallic
 :MetallicCompounds:
   - "[Li,Na,K,Rb,Cs,Be,Ca,Sr,Mg,Ba,Sc,Ti,V,Cr,Mn,Fe,Co,Ni,Cu,Zn,Al,Ga,Y,Zr,Nb,Mo,Tc,Ru,Rh,Pd,Ag,Cd,In,Sn,Lu,Hf,Ta,W,Re,Os,Ir,Pt,Au,Hg,Tl,Pb,Bi]"
 :LithiumIon:
@@ -892,7 +892,6 @@
   - "[Ru+++]"
 :Ruthenium2Ion:
   - "[Ru++]"
-
 :Ruthenium:
   - "[RuX4,RuX3,RuX2]"
 :RhodiumIon:
@@ -901,7 +900,6 @@
   - "[Rh+++]"
 :Rhodium2Ion:
   - "[Rh++]"
-
 :Rhodium:
   - "[RhX6,RhX5,RhX4,RhX3,RhX2]"
 :PalladiumIon:
@@ -910,7 +908,6 @@
   - "[Pd++++]"
 :Palladium2Ion:
   - "[Pd++]"
-
 :Palladium:
   - "[PdX4,PdX2]"
 :SilverIon:
@@ -921,7 +918,6 @@
   - "[Ag++]"
 :Silver1Ion:
   - "[Ag+]"
-	
 :Silver:
   - "[AgX3,AgX2,AgX2]"
 :CadmiumIon:
@@ -936,7 +932,6 @@
   - "[Sn++++]"
 :TinIon:
   - "[Sn++]"
-	
 :Tin:
   - "[SnX4,SnX2]"
 :Lutetium:
