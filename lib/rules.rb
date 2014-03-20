@@ -5,6 +5,7 @@ require 'utilities/booleans'
 require 'utilities/progress'
 require 'utilities/thread-pool'
 require 'fileutils'
+require 'timeout'
 
 Dir.glob(File.join(File.dirname(File.absolute_path(__FILE__)),"rules", "*.rb")).map {|rfile| require rfile }
 
@@ -87,7 +88,7 @@ class LipidClassifier
         rescue => e
           errors <<  "Rule contains an invalid smarts string:\n\t#{rule.first}\n\t\t#{e}"
         end
-        File.open('smart_error.log', 'w') {|i| i.puts errors }
+        File.open('smart_error.log', 'a') {|i| i.puts errors }
       end
       analysis
     end
@@ -152,7 +153,30 @@ class LipidClassifier
         end
       end
     end
+    def self.append_analysis_to_arff_file(array, filename)
+      raise ArgumentError unless File.exists?(filename)
+      array = [array] unless array.is_a?(Array)
+      File.open(filename, "a") do |outputter|
+        parsing_keys = array.first.keys
+        array.map do |hash|
+          next if hash.nil?
+          entry = []
+          parsing_keys.map do |k|
+            if hash[k].class == Array
+              entry << hash[k].reduce{|r,e| r || e}
+            elsif hash[k].nil?
+              entry << "?"
+            else
+              entry << hash[k]
+            end
+          end
+          outputter.puts entry.join(",")
+        end
+      end
+    end
     def self.write_analysis_to_arff_file(array, file = "testing.arff")
+      FileUtils.mkdir_p File.dirname(file)
+      FileUtils.touch file
       array = [array] unless array.is_a?(Array)
       File.open(file, "w") do |outputter|
         outputter.puts %{
@@ -219,7 +243,7 @@ class LipidClassifier
           end
         end
       end
-      write_analysis_to_arff_file(array, File.join(folder, "root.arff"))
+      write_analysis_to_arff_file(array, File.join(folder, "root.arff")) unless LipidClassifier::Multithreaded
       #  RECURSIVE IS THE PROBLEM... investigate_layer(category_layers, folder, :class_code)
       write_layers_to_arffs(folder, category_layers) # ADD THREAD POOL TO MAKE WRITING LESS IO dependent
     end
@@ -228,9 +252,14 @@ class LipidClassifier
       hash.each do |k,v|
         subfolder = File.join(folder, k.to_s)
         filename = File.join(folder, "#{k.to_s}.arff")
-        p filename
-        #next if File.exists? filename
-        write_analysis_to_arff_file(v, filename)
+        putsv "Writing: #{filename}"
+        Timeout::timeout(3.0) { File.open(filename, 'a').flock(File::LOCK_EX) }
+        if File.zero? filename
+          write_analysis_to_arff_file(v, filename)
+        else
+          append_analysis_to_arff_file(v, filename)
+        end
+        File.open(filename, 'a').flock(File::LOCK_UN)
         subhash = Hash.new {|h,k| h[k] = [] }
         v.map {|a| subhash[a[key_code]] << a }
         FileUtils.mkdir_p subfolder if v.size > 0
@@ -238,49 +267,13 @@ class LipidClassifier
       end
       resp
     end
-    def self.write_layers_to_arffs(folder, hash)
+    def self.write_layers_to_arffs(folder, hash) 
       #category
       cat_folder, class_layers = write_layer_to_arffs(folder, hash, :class_code)
       class_folder, subclass_layers = write_layer_to_arffs(cat_folder, class_layers, :subclass_code)
       subclass_folder, class4_layers = write_layer_to_arffs(class_folder, subclass_layers, :class_level4_code)
     end
-=begin
-    def write_layers_to_arffs(folder, hash)
-      hash.each do |k,v|
-        cat_folder = File.join(folder, k.to_s)
-        FileUtils.mkdir_p cat_folder
-        filename = File.join(folder,"#{k.to_s}.arff")
-        next if File.exists?(filename)
-        write_analysis_to_arff_file(v, filename)
-        class_layers = Hash.new {|h,k| h[k] = [] }
-        v.map {|a| class_layers[a[:class_code]] << a }
-        class_layers.each do |k,v|
-          class_folder = FileUtils.mkdir_p(File.join(cat_folder, k.to_s))
-          filename = File.join(cat_folder, "#{k.to_s}.arff")
-          next if File.exists?(filename)
-          write_analysis_to_arff_file(v, filename)
-          subclass_layers = Hash.new {|h,k| h[k] = [] }
-          v.map {|a| subclass_layers[a[:subclass_code]] << a }
-          subclass_layers.each do |k,v|
-            filename = File.join(class_folder, "#{k.to_s}.arff")
-            next if File.exists?(filename)
-            write_analysis_to_arff_file(v, filename)
-            class4_layers = Hash.new {|h,k| h[k] = [] }
-            v.map {|a| class4_layers[a[:class_level4_code]] << a }
-            if class4_layers.size > 1
-              class4_layers.each do |k,v|
-                subclass_folder = FileUtils.mkdir_p(File.join(class_folder, k.to_s))
-                # do this stuff again
-                filename = File.join(subclass_folder, "#{k.to_s}.arff")
-                next if File.exists?(filename)
-                write_analysis_to_arff_file(v, filename)
-              end
-            end
-          end
-        end
-      end
-    end
-=end
+
     def self.create_set_of_rules_from_smart(smart_key, rule_set = Smarts)
       # returns a hash of generated rules
       hsh = {}

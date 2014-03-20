@@ -24,6 +24,9 @@ classifier_optparse = OptionParser.new do |opts|
     puts opts
     exit
   end
+  opts.on("-r", "--[no-]remove_files", "Remove existing files in the directory") do |r|
+    options[:remove_files] = r
+  end
 end
 
 if ARGV.size == 0
@@ -34,35 +37,54 @@ end
 classifier_optparse.parse!(ARGV)
 LCVERBOSE = options[:verbose]
 
+if options[:remove_files]
+  if options[:distribute]
+    FileUtils.rm_r Dir.glob(File.join(options[:distribute], "*"))
+  end
+end
+
 if options[:multithread] # Fork to split the classifications, write them each to the folder, implement threads on writing process
+  LipidClassifier::Multithreaded = true
   if options[:struct_file]
     Classification = LipidClassifier::Classification
     classifications = YAML.load_file(options[:struct_file])
     fork_count = options[:multithread]
     pids = []
-    forked_size = classifications.size / fork_count.to_i
-    classifications.each_slice(forked_size) do |classifications|
+    forked_size = classifications.size / fork_count.to_f
+    classifications.each_slice(forked_size.ceil) do |classification|
       pids << fork do 
-        analysis = LipidClassifier::Rules.analyze_classifications(classifications)
-        putsv "Outputting files *arff and *yml, #{options[:struct_file].gsub(".yml", ".arff")} and #{options[:struct_file].gsub(".yml", ".csv")}"
+        analysis = LipidClassifier::Rules.analyze_classifications(classification)
         if options[:distribute]
+          rootfile = File.join(options[:distribute], "root.arff")
+          Timeout::timeout(3.0) {File.open(rootfile, 'a').flock(File::LOCK_EX)}
+          if File.zero?(rootfile)
+            LipidClassifier::Rules.write_analysis_to_arff_file(analysis, rootfile)
+          else
+            LipidClassifier::Rules.append_analysis_to_arff_file(analysis, rootfile)
+          end
+          putsv "Rootfile is now #{File.size(rootfile)} bytes"
+          File.open(rootfile, 'a').flock(File::LOCK_UN)
           LipidClassifier::Rules.write_layers_to_distributed_arffs(analysis, options[:distribute])
+        else
+          putsv "Outputting files *arff and *yml, #{options[:struct_file].gsub(".yml", ".arff")} and #{options[:struct_file].gsub(".yml", ".csv")}"
+          LipidClassifier::Rules.write_analysis_to_arff_file(analysis, options[:struct_file].gsub(".yml", ".arff"))
         end
-        LipidClassifier::Rules.write_analysis_to_arff_file(analysis, options[:struct_file].gsub(".yml", ".arff"))
         if options[:csv]
           LipidClassifier::Rules.write_analysis_to_csv_file(analysis, options[:struct_file].gsub(".yml", ".csv"))
         end
       end
     end
-    p Process.waitall
+    p Process.waitall.map{|a| a.last.success?}.uniq
   end
 else
+  LipidClassifier::Multithreaded = false
   if options[:struct_file]
     Classification = LipidClassifier::Classification
     classifications = YAML.load_file(options[:struct_file])
     analysis = LipidClassifier::Rules.analyze_classifications(classifications)
     putsv "Outputting files *arff and *yml, #{options[:struct_file].gsub(".yml", ".arff")} and #{options[:struct_file].gsub(".yml", ".csv")}"
     if options[:distribute]
+      LipidClassifier::Rules.write_analysis_to_arff_file(analysis, File.join(options[:distribute], 'root.arff'))
       LipidClassifier::Rules.write_layers_to_distributed_arffs(analysis, options[:distribute])
     end
     LipidClassifier::Rules.write_analysis_to_arff_file(analysis, options[:struct_file].gsub(".yml", ".arff"))

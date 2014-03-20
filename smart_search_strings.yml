@@ -194,7 +194,7 @@
 :sulfoxide_low_specificity:
   - "[$([#16X3]=[OX1]),$([#16X3+][OX1-])]" #( sulfinyl, thionyl ) Analog of carbonyl where S replaces C. Hits all sulfoxides, including heteroatom-substituted sulfoxides, dialkylsulfoxides carbo-sulfoxides, sulfinate, sulfinic acids... Hits Both Depiction Forms. Won't hit sulfones.
 :sulfoxide_high_specificity:
-  - "[$([#16X3](=[OX1])([#6])[#6]),$([#16X3+]([OX1-])([#6])[#6])]" #(sulfinyl , thionyl) Analog of carbonyl where S replaces C. Only hits carbo-sulfoxides (Won't hit herteroatom-substituted molecules). Hits Both Depiction Forms. Won't hit sulfones.
+  - "[$([#16X3](=[OX1])([#6])[#6]),$([#16X3+]([OX1-])([#6])[#6])]" #(sulfinyl, thionyl) Analog of carbonyl where S replaces C. Only hits carbo-sulfoxides (Won't hit herteroatom-substituted molecules). Hits Both Depiction Forms. Won't hit sulfones.
 :sulfate:
   - "[$([#16X4](=[OX1])(=[OX1])([OX2H,OX1H0-])[OX2][#6]),$([#16X4+2]([OX1-])([OX1-])([OX2H,OX1H0-])[OX2][#6])]" #(sulfuric acid monoester) Only hits when oxygen is carbon-substituted. Hits acid and conjugate base. Hits Both Depiction Forms.
 :sulfuric_acid_ester_low_specificity:
@@ -455,7 +455,7 @@
 :Benzenering:
   - "c1ccccc1"
 :Carbazole:
-  - "c1c3c(ccc1)c2ccccc2n3- [$([#1]),$([#6])]"
+  - "c1c3c(ccc1)c2ccccc2n3-[$([#1]),$([#6])]"
 :Iminoarene:
   - "[*;r6]=[NX2]"
 :Oxoarene:
@@ -489,9 +489,9 @@
 :Acylazide:
   - "[CX3](=[OX1])[NX2]~[NX2]~[NX1]"
 :Azo:
-  - "[#6]- [#7]=[#7]- [#6]"
+  - "[#6]-[#7]=[#7]-[#6]"
 :Diazo:
-  - "[$([#6]=[N+]=[N- ]),$([#6- ]- [N+]#[N])]"
+  - "[$([#6]=[N+]=[N-]),$([#6-]-[N+]#[N])]"
 :Diazonium:
   - "[#6][NX2+]#[NX1]"
 :Carbodiimide:
@@ -539,7 +539,7 @@
   - "[CX3;$([R0][#6]),$([H1R0])](=[OX1])[#7X3H0]([#6;!$(C=[O,N,S])])[#6;!$(C=[O,N,S])]"
 
 :Azoxy:
-  - "[#6][$([NX2]=[NX3+]([O- ])[#6]),$([NX2]=[NX3+0](=[O])[#6])]"
+  - "[#6][$([NX2]=[NX3+]([O-])[#6]),$([NX2]=[NX3+0](=[O])[#6])]"
 :Carbamate:
   - "[NX3,NX4+][CX3](=[OX1])[OX2,OX1-]"
 :Cyanate:
@@ -561,13 +561,13 @@
 :Lactam:
   - "[#6R][#6X3R](=[OX1])[#7X3H2,#7X3H1,#7X3H0]"
 :Nitrate:
-  - "[NX3+]([OX1- ])(=[OX1])([OX1-])"
+  - "[NX3+]([OX1-])(=[OX1])([OX1-])"
 :Nitrite:
   - "[NX2](=[OX1])[O;$([X2]),$([X1-])]"
 :Nitro:
   - "[$([NX3](=O)=O),$([NX3+](=O)[O-])][!#8]"
 :Nitrone:
-  - "[NX3+;$([H1][OX1- ]),$([H0][OX1-])]=[C]"
+  - "[NX3+;$([H1][OX1-]),$([H0][OX1-])]=[C]"
 :Nitroso:
   - "[NX2](=[OX1])[!#7;!#8]"
 :Nitrosamine:
@@ -643,7 +643,7 @@
 :Lactone:
   - "[#6][#6X3R](=[OX1])[#8X2][#6;!$(C=[O,N,S])]"
 :Peroxide:
-  - "[OX2,OX1- ][OX2,OX1-]"
+  - "[OX2,OX1-][OX2,OX1-]"
 :Hydroperoxide:
   - "[OX2H][OX2]"
 
@@ -964,27 +964,27 @@
 :Metalloid:
   - "[B,Si,Ge,As,Sb,Te,At]"
 :Boron:
-  - "[BX3,BX4- ]"
+  - "[BX3,BX4-]"
 :Silicon:
-  - "[SiX4,SiX3,SiX2,SiX1,SiX4- ,SiX3- ,SiX2- ,SiX1- ]"
+  - "[SiX4,SiX3,SiX2,SiX1,SiX4-,SiX3-,SiX2-,SiX1-]"
 :Germanium:
-  - "[GeX4,GeX3,GeX2,GeX1,GeX4- ,GeX3- ,GeX2- ,GeX1- ]"
+  - "[GeX4,GeX3,GeX2,GeX1,GeX4-,GeX3-,GeX2-,GeX1-]"
 :Arsenic:
-  - "[AsX5,AsX3,AsX2,AsX1,AsX3- ]"
+  - "[AsX5,AsX3,AsX2,AsX1,AsX3-]"
 :Antimony:
-  - "[SbX5,SbX4+,SbX3,SbX3- ]"
+  - "[SbX5,SbX4+,SbX3,SbX3-]"
 :Tellurium:
-  - "[TeX6,TeX5,TeX4,TeX2,TeX2- ]"
+  - "[TeX6,TeX5,TeX4,TeX2,TeX2-]"
 
 
 :PhosphoricAcidDerivative:
   - "[PX4D4](=[!#6])([!#6])([!#6])[!#6]"
 :PhosphoricAcid:
-  - "[PX4D4](=[OX1])([$([OX2H]),$([OX1- ])])([$([OX2H]),$([OX1- ])])[$([OX2H]),$([OX1- ])]"
+  - "[PX4D4](=[OX1])([$([OX2H]),$([OX1-])])([$([OX2H]),$([OX1-])])[$([OX2H]),$([OX1-])]"
 :PhosphoricMonoester:
-  - "[PX4D4](=[OX1])([$([OX2H]),$([OX1- ])])([$([OX2H]),$([OX1- ])])[OX2][#6;!$(C=[O,N,S])]"
+  - "[PX4D4](=[OX1])([$([OX2H]),$([OX1-])])([$([OX2H]),$([OX1-])])[OX2][#6;!$(C=[O,N,S])]"
 :PhosphoricDiester:
-  - "[PX4D4](=[OX1])([$([OX2H]),$([OX1- ])])([OX2][#6;!$(C=[O,N,S])])[OX2][#6;!$(C=[O,N,S])]"
+  - "[PX4D4](=[OX1])([$([OX2H]),$([OX1-])])([OX2][#6;!$(C=[O,N,S])])[OX2][#6;!$(C=[O,N,S])]"
 :PhosphoricTriester:
   - "[PX4D4](=[OX1])([OX2][#6;!$(C=[O,N,S])])([OX2][#6;!$(C=[O,N,S])])[OX2][#6;!$(C=[O,N,S])]"
 :PhosphoricMonoamide:
@@ -1003,13 +1003,13 @@
 :PhosphonicAcidDerivative:
   - "[PX4;$([H1]),$([H0][#6])](=[#8])([!#6])[!#6]"
 :PhosphonicAcid:
-  - "[PX4;$([H1]),$([H0][#6])](=[OX1])([$([OX2H]),$([OX1- ])])[$([OX2H]),$([OX1- ])]"
+  - "[PX4;$([H1]),$([H0][#6])](=[OX1])([$([OX2H]),$([OX1-])])[$([OX2H]),$([OX1-])]"
 :PhosphonicMonoester:
-  - "[PX4;$([H1]),$([H0][#6])](=[OX1])([$([OX2H]),$([OX1- ])])[OX2][#6;!$(C=[O,N,S])]"
+  - "[PX4;$([H1]),$([H0][#6])](=[OX1])([$([OX2H]),$([OX1-])])[OX2][#6;!$(C=[O,N,S])]"
 :PhosphonicDiester:
   - "[PX4;$([H1]),$([H0][#6])](=[OX1])([OX2][#6;!$(C=[O,N,S])])[OX2][#6;!$(C=[O,N,S])]"
 :PhosphonicMonoamide:
-  - "[PX4;$([H1]),$([H0][#6])](=[OX1])([$([OX2H]),$([OX1- ])])[#7X3H2,#7X3H1,#7X3H0]"
+  - "[PX4;$([H1]),$([H0][#6])](=[OX1])([$([OX2H]),$([OX1-])])[#7X3H2,#7X3H1,#7X3H0]"
 :PhosphonicDiamide:
   - "[PX4;$([H1]),$([H0][#6])](=[OX1])([#7X3H2,#7X3H1,#7X3H0])[#7X3H2,#7X3H1,#7X3H0]"
 :PhosphonicEsteramide:
@@ -1020,7 +1020,7 @@
 :PhosphinicAcidDerivative:
   - "[PX4;$([H2]),$([H1][#6]),$([H0]([#6])[#6])](=[#8])[!#6]"
 :PhosphinicAcid:
-  - "[PX4;$([H2]),$([H1][#6]),$([H0]([#6])[#6])](=[OX1])[$([OX2H]),$([OX1- ])]"
+  - "[PX4;$([H2]),$([H1][#6]),$([H0]([#6])[#6])](=[OX1])[$([OX2H]),$([OX1-])]"
 :PhosphinicEster:
   - "[PX4;$([H2]),$([H1][#6]),$([H0]([#6])[#6])](=[OX1])[OX2][#6;!$(C=[O,N,S])]"
 :PhosphinicAmide:
@@ -1029,13 +1029,13 @@
 :PhosphonousDerivatives:
   - "[PX3;$([H1]),$([H0][#6])]"
 :PhosphonousAcid:
-  - "[PX3;$([H1]),$([H0][#6])]([$([OX2H]),$([OX1- ])])[$([OX2H]),$([OX1- ])]"
+  - "[PX3;$([H1]),$([H0][#6])]([$([OX2H]),$([OX1-])])[$([OX2H]),$([OX1-])]"
 :PhosphonousMonoester:
-  - "[PX3;$([H1]),$([H0][#6])]([$([OX2H]),$([OX1- ])])[OX2][#6;!$(C=[O,N,S])]"
+  - "[PX3;$([H1]),$([H0][#6])]([$([OX2H]),$([OX1-])])[OX2][#6;!$(C=[O,N,S])]"
 :PhosphonousDiester:
   - "[PX3;$([H1]),$([H0][#6])]([OX2][#6;!$(C=[O,N,S])])[OX2][#6;!$(C=[O,N,S])]"
 :PhosphonousMonoamide:
-  - "[PX3;$([H1]),$([H0][#6])]([$([OX2H]),$([OX1- ])])[#7X3H2,#7X3H1,#7X3H0]"
+  - "[PX3;$([H1]),$([H0][#6])]([$([OX2H]),$([OX1-])])[#7X3H2,#7X3H1,#7X3H0]"
 :PhosphonousDiamide:
   - "[PX3;$([H1]),$([H0][#6])]([#7X3H2,#7X3H1,#7X3H0])[#7X3H2,#7X3H1,#7X3H0]"
 :PhosphonousEsteramide:
@@ -1044,7 +1044,7 @@
 :PhosphinousDerivatives:
   - "[PX3;$([H2]),$([H1][#6]),$([H0]([#6])[#6])]"
 :PhosphinousAcid:
-  - "[PX3;$([H2]),$([H1][#6]),$([H0]([#6])[#6])][$([OX2H]),$([OX1- ])]"
+  - "[PX3;$([H2]),$([H1][#6]),$([H0]([#6])[#6])][$([OX2H]),$([OX1-])]"
 :PhosphinousEster:
   - "[PX3;$([H2]),$([H1][#6]),$([H0]([#6])[#6])][OX2][#6;!$(C=[O,N,S])]"
 :PhosphinousAmide:
@@ -1053,7 +1053,7 @@
 
 #Sulphur
 :CarbothioicAcid:
-  - "[CX3;$([R0][#6]),$([H1R0])](=[OX1])[$([SX2H]),$([SX1- ])]"
+  - "[CX3;$([R0][#6]),$([H1R0])](=[OX1])[$([SX2H]),$([SX1-])]"
 :CarbodithioicAcid:
   - "[CX3;!R;$([C][#6]),$([CH]);$([C](=[SX1])[SX2H])]"
 :CarbodithioicEster:
@@ -1065,7 +1065,7 @@
 :SulfenicDerivative:
   - "[SX2;$([H1]),$([H0][#6])]"
 :SulfenicAcid:
-  - "[SX2;$([H1]),$([H0][#6])][$([OX2H]),$([OX1- ])]"
+  - "[SX2;$([H1]),$([H0][#6])][$([OX2H]),$([OX1-])]"
 :SulfenicHalide:
   - "[SX2;$([H1]),$([H0][#6])][FX1,ClX1,BrX1,IX1]"
 :SulfenicEster:
@@ -1076,7 +1076,7 @@
 :SulfinicDerivative:
   - "[SX3;$([H1]),$([H0][#6])](=[#8])[!#6]"
 :SulfinicAcid:
-  - "[SX3;$([H1]),$([H0][#6])](=[OX1])[$([OX2H]),$([OX1- ])]"
+  - "[SX3;$([H1]),$([H0][#6])](=[OX1])[$([OX2H]),$([OX1-])]"
 :SulfinicHalide:
   - "[SX3;$([H1]),$([H0][#6])](=[OX1])[FX1,ClX1,BrX1,IX1]"
 :SulfinicEster:
@@ -1085,13 +1085,13 @@
   - "[SX3;$([H1]),$([H0][#6])](=[OX1])[#7X3H2,#7X3H1,#7X3H0]"
 
 :Sulfite:
-  - "[$([OX2]),$([OX1- ])][SX3](=[OX1])[$([OX2]),$([OX1- ])]"
+  - "[$([OX2]),$([OX1-])][SX3](=[OX1])[$([OX2]),$([OX1-])]"
 :Sulfone:
-  - "[$([SX4](=[OX1])(=[OX1])([#6])[#6]),$([SX4+2]([OX1- ])([OX1- ])([#6])[#6])]"
+  - "[$([SX4](=[OX1])(=[OX1])([#6])[#6]),$([SX4+2]([OX1-])([OX1-])([#6])[#6])]"
 :SulfonicDerivative:
   - "[SX4;$([H1]),$([H0][#6])](=[#8])(=[#8])[!#6]"
 :Sulfonicacid:
-  - "[SX4;$([H1]),$([H0][#6])](=[OX1])(=[OX1])[$([OX2H]),$([OX1- ])]"
+  - "[SX4;$([H1]),$([H0][#6])](=[OX1])(=[OX1])[$([OX2H]),$([OX1-])]"
 :SulfonicHalide:
   - "[SX4;$([H1]),$([H0][#6])](=[OX1])(=[OX1])[FX1,ClX1,BrX1,IX1]"
 :SulfonicEster:
@@ -1102,17 +1102,17 @@
 :Sulfonium:
   - "[S+;!$([S]~[!#6]);!$([S]*~[#7,#8,#15,#16])]"
 :Sulfoxide:
-  - "[$([SX3](=[OX1])([#6])[#6]),$([SX3+]([OX1- ])([#6])[#6])]"
+  - "[$([SX3](=[OX1])([#6])[#6]),$([SX3+]([OX1-])([#6])[#6])]"
 :SulfuricDerivative:
   - "[SX4D4](=[#8])(=[#8])([!#6])[!#6]"
 :SulfuricAcid:
-  - "[SX4](=[OX1])(=[OX1])([$([OX2H]),$([OX1- ])])[$([OX2H]),$([OX1- ])]"
+  - "[SX4](=[OX1])(=[OX1])([$([OX2H]),$([OX1-])])[$([OX2H]),$([OX1-])]"
 :SulfuricMonoester:
-  - "[SX4](=[OX1])(=[OX1])([$([OX2H]),$([OX1- ])])[OX2][#6;!$(C=[O,N,S])]"
+  - "[SX4](=[OX1])(=[OX1])([$([OX2H]),$([OX1-])])[OX2][#6;!$(C=[O,N,S])]"
 :SulfuricDiester:
   - "[SX4](=[OX1])(=[OX1])([OX2][#6;!$(C=[O,N,S])])[OX2][#6;!$(C=[O,N,S])]"
 :SulfuricMonoamide:
-  - "[SX4](=[OX1])(=[OX1])([#7X3H2,#7X3H1,#7X3H0])[$([OX2H]),$([OX1- ])]"
+  - "[SX4](=[OX1])(=[OX1])([#7X3H2,#7X3H1,#7X3H0])[$([OX2H]),$([OX1-])]"
 :SulfuricDiamide:
   - "[SX4](=[OX1])(=[OX1])([#7X3H2,#7X3H1,#7X3H0])[#7X3H2,#7X3H1,#7X3H0]"
 :SulfuricEsteramide:
