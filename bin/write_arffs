@@ -55,6 +55,7 @@ if options[:multithread] # Fork to split the classifications, write them each to
       pids << fork do 
         analysis = LipidClassifier::Rules.analyze_classifications(classification)
         if options[:distribute]
+          FileUtils.mkdir_p options[:distribute]
           rootfile = File.join(options[:distribute], "root.arff")
           Timeout::timeout(3.0) {File.open(rootfile, 'a').flock(File::LOCK_EX)}
           if File.zero?(rootfile)
