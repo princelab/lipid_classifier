@@ -425,30 +425,25 @@
   - "OC(=O)[CX4](C)[CX4](O)(C)"
 :ethanolamine:
   - "[#7][CX4][CX4][OX2][HX1]"
-  
 :Z_config_nonspecif_1:
-  - "[#6]/[#6]=[#6]\[#6]"
+  - "[#6]/[#6]=[#6]\\[#6]"
 :Z_config_nonspecif_2:
-  - "[#6]\[#6]=[#6]/[#6]"  
+  - "[#6]\\[#6]=[#6]/[#6]"  
 :Z_config_specif_1:
-  - "[CX4]/[CX3]=[CX3]\[CX4]"
+  - "[CX4]/[CX3]=[CX3]\\[CX4]"
 :Z_config_specif_2:
-  - "[CX4]\[CX3]=[CX3]/[CX4]"
-
+  - "[CX4]\\[CX3]=[CX3]/[CX4]"
 :Z_config_on_oxy_nonspecif_1:
-  - "[#6]/[#6]=[#6]\[#8]"
+  - "[#6]/[#6]=[#6]\\[#8]"
 :Z_config_on_oxy_nonspecif_2:
-  - "[#6]\[#6]=[#6]/[#8]"  
+  - "[#6]\\[#6]=[#6]/[#8]"  
 :Z_config_on_oxy_specif_1:
-  - "[CX4]/[CX3]=[CX3]\[OX2]"
+  - "[CX4]/[CX3]=[CX3]\\[OX2]"
 :Z_config_on_oxy_specif_2:
-  - "[CX4]\[CX3]=[CX3]/[OX2]"
-  
+  - "[CX4]\\[CX3]=[CX3]/[OX2]"
 :N_acyl4hydroxysphinganine:     # phytoceramides
   - "[NX3][CX4][CX4]([OX2])[CX4]([OX2])"
-  
 #SMARTS ADDED FROM http://tech.knime.org/forum/indigo/molecule-functionality-node-request
-
 :Alkane:
   - "[CX4;$([H3][#6]),$([H2]([#6])[#6]),$([H1]([#6])([#6])[#6]),$([#6]([#6])([#6])([#6])[#6])]"
 :Alkane_Primary:
