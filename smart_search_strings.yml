@@ -444,6 +444,9 @@
 :Z_config_on_oxy_specif_2:
   - "[CX4]\[CX3]=[CX3]/[OX2]"
   
+:N_acyl4hydroxysphinganine:     # phytoceramides
+  - "[NX3][CX4][CX4]([OX2])[CX4]([OX2])"
+  
 #SMARTS ADDED FROM http://tech.knime.org/forum/indigo/molecule-functionality-node-request
 
 :Alkane:
