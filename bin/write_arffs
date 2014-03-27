@@ -30,6 +30,9 @@ classifier_optparse = OptionParser.new do |opts|
   opts.on("--randomize N", Float, "Randomize a subset of the entire dataset for further selection.") do |random|
     options[:randomize] = random
   end
+  opts.on("--search STRING", String, "Accept a search string which will be used to select which lmids to classify, for example: `--search FA0203` would select only LMFA0203****** lipids for classification. ") do |search|
+    options[:search] = search
+  end
 end
 
 if ARGV.size == 0
@@ -57,6 +60,11 @@ if options[:multithread] # Fork to split the classifications, write them each to
     if options[:randomize]
       count = (classifications.size * options[:randomize]).ceil
       classifications = classifications.sample(count)
+    end
+    if options[:search]
+      search = Regexp.new options[:search]
+      classifications = classifications.select {|a| a[:lmid][search] }
+      putsv "There are now #{classifications.size} lmids in your search space."
     end
 
     classifications.each_slice(forked_size.ceil) do |classification|
@@ -92,6 +100,15 @@ else
     classifications = YAML.load_file(options[:struct_file])
     analysis = LipidClassifier::Rules.analyze_classifications(classifications)
     putsv "Outputting files *arff and *yml, #{options[:struct_file].gsub(".yml", ".arff")} and #{options[:struct_file].gsub(".yml", ".csv")}"
+
+    if options[:randomize]
+      count = (classifications.size * options[:randomize]).ceil
+      classifications = classifications.sample(count)
+    end
+    if options[:search]
+      classifications = classifications.select {|a| a.to_s[options[:search]] }
+    end
+
     if options[:distribute]
       LipidClassifier::Rules.write_analysis_to_arff_file(analysis, File.join(options[:distribute], 'root.arff'))
       LipidClassifier::Rules.write_layers_to_distributed_arffs(analysis, options[:distribute])
