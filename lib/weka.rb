@@ -101,13 +101,13 @@ class LipidClassifier
       #2 Nominalize
       #3 Reorder
       #4 Classify with J48
-      r,e,s = Open3.capture3 "java weka.filters.unsupervised.attribute.Remove -R #{remove_string} -i #{input_file} -o #{tmp_file1}"
+      r,e,s = Open3.capture3 "java -Xmx2048m weka.filters.unsupervised.attribute.Remove -R #{remove_string} -i #{input_file} -o #{tmp_file1}"
       File.open("weka_parse_errors.log", "a") {|io| io.puts "*"*80; io.puts e; io.puts input_file } if e.size > 0
-      r,e,s = Open3.capture3 "java weka.filters.unsupervised.attribute.NumericToNominal -R first -i #{tmp_file1} -o #{tmp_file2}"
+      r,e,s = Open3.capture3 "java -Xmx2048m weka.filters.unsupervised.attribute.NumericToNominal -R first -i #{tmp_file1} -o #{tmp_file2}"
       File.open("weka_parse_errors.log", "a") {|io| io.puts "*"*80; io.puts e; io.puts input_file } if e.size > 0
-      r,e,s = Open3.capture3 "java weka.filters.unsupervised.attribute.Reorder -R 2-last,1 -i  #{tmp_file2} -o #{output_file}"
+      r,e,s = Open3.capture3 "java -Xmx2048m weka.filters.unsupervised.attribute.Reorder -R 2-last,1 -i  #{tmp_file2} -o #{output_file}"
       File.open("weka_parse_errors.log", "a") {|io| io.puts "*"*80; io.puts e; io.puts input_file } if e.size > 0
-      resp,error,status = Open3.capture3("java weka.classifiers.trees.J48 -C 0.25 -M 2 -t #{output_file} > #{model_file}")
+      resp,error,status = Open3.capture3("java -Xmx2048m weka.classifiers.trees.J48 -C 0.25 -M 2 -t #{output_file} > #{model_file}")
       if error.size > 0 
         #find the assignment
         #Catch other errors... 
@@ -133,6 +133,64 @@ class LipidClassifier
       model_file
     end
 
+    def self.run_weka_on_arff_file_for_testing(file, class_level)
+      # 3 different WEKA steps
+      remove_string = case class_level
+      when "root"
+        "1,2,3,5,6,7,8"
+      when "category"
+        "1,2,3,4,6,7,8"
+      when "class"
+        "1,2,3,4,5,7,8"
+      when "subclass"
+        "1,2,3,4,5,6,8"
+      when "class_level4"
+        "1,2,3,4,5,6,8"
+      end
+
+      input_file = file
+      tmp_file1 = 'tmp_arffes.arff'
+      tmp_file2 = 'tmp_arffes2.arff'
+      output_file = file.gsub(".arff","_for_analysis.arff")
+      model_file = file.gsub(".arff", "_classifier.txt")
+
+      #1 Remove
+      #2 Nominalize
+      #3 Reorder
+      #4 Classify with J48
+      r,e,s = Open3.capture3 "java -Xmx2048m weka.filters.unsupervised.attribute.Remove -R #{remove_string} -i #{input_file} -o #{tmp_file1}"
+      File.open("weka_parse_errors2.log", "a") {|io| io.puts "*"*80; io.puts e; io.puts input_file } if e.size > 0
+      r,e,s = Open3.capture3 "java -Xmx2048m weka.filters.unsupervised.attribute.NumericToNominal -R first -i #{tmp_file1} -o #{tmp_file2}"
+      File.open("weka_parse_errors2.log", "a") {|io| io.puts "*"*80; io.puts e; io.puts input_file } if e.size > 0
+      r,e,s = Open3.capture3 "java -Xmx2048m weka.filters.unsupervised.attribute.Reorder -R 2-last,1 -i  #{tmp_file2} -o #{output_file}"
+      File.open("weka_parse_errors2.log", "a") {|io| io.puts "*"*80; io.puts e; io.puts input_file } if e.size > 0
+      resp,error,status = Open3.capture3("java -Xmx2048m weka.classifiers.trees.J48 -C 0.25 -M 2 -t #{output_file} > #{model_file}")
+      if error.size > 0 
+        #find the assignment
+        #Catch other errors... 
+        if e[/Unable to determine structure as arff/]
+          line_error_number = e[/Unable to determine structure as arff \(Reason: java.io.IOException: premature end of file, read Token\[EOF\], line (\d)\)./,1]
+          File.open("weka_parse_errors2.log", "a") {|io| io.puts "*"*80; io.puts e; io.puts input_file }
+        elsif error[/: Cannot handle unary class!/]
+          codes = File.readlines(output_file).select {|a| a[/^@attribute \w*_code/] }
+          if codes.size == 1
+            assignment = codes.first[/_code {(.*)}/,1]
+            File.open(model_file, "w") do |fileio|
+              fileio.puts "------------------"
+              fileio.puts ": #{assignment} (100)"
+              fileio.puts nil
+            end
+          else
+            puts "ERROR2!!!" 
+            binding.pry
+            abort
+          end
+        end
+      end
+      model_file
+    end
+
+
     def self.grab_arffs(directory)
       files = Dir.glob(File.join(directory, "*.arff"))
       files <<  Dir.glob(File.join(directory, "*","*.arff"))
@@ -148,6 +206,7 @@ class LipidClassifier
       files <<  Dir.glob(File.join(directory, "*","*_classifier.txt"))
       files <<  Dir.glob(File.join(directory, "*","**","*_classifier.txt"))
       conversion_hash = {root: "category", category: "lclass", class: "subclass", subclass: "class_level4", class_level4: "identifier"}
+      raise ArgumentError if files.flatten.size < 1
       files.flatten.map do |file|
         lines = parse_classifier_from_raw_weka_output(file)
         struct = parse_ontology_from_filestructure(file)
@@ -188,11 +247,14 @@ class LipidClassifier
     end
 
     def self.classify_unknown_lipid(molecule)
-      raise ArgumentError unless @classifiers
+      raise ArgumentError unless @classifiers or @classifiers.size > 0
       analysis = LipidClassifier::Rules.analyze(molecule)
       assignment = LipidClassifier::WEKA::Assignment.new
       assignment.category = @classifiers[:root].classification_lambda.call analysis
       assignment.lclass = @classifiers[:category][assignment.category].classification_lambda.call analysis
+      putsv assignment
+      putsv @classifiers[:class].keys
+      putsv [assignment.category, assignment.lclass].join("-").to_sym
       assignment.subclass = @classifiers[:class][[assignment.category, assignment.lclass].join("-").to_sym].classification_lambda.call analysis
       assignment.class_level4 = @classifiers[:subclass][[assignment.category, assignment.lclass,assignment.subclass].join("-").to_sym].classification_lambda.call analysis
       assignment

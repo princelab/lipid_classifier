@@ -176,7 +176,6 @@ class LipidClassifier
     end
     def self.write_analysis_to_arff_file(array, file = "testing.arff")
       FileUtils.mkdir_p File.dirname(file)
-      FileUtils.touch file
       array = [array] unless array.is_a?(Array)
       File.open(file, "w") do |outputter|
         outputter.puts %{
@@ -231,47 +230,52 @@ class LipidClassifier
       FileUtils.mkdir_p folder
       category_layers = Hash.new {|h,k| h[k] = [] }
       LipidClassifier::CategoryCodeToNameMap.keys.map do |key| 
-        array[1] = nil
+#        array[1] = nil # What?  Why was I doing this?
         array.map do |entry_hash| 
           begin
             category_layers[key] << entry_hash if entry_hash[:category_code].to_sym == key 
           rescue NoMethodError => e
             if entry_hash.nil?
+              p array.first
               puts "EMPTY ENTRY_HASH"
               next
             end
           end
         end
       end
+      p category_layers.keys
       write_analysis_to_arff_file(array, File.join(folder, "root.arff")) unless LipidClassifier::Multithreaded
       #  RECURSIVE IS THE PROBLEM... investigate_layer(category_layers, folder, :class_code)
-      write_layers_to_arffs(folder, category_layers) # ADD THREAD POOL TO MAKE WRITING LESS IO dependent
+      write_layers_to_arffs(folder, category_layers, 1) # ADD THREAD POOL TO MAKE WRITING LESS IO dependent
     end
-    def self.write_layer_to_arffs(folder, hash, key_code)
-      resp = nil
-      hash.each do |k,v|
-        subfolder = File.join(folder, k.to_s)
-        filename = File.join(folder, "#{k.to_s}.arff")
-        putsv "Writing: #{filename}"
-        Timeout::timeout(3.0) { File.open(filename, 'a').flock(File::LOCK_EX) }
-        if File.zero? filename
-          write_analysis_to_arff_file(v, filename)
-        else
-          append_analysis_to_arff_file(v, filename)
-        end
-        File.open(filename, 'a').flock(File::LOCK_UN)
-        subhash = Hash.new {|h,k| h[k] = [] }
-        v.map {|a| subhash[a[key_code]] << a }
-        FileUtils.mkdir_p subfolder if v.size > 0
-        resp = [subfolder, subhash]
+    def self.mutex_write_data_to_arff_file(filename, v)
+      putsv "Writing: #{filename}"
+      Timeout::timeout(3.0) { File.open(filename, 'a').flock(File::LOCK_EX) } rescue binding.pry
+      if File.zero? filename
+        write_analysis_to_arff_file(v, filename)
+      else
+        append_analysis_to_arff_file(v, filename)
       end
-      resp
+      File.open(filename, 'a').flock(File::LOCK_UN)
     end
-    def self.write_layers_to_arffs(folder, hash) 
-      #category
-      cat_folder, class_layers = write_layer_to_arffs(folder, hash, :class_code)
-      class_folder, subclass_layers = write_layer_to_arffs(cat_folder, class_layers, :subclass_code)
-      subclass_folder, class4_layers = write_layer_to_arffs(class_folder, subclass_layers, :class_level4_code)
+
+    def self.write_layers_to_arffs(root_folder, hash, code_i)
+      codes = [:category_code, :class_code, :subclass_code, :class_level4_code]
+      return if code_i > 3
+      hash.each do |k,v|
+        next if v.size < 1
+        subfolder = File.join(root_folder, k.to_s)
+        key_code = codes[code_i]
+        FileUtils.mkdir_p subfolder
+        filename = File.join(root_folder, "#{k.to_s}.arff")
+        putsv "Writing: #{filename}"
+        mutex_write_data_to_arff_file(filename, v) # Write the file within the other fxn     
+        subhash = Hash.new {|h,k| h[k] = [] }
+        v.map do |a| 
+          subhash[a[key_code]] << a
+        end
+        write_layers_to_arffs(subfolder, subhash, code_i+1) # Recursive right here!
+      end
     end
 
     def self.create_set_of_rules_from_smart(smart_key, rule_set = Smarts)

@@ -27,6 +27,9 @@ classifier_optparse = OptionParser.new do |opts|
   opts.on("-r", "--[no-]remove_files", "Remove existing files in the directory") do |r|
     options[:remove_files] = r
   end
+  opts.on("--randomize N", Float, "Randomize a subset of the entire dataset for further selection.") do |random|
+    options[:randomize] = random
+  end
 end
 
 if ARGV.size == 0
@@ -51,6 +54,11 @@ if options[:multithread] # Fork to split the classifications, write them each to
     fork_count = options[:multithread]
     pids = []
     forked_size = classifications.size / fork_count.to_f
+    if options[:randomize]
+      count = (classifications.size * options[:randomize]).ceil
+      classifications = classifications.sample(count)
+    end
+
     classifications.each_slice(forked_size.ceil) do |classification|
       pids << fork do 
         analysis = LipidClassifier::Rules.analyze_classifications(classification)

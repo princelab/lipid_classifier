@@ -33,14 +33,44 @@ classifier_optparse = OptionParser.new do |opts|
     options[:weka] = weka
     options[:weka] ||= options[:directory]
   end
+  opts.on("--[no-]cleanup", "Clean up the WEKA classifiers on the designated folder") do |cleanup|
+    options[:cleanup] = cleanup
+  end  
+  opts.on("-m", "--multithread [COUNT]", Integer, "Run the analysis in a multithreaded mode to address scale limitations") do |thread|
+    options[:multithread] = thread
+  end
+  opts.on("--randomize N", Float, "Randomize a subset of the given dataset for further selection.") do |random|
+    options[:randomize] = random
+  end
 end
 
 if ARGV.size == 0
   puts classifier_optparse
   exit
 end
-
 classifier_optparse.parse!(ARGV)
+
+if options[:cleanup]
+  folder = options[:directory]
+  raise ArgumentError unless folder
+
+  files = []
+  files << Dir.glob(File.join(folder,"*_for_analysis_classifier.txt"))
+  files << Dir.glob(File.join(folder,"**","*_for_analysis_classifier.txt"))
+  files << Dir.glob(File.join(folder,"*_for_analysis_for_analysis.arff"))
+  files << Dir.glob(File.join(folder,"**","*_for_analysis_for_analysis.arff"))
+  files << Dir.glob(File.join(folder,"*_for_analysis.arff"))
+  files << Dir.glob(File.join(folder,"**","*_for_analysis.arff"))
+  files << Dir.glob(File.join(folder,"*_classifier.txt"))
+  files << Dir.glob(File.join(folder,"**","*_classifier.txt"))
+  files.flatten!.uniq!
+
+  files.each do |file|
+    FileUtils.remove(file)
+  end
+
+end
+
 LCVERBOSE = options[:verbose]
 if options[:weka]
   LipidClassifier::WEKA.grab_arffs(options[:weka])
@@ -52,25 +82,87 @@ tc = Time.now
 LipidClassifier::WEKA.load_classifications(options[:directory])
 puts "Loading classifications took #{Time.now-tc} seconds" if options[:time]
 
-if options[:lmids]
-  options[:lmids].each do |lmid|
-    LipidClassifier::WEKA.classify_lipid_vs_lmid(lmid)
-  end
-elsif options[:list]
-  t = Time.now
-  list = File.readlines(options[:list]).map(&:chomp)
-  outfile = File.join(options[:directory], "misclassified.txt")
-  FileUtils.touch outfile if File.exists? outfile
-  list.map do |lmid|
-    begin
-      LipidClassifier::WEKA.classify_lipid_vs_lmid(lmid, outfile )
-    rescue NoMethodError => e
-      p lmid
-      p e
-      p e.backtrace
+if options[:multithread]
+  if options[:lmids]
+    big_list = options[:lmids]
+    # randomize option
+    big_list= big_list.sample((big_list.size * options[:randomize]).ceil) if options[:randomize]
+    pids = []
+    split_size = big_list.size / options[:multithread].to_f
+    big_list.each_slice(split_size.ceil) do |list|
+      pids << fork do 
+        list.each do |lmid|
+          LipidClassifier::WEKA.classify_lipid_vs_lmid(lmid)
+        end
+      end
+    end
+  elsif options[:list]
+    t = Time.now
+    big_list = File.readlines(options[:list]).map(&:chomp)
+    big_list= big_list.sample((big_list.size * options[:randomize]).ceil) if options[:randomize]
+    size = big_list.size
+    outfile_base = File.join(options[:directory], "misclassified")
+    pids,outfiles = [],[]
+    split_size = big_list.size / options[:multithread].to_f
+    big_list.each_slice(split_size.ceil).with_index do |list, i|
+      outfile = outfile_base + "_#{i}.txt"
+      FileUtils.touch outfile if File.exists? outfile
+      outfiles << outfile
+      pids << fork do 
+        list.map do |lmid|
+          begin
+            LipidClassifier::WEKA.classify_lipid_vs_lmid(lmid, outfile)
+          rescue NoMethodError => e
+            File.open(outfile, 'a') {|io| io.puts "#{lmid} didn't classify because of #{e} in #{e.backtrace.first}" }
+            p lmid
+            p e
+            p e.backtrace
+          end
+        end # list.map
+      end # fork
+    end # big_list.each_slice
+    # combine them into a single file
+    p Process.waitall.map{|a| a.last.success?}.uniq
+    puts "Took #{Time.now-t} seconds" if options[:time]
+    lines = []
+    outfiles.each do |file|
+      lines << File.readlines(file)
+    end
+    lines = lines.flatten.uniq
+    File.open(outfile_base + ".txt", 'w') do |io|
+      io.puts lines
     end
   end
-  puts "Took #{Time.now-t} seconds" if options[:time]
+else # multithread
+  if options[:lmids]
+    options[:lmids].each do |lmid|
+      LipidClassifier::WEKA.classify_lipid_vs_lmid(lmid)
+    end
+  elsif options[:list]
+    t = Time.now
+    list = File.readlines(options[:list]).map(&:chomp)
+    list= list.sample((list.size * options[:randomize]).ceil) if options[:randomize]
+    size = list.size
+    outfile = File.join(options[:directory], "misclassified.txt")
+    FileUtils.touch outfile if File.exists? outfile
+    prog = Utilities::Progress.new("Analyzing a list of #{size} lmids")
+    count,num = 0,0
+    step = size/100.0
+    list.map do |lmid|
+      if count > step * (num+1)
+        num = ((count/size.to_f)*100.0).to_i
+        prog.update(num)
+      end
+      begin
+        LipidClassifier::WEKA.classify_lipid_vs_lmid(lmid, outfile)
+      rescue NoMethodError => e
+        p lmid
+        p e
+        p e.backtrace
+      end
+    end
+    prog.finish!
+    puts "Took #{Time.now-t} seconds" if options[:time]
+  end
 end
-
 
