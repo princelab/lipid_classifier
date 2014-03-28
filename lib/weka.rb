@@ -107,7 +107,7 @@ class LipidClassifier
       File.open("weka_parse_errors.log", "a") {|io| io.puts "*"*80; io.puts e; io.puts input_file } if e.size > 0
       r,e,s = Open3.capture3 "java -Xmx2048m weka.filters.unsupervised.attribute.Reorder -R 2-last,1 -i  #{tmp_file2} -o #{output_file}"
       File.open("weka_parse_errors.log", "a") {|io| io.puts "*"*80; io.puts e; io.puts input_file } if e.size > 0
-      resp,error,status = Open3.capture3("java -Xmx2048m weka.classifiers.trees.J48 -C 0.25 -M 2 -t #{output_file} > #{model_file}")
+      resp,error,status = Open3.capture3("java -Xmx2048m weka.classifiers.trees.J48 -C 0.25 -M 1 -t #{output_file} > #{model_file}")
       if error.size > 0 
         #find the assignment
         #Catch other errors... 
