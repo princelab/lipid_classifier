@@ -1150,3 +1150,22 @@
 :Thiourea:
   - "[NX3][CX3](=[SX1])[NX3]"
 
+# Cholesterols
+#:sterol_backbone: 
+:sterol_backbone_core: 
+  - "[C;R2;r6;r5][C;R2;r6;r5][C;R2;r6][C;R2;r6][C;R2;r6][C;R2;r6]"
+
+
+# Methyl ethyl branching problem:
+:ethyl_branch: 
+  - "[#6][#6]([CD2][CD1])[#6]"
+:methyl_branch:  
+  - "[#6][#6]([CD1])[#6]"
+:hexose_link_1_3:
+  - "[O;R][C;R][O;!R][$([C;R][C;R][C;R][O;R]);$([C;R][C;R][C;R][O;R])]"
+:hexose_link_1_4_or_1_2:
+  - "[O;R][C;R][O;!R][C;R][$([C;R][O;R]);$([C;R][C;R][O])]"
+:hexose_link_1_2:
+  - "[O;R][C;R][O;!R][C;R][$([C;R]);$(C([O;!R]))][O;R]"
+:hexose_link_1_4:
+  - "[O;R][C;R][O;!R][C;R][C;R][C;R][$([C;R]);$(C([O;!R]))][O;R]"
