@@ -263,7 +263,7 @@ class LipidClassifier
     def self.classify_lipid_vs_lmid(lmid, file = nil)
       raise ArgumentError unless @classifiers
       hash = LipidClassifier::Rules.analyze_lmid(lmid)
-      lm_classification = LipidClassifier::LipidMaps.parse_classification_from_lmid(lmid)
+      lm_classification = LipidClassifier::LipidMaps.parse_classification_from_LMID(lmid)
       weka_classification = classify_unknown_lipid(Rubabel[lmid,:lmid])
       arr = [lm_classification.to_compare_classification, weka_classification.to_compare_classification]
       boolean = arr.first == arr.last

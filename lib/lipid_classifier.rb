@@ -28,6 +28,13 @@ class LipidClassifier
     classification.name = CategoryCodeToNameMap[classification.category_code.to_sym]
     classification
   end
+  def self.corrections
+    @corrections
+  end
+  def self.load_corrections
+    file = File.join(__dir__, "..", 'corrections.yml')
+    @corrections = YAML.load_file(file)
+  end
   # Load the SMARTS into RULES
   class Rules
     RawSmarts = YAML.load_file("smart_search_strings.yml")
@@ -35,10 +42,6 @@ class LipidClassifier
     Smarts = {}
     FunctionalGroups = {}
     AminoAcids = {}
-  end
-  def self.load_corrections
-    file = File.join(__dir__, "..", 'corrections.yml')
-    @corrections = YAML.load_file(file)
   end
 end
 
