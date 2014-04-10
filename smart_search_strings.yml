@@ -1169,3 +1169,6 @@
   - "[O;R][C;R][O;!R][C;R][$([C;R]);$(C([O;!R]))][O;R]"
 :hexose_link_1_4:
   - "[O;R][C;R][O;!R][C;R][C;R][C;R][$([C;R]);$(C([O;!R]))][O;R]"
+:hexose_link_1_6:
+  - "[O;R][C;R][O;!R][C;!R][C;R][C;R][C;R][C;R][$([C;R]);$(C([O;!R]))][O;R]"
+

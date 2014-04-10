@@ -56,7 +56,6 @@ if options[:multithread] # Fork to split the classifications, write them each to
     classifications = YAML.load_file(options[:struct_file])
     fork_count = options[:multithread]
     pids = []
-    forked_size = classifications.size / fork_count.to_f
     if options[:randomize]
       count = (classifications.size * options[:randomize]).ceil
       classifications = classifications.sample(count)
@@ -66,7 +65,8 @@ if options[:multithread] # Fork to split the classifications, write them each to
       classifications = classifications.select {|a| a[:lmid][search] }
       putsv "There are now #{classifications.size} lmids in your search space."
     end
-
+    forked_size = classifications.size / fork_count.to_f
+    putsv "Classifications (#{classifications.size} total) will be processed in #{forked_size} sized chunks portions"
     classifications.each_slice(forked_size.ceil) do |classification|
       pids << fork do 
         analysis = LipidClassifier::Rules.analyze_classifications(classification)
@@ -89,8 +89,9 @@ if options[:multithread] # Fork to split the classifications, write them each to
         if options[:csv]
           LipidClassifier::Rules.write_analysis_to_csv_file(analysis, options[:struct_file].gsub(".yml", ".csv"))
         end
-      end
-    end
+        putsv "Fork finished"
+      end # fork do 
+    end 
     p Process.waitall.map{|a| a.last.success?}.uniq
   end
 else
