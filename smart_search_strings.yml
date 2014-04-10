@@ -1155,6 +1155,8 @@
 :sterol_backbone_core: 
   - "[C;R2;r6;r5][C;R2;r6;r5][C;R2;r6][C;R2;r6][C;R2;r6][C;R2;r6]"
 
+:ceramide:
+  - "[#8][CX4][CX4](-[#7][CX3](=[O])[#6])[CX4](O)[CX3]=[CX3]"
 
 # Methyl ethyl branching problem:
 :ethyl_branch: 
@@ -1171,4 +1173,5 @@
   - "[O;R][C;R][O;!R][C;R][C;R][C;R][$([C;R]);$(C([O;!R]))][O;R]"
 :hexose_link_1_6:
   - "[O;R][C;R][O;!R][C;!R][C;R][C;R][C;R][C;R][$([C;R]);$(C([O;!R]))][O;R]"
+  
 
