@@ -106,7 +106,7 @@ if options[:multithread]
     split_size = big_list.size / options[:multithread].to_f
     big_list.each_slice(split_size.ceil).with_index do |list, i|
       outfile = outfile_base + "_#{i}.txt"
-      FileUtils.touch outfile if File.exists? outfile
+      FileUtils.touch outfile
       outfiles << outfile
       pids << fork do 
         list.map do |lmid|
