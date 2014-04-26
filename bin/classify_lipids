@@ -36,6 +36,10 @@ classifier_optparse = OptionParser.new do |opts|
   opts.on("--[no-]cleanup", "Clean up the WEKA classifiers on the designated folder") do |cleanup|
     options[:cleanup] = cleanup
   end  
+  opts.on("--smiles STRING", String, "Run the classifier on a given SMILES string") do |smiles|
+    p smiles
+    options[:smiles] = smiles
+  end
   opts.on("-m", "--multithread [COUNT]", Integer, "Run the analysis in a multithreaded mode to address scale limitations") do |thread|
     options[:multithread] = thread
   end
@@ -138,6 +142,8 @@ else # multithread
     options[:lmids].each do |lmid|
       LipidClassifier::WEKA.classify_lipid_vs_lmid(lmid)
     end
+  elsif options[:smiles]
+    LipidClassifier::WEKA.classify_lipid_vs_smiles(options[:smiles])
   elsif options[:list]
     t = Time.now
     list = File.readlines(options[:list]).map(&:chomp)

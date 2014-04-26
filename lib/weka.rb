@@ -260,6 +260,19 @@ class LipidClassifier
       assignment
     end
 
+    def self.classify_lipid_vs_smiles(smiles, file = nil)
+      raise ArgumentError unless @classifiers
+      mol = ::Rubabel[smiles]
+      hash = LipidClassifier::Rules.analyze(mol)
+      weka_classification = classify_unknown_lipid(Rubabel[smiles,:smiles])
+      str = "MOL: #{smiles} was classified as '#{weka_classification.to_compare_classification}'"
+      if file
+        File.open(file,"a") {|i| i.puts str }
+      else 
+        puts str
+      end
+    end
+    
     def self.classify_lipid_vs_lmid(lmid, file = nil)
       raise ArgumentError unless @classifiers
       hash = LipidClassifier::Rules.analyze_lmid(lmid)
