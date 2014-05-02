@@ -11,7 +11,6 @@ class LipidClassifier
     def self.parse_classification_from_LMID(string) # add case fixing, and symbols where possible?
       LipidClassifier.load_corrections unless LipidClassifier.corrections
       keys = LipidClassifier.corrections.find_keys(string)
-      p keys
       raise ArgumentError if keys.size > 1
       corrected = LipidClassifier.corrections[keys.first]
       if corrected
