@@ -1,0 +1,28 @@
+---
+- :lmid: LMFA01010000
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010000"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0000'
+- :lmid: LMFA01010001
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010001"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0001'
+- :lmid: LMFA01010002
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010002"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0002'

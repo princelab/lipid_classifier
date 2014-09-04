@@ -1,0 +1,3601 @@
+---
+- :lmid: LMFA01010000
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010000"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0000'
+- :lmid: LMFA01010001
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010001"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0001'
+- :lmid: LMFA01010002
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010002"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0002'
+- :lmid: LMFA01010003
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010003"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0003'
+- :lmid: LMFA01010004
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010004"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0004'
+- :lmid: LMFA01010005
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010005"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0005'
+- :lmid: LMFA01010006
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010006"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0006'
+- :lmid: LMFA01010007
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010007"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0007'
+- :lmid: LMFA01010008
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010008"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: 0008
+- :lmid: LMFA01010009
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010009"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: 0009
+- :lmid: LMFA01010010
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010010"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0010'
+- :lmid: LMFA01010011
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010011"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0011'
+- :lmid: LMFA01010012
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010012"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0012'
+- :lmid: LMFA01010013
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010013"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0013'
+- :lmid: LMFA01010014
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010014"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0014'
+- :lmid: LMFA01010015
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010015"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0015'
+- :lmid: LMFA01010017
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010017"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0017'
+- :lmid: LMFA01010018
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010018"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: 0018
+- :lmid: LMFA01010019
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010019"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: 0019
+- :lmid: LMFA01010020
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010020"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0020'
+- :lmid: LMFA01010021
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010021"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0021'
+- :lmid: LMFA01010022
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010022"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0022'
+- :lmid: LMFA01010023
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010023"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0023'
+- :lmid: LMFA01010024
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010024"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0024'
+- :lmid: LMFA01010025
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010025"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0025'
+- :lmid: LMFA01010026
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010026"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0026'
+- :lmid: LMFA01010027
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010027"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0027'
+- :lmid: LMFA01010028
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010028"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: 0028
+- :lmid: LMFA01010029
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010029"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: 0029
+- :lmid: LMFA01010030
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010030"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0030'
+- :lmid: LMFA01010031
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010031"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0031'
+- :lmid: LMFA01010032
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010032"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0032'
+- :lmid: LMFA01010033
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010033"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0033'
+- :lmid: LMFA01010034
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010034"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0034'
+- :lmid: LMFA01010035
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010035"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0035'
+- :lmid: LMFA01010036
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010036"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0036'
+- :lmid: LMFA01010037
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010037"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0037'
+- :lmid: LMFA01010038
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010038"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: 0038
+- :lmid: LMFA01010039
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010039"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: 0039
+- :lmid: LMFA01010043
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010043"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0043'
+- :lmid: LMFA01010044
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010044"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0044'
+- :lmid: LMFA01010045
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010045"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0045'
+- :lmid: LMFA01010046
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010046"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0046'
+- :lmid: LMFA01010047
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010047"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0047'
+- :lmid: LMFA01010048
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010048"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: 0048
+- :lmid: LMFA01010049
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010049"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: 0049
+- :lmid: LMFA01010050
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010050"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0050'
+- :lmid: LMFA01010051
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010051"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0051'
+- :lmid: LMFA01010052
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010052"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0052'
+- :lmid: LMFA01010053
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010053"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0053'
+- :lmid: LMFA01010000
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010000"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0000'
+- :lmid: LMFA01010001
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010001"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0001'
+- :lmid: LMFA01010002
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010002"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0002'
+- :lmid: LMFA01010003
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010003"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0003'
+- :lmid: LMFA01010004
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010004"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0004'
+- :lmid: LMFA01010005
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010005"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0005'
+- :lmid: LMFA01010006
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010006"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0006'
+- :lmid: LMFA01010007
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010007"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0007'
+- :lmid: LMFA01010008
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010008"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: 0008
+- :lmid: LMFA01010009
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010009"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: 0009
+- :lmid: LMFA01010010
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010010"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0010'
+- :lmid: LMFA01010011
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010011"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0011'
+- :lmid: LMFA01010012
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010012"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0012'
+- :lmid: LMFA01010013
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010013"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0013'
+- :lmid: LMFA01010014
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010014"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0014'
+- :lmid: LMFA01010015
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010015"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0015'
+- :lmid: LMFA01010017
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010017"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0017'
+- :lmid: LMFA01010018
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010018"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: 0018
+- :lmid: LMFA01010019
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010019"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: 0019
+- :lmid: LMFA01010020
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010020"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0020'
+- :lmid: LMFA01010021
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010021"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0021'
+- :lmid: LMFA01010022
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010022"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0022'
+- :lmid: LMFA01010023
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010023"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0023'
+- :lmid: LMFA01010024
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010024"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0024'
+- :lmid: LMFA01010025
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010025"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0025'
+- :lmid: LMFA01010026
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010026"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0026'
+- :lmid: LMFA01010027
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010027"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0027'
+- :lmid: LMFA01010028
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010028"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: 0028
+- :lmid: LMFA01010029
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010029"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: 0029
+- :lmid: LMFA01010030
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010030"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0030'
+- :lmid: LMFA01010031
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010031"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0031'
+- :lmid: LMFA01010032
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010032"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0032'
+- :lmid: LMFA01010033
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010033"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0033'
+- :lmid: LMFA01010034
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010034"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0034'
+- :lmid: LMFA01010035
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010035"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0035'
+- :lmid: LMFA01010036
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010036"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0036'
+- :lmid: LMFA01010037
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010037"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0037'
+- :lmid: LMFA01010038
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010038"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: 0038
+- :lmid: LMFA01010039
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010039"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: 0039
+- :lmid: LMFA01010043
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010043"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0043'
+- :lmid: LMFA01010044
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010044"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0044'
+- :lmid: LMFA01010045
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010045"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0045'
+- :lmid: LMFA01010046
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010046"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0046'
+- :lmid: LMFA01010047
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010047"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0047'
+- :lmid: LMFA01010048
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010048"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: 0048
+- :lmid: LMFA01010049
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010049"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: 0049
+- :lmid: LMFA01010050
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010050"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0050'
+- :lmid: LMFA01010051
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010051"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0051'
+- :lmid: LMFA01010052
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010052"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0052'
+- :lmid: LMFA01010053
+  :href: "/data/LMSDRecord.php?LMID=LMFA01010053"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '01'
+    class_level4_code: ''
+    identifier: '0053'
+- :lmid: LMFA01020001
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020001"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0001'
+- :lmid: LMFA01020002
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020002"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0002'
+- :lmid: LMFA01020003
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020003"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0003'
+- :lmid: LMFA01020004
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020004"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0004'
+- :lmid: LMFA01020005
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020005"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0005'
+- :lmid: LMFA01020006
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020006"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0006'
+- :lmid: LMFA01020007
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020007"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0007'
+- :lmid: LMFA01020008
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020008"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: 0008
+- :lmid: LMFA01020009
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020009"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: 0009
+- :lmid: LMFA01020010
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020010"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0010'
+- :lmid: LMFA01020011
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020011"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0011'
+- :lmid: LMFA01020012
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020012"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0012'
+- :lmid: LMFA01020013
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020013"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0013'
+- :lmid: LMFA01020014
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020014"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0014'
+- :lmid: LMFA01020015
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020015"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0015'
+- :lmid: LMFA01020016
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020016"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0016'
+- :lmid: LMFA01020017
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020017"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0017'
+- :lmid: LMFA01020018
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020018"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: 0018
+- :lmid: LMFA01020019
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020019"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: 0019
+- :lmid: LMFA01020020
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020020"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0020'
+- :lmid: LMFA01020021
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020021"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0021'
+- :lmid: LMFA01020022
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020022"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0022'
+- :lmid: LMFA01020023
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020023"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0023'
+- :lmid: LMFA01020024
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020024"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0024'
+- :lmid: LMFA01020025
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020025"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0025'
+- :lmid: LMFA01020026
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020026"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0026'
+- :lmid: LMFA01020027
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020027"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0027'
+- :lmid: LMFA01020028
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020028"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: 0028
+- :lmid: LMFA01020029
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020029"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: 0029
+- :lmid: LMFA01020030
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020030"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0030'
+- :lmid: LMFA01020031
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020031"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0031'
+- :lmid: LMFA01020032
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020032"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0032'
+- :lmid: LMFA01020033
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020033"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0033'
+- :lmid: LMFA01020034
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020034"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0034'
+- :lmid: LMFA01020035
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020035"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0035'
+- :lmid: LMFA01020036
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020036"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0036'
+- :lmid: LMFA01020037
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020037"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0037'
+- :lmid: LMFA01020038
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020038"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: 0038
+- :lmid: LMFA01020039
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020039"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: 0039
+- :lmid: LMFA01020040
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020040"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0040'
+- :lmid: LMFA01020041
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020041"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0041'
+- :lmid: LMFA01020042
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020042"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0042'
+- :lmid: LMFA01020043
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020043"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0043'
+- :lmid: LMFA01020044
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020044"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0044'
+- :lmid: LMFA01020045
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020045"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0045'
+- :lmid: LMFA01020046
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020046"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0046'
+- :lmid: LMFA01020047
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020047"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0047'
+- :lmid: LMFA01020048
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020048"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: 0048
+- :lmid: LMFA01020049
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020049"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: 0049
+- :lmid: LMFA01020050
+  :href: "/data/LMSDRecord.php?LMID=LMFA01020050"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '02'
+    class_level4_code: ''
+    identifier: '0050'
+- :lmid: LMFA01030001
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030001"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0001'
+- :lmid: LMFA01030002
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030002"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0002'
+- :lmid: LMFA01030003
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030003"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0003'
+- :lmid: LMFA01030004
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030004"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0004'
+- :lmid: LMFA01030005
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030005"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0005'
+- :lmid: LMFA01030006
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030006"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0006'
+- :lmid: LMFA01030007
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030007"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0007'
+- :lmid: LMFA01030008
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030008"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: 0008
+- :lmid: LMFA01030009
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030009"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: 0009
+- :lmid: LMFA01030010
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030010"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0010'
+- :lmid: LMFA01030011
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030011"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0011'
+- :lmid: LMFA01030012
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030012"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0012'
+- :lmid: LMFA01030013
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030013"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0013'
+- :lmid: LMFA01030014
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030014"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0014'
+- :lmid: LMFA01030015
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030015"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0015'
+- :lmid: LMFA01030016
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030016"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0016'
+- :lmid: LMFA01030017
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030017"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0017'
+- :lmid: LMFA01030018
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030018"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: 0018
+- :lmid: LMFA01030019
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030019"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: 0019
+- :lmid: LMFA01030020
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030020"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0020'
+- :lmid: LMFA01030021
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030021"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0021'
+- :lmid: LMFA01030022
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030022"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0022'
+- :lmid: LMFA01030023
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030023"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0023'
+- :lmid: LMFA01030024
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030024"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0024'
+- :lmid: LMFA01030025
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030025"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0025'
+- :lmid: LMFA01030026
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030026"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0026'
+- :lmid: LMFA01030027
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030027"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0027'
+- :lmid: LMFA01030028
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030028"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: 0028
+- :lmid: LMFA01030029
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030029"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: 0029
+- :lmid: LMFA01030030
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030030"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0030'
+- :lmid: LMFA01030031
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030031"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0031'
+- :lmid: LMFA01030032
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030032"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0032'
+- :lmid: LMFA01030033
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030033"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0033'
+- :lmid: LMFA01030034
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030034"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0034'
+- :lmid: LMFA01030035
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030035"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0035'
+- :lmid: LMFA01030036
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030036"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0036'
+- :lmid: LMFA01030037
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030037"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0037'
+- :lmid: LMFA01030038
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030038"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: 0038
+- :lmid: LMFA01030039
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030039"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: 0039
+- :lmid: LMFA01030040
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030040"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0040'
+- :lmid: LMFA01030041
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030041"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0041'
+- :lmid: LMFA01030042
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030042"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0042'
+- :lmid: LMFA01030043
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030043"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0043'
+- :lmid: LMFA01030044
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030044"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0044'
+- :lmid: LMFA01030045
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030045"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0045'
+- :lmid: LMFA01030046
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030046"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0046'
+- :lmid: LMFA01030047
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030047"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0047'
+- :lmid: LMFA01030048
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030048"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: 0048
+- :lmid: LMFA01030050
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030050"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0050'
+- :lmid: LMFA01030051
+  :href: "/data/LMSDRecord.php?LMID=LMFA01030051"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '03'
+    class_level4_code: ''
+    identifier: '0051'
+- :lmid: LMFA01040028
+  :href: "/data/LMSDRecord.php?LMID=LMFA01040028"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '04'
+    class_level4_code: ''
+    identifier: 0028
+- :lmid: LMFA01040030
+  :href: "/data/LMSDRecord.php?LMID=LMFA01040030"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '04'
+    class_level4_code: ''
+    identifier: '0030'
+- :lmid: LMFA01040036
+  :href: "/data/LMSDRecord.php?LMID=LMFA01040036"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '04'
+    class_level4_code: ''
+    identifier: '0036'
+- :lmid: LMFA01040037
+  :href: "/data/LMSDRecord.php?LMID=LMFA01040037"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '04'
+    class_level4_code: ''
+    identifier: '0037'
+- :lmid: LMFA01040038
+  :href: "/data/LMSDRecord.php?LMID=LMFA01040038"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '04'
+    class_level4_code: ''
+    identifier: 0038
+- :lmid: LMFA01040039
+  :href: "/data/LMSDRecord.php?LMID=LMFA01040039"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '04'
+    class_level4_code: ''
+    identifier: 0039
+- :lmid: LMFA01040040
+  :href: "/data/LMSDRecord.php?LMID=LMFA01040040"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '04'
+    class_level4_code: ''
+    identifier: '0040'
+- :lmid: LMFA01040041
+  :href: "/data/LMSDRecord.php?LMID=LMFA01040041"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '04'
+    class_level4_code: ''
+    identifier: '0041'
+- :lmid: LMFA01040042
+  :href: "/data/LMSDRecord.php?LMID=LMFA01040042"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '04'
+    class_level4_code: ''
+    identifier: '0042'
+- :lmid: LMFA01040043
+  :href: "/data/LMSDRecord.php?LMID=LMFA01040043"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '04'
+    class_level4_code: ''
+    identifier: '0043'
+- :lmid: LMFA01040044
+  :href: "/data/LMSDRecord.php?LMID=LMFA01040044"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '04'
+    class_level4_code: ''
+    identifier: '0044'
+- :lmid: LMFA01040045
+  :href: "/data/LMSDRecord.php?LMID=LMFA01040045"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '04'
+    class_level4_code: ''
+    identifier: '0045'
+- :lmid: LMFA01040046
+  :href: "/data/LMSDRecord.php?LMID=LMFA01040046"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '04'
+    class_level4_code: ''
+    identifier: '0046'
+- :lmid: LMFA01040047
+  :href: "/data/LMSDRecord.php?LMID=LMFA01040047"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '04'
+    class_level4_code: ''
+    identifier: '0047'
+- :lmid: LMFA01040048
+  :href: "/data/LMSDRecord.php?LMID=LMFA01040048"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '04'
+    class_level4_code: ''
+    identifier: 0048
+- :lmid: LMFA01040049
+  :href: "/data/LMSDRecord.php?LMID=LMFA01040049"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '04'
+    class_level4_code: ''
+    identifier: 0049
+- :lmid: LMFA01040050
+  :href: "/data/LMSDRecord.php?LMID=LMFA01040050"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '04'
+    class_level4_code: ''
+    identifier: '0050'
+- :lmid: LMFA01040051
+  :href: "/data/LMSDRecord.php?LMID=LMFA01040051"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '04'
+    class_level4_code: ''
+    identifier: '0051'
+- :lmid: LMFA01040052
+  :href: "/data/LMSDRecord.php?LMID=LMFA01040052"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '04'
+    class_level4_code: ''
+    identifier: '0052'
+- :lmid: LMFA01040053
+  :href: "/data/LMSDRecord.php?LMID=LMFA01040053"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '04'
+    class_level4_code: ''
+    identifier: '0053'
+- :lmid: LMFA01040054
+  :href: "/data/LMSDRecord.php?LMID=LMFA01040054"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '04'
+    class_level4_code: ''
+    identifier: '0054'
+- :lmid: LMFA01040055
+  :href: "/data/LMSDRecord.php?LMID=LMFA01040055"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '04'
+    class_level4_code: ''
+    identifier: '0055'
+- :lmid: LMFA01040056
+  :href: "/data/LMSDRecord.php?LMID=LMFA01040056"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '04'
+    class_level4_code: ''
+    identifier: '0056'
+- :lmid: LMFA01040057
+  :href: "/data/LMSDRecord.php?LMID=LMFA01040057"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '04'
+    class_level4_code: ''
+    identifier: '0057'
+- :lmid: LMFA01040058
+  :href: "/data/LMSDRecord.php?LMID=LMFA01040058"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '04'
+    class_level4_code: ''
+    identifier: 0058
+- :lmid: LMFA01040061
+  :href: "/data/LMSDRecord.php?LMID=LMFA01040061"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '04'
+    class_level4_code: ''
+    identifier: '0061'
+- :lmid: LMFA01050001
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050001"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0001'
+- :lmid: LMFA01050004
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050004"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0004'
+- :lmid: LMFA01050005
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050005"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0005'
+- :lmid: LMFA01050006
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050006"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0006'
+- :lmid: LMFA01050007
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050007"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0007'
+- :lmid: LMFA01050008
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050008"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: 0008
+- :lmid: LMFA01050009
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050009"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: 0009
+- :lmid: LMFA01050010
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050010"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0010'
+- :lmid: LMFA01050011
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050011"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0011'
+- :lmid: LMFA01050012
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050012"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0012'
+- :lmid: LMFA01050013
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050013"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0013'
+- :lmid: LMFA01050014
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050014"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0014'
+- :lmid: LMFA01050015
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050015"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0015'
+- :lmid: LMFA01050016
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050016"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0016'
+- :lmid: LMFA01050017
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050017"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0017'
+- :lmid: LMFA01050018
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050018"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: 0018
+- :lmid: LMFA01050019
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050019"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: 0019
+- :lmid: LMFA01050020
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050020"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0020'
+- :lmid: LMFA01050021
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050021"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0021'
+- :lmid: LMFA01050022
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050022"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0022'
+- :lmid: LMFA01050023
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050023"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0023'
+- :lmid: LMFA01050024
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050024"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0024'
+- :lmid: LMFA01050025
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050025"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0025'
+- :lmid: LMFA01050026
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050026"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0026'
+- :lmid: LMFA01050027
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050027"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0027'
+- :lmid: LMFA01050028
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050028"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: 0028
+- :lmid: LMFA01050029
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050029"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: 0029
+- :lmid: LMFA01050031
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050031"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0031'
+- :lmid: LMFA01050032
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050032"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0032'
+- :lmid: LMFA01050033
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050033"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0033'
+- :lmid: LMFA01050034
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050034"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0034'
+- :lmid: LMFA01050035
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050035"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0035'
+- :lmid: LMFA01050036
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050036"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0036'
+- :lmid: LMFA01050037
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050037"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0037'
+- :lmid: LMFA01050038
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050038"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: 0038
+- :lmid: LMFA01050039
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050039"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: 0039
+- :lmid: LMFA01050040
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050040"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0040'
+- :lmid: LMFA01050041
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050041"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0041'
+- :lmid: LMFA01050042
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050042"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0042'
+- :lmid: LMFA01050044
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050044"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0044'
+- :lmid: LMFA01050045
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050045"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0045'
+- :lmid: LMFA01050046
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050046"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0046'
+- :lmid: LMFA01050047
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050047"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0047'
+- :lmid: LMFA01050048
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050048"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: 0048
+- :lmid: LMFA01050049
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050049"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: 0049
+- :lmid: LMFA01050050
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050050"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0050'
+- :lmid: LMFA01050051
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050051"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0051'
+- :lmid: LMFA01050052
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050052"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0052'
+- :lmid: LMFA01050053
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050053"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0053'
+- :lmid: LMFA01050071
+  :href: "/data/LMSDRecord.php?LMID=LMFA01050071"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '05'
+    class_level4_code: ''
+    identifier: '0071'
+- :lmid: LMFA01060001
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060001"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0001'
+- :lmid: LMFA01060002
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060002"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0002'
+- :lmid: LMFA01060003
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060003"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0003'
+- :lmid: LMFA01060004
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060004"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0004'
+- :lmid: LMFA01060005
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060005"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0005'
+- :lmid: LMFA01060006
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060006"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0006'
+- :lmid: LMFA01060007
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060007"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0007'
+- :lmid: LMFA01060008
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060008"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: 0008
+- :lmid: LMFA01060009
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060009"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: 0009
+- :lmid: LMFA01060010
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060010"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0010'
+- :lmid: LMFA01060011
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060011"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0011'
+- :lmid: LMFA01060012
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060012"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0012'
+- :lmid: LMFA01060013
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060013"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0013'
+- :lmid: LMFA01060014
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060014"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0014'
+- :lmid: LMFA01060015
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060015"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0015'
+- :lmid: LMFA01060016
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060016"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0016'
+- :lmid: LMFA01060017
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060017"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0017'
+- :lmid: LMFA01060018
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060018"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: 0018
+- :lmid: LMFA01060019
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060019"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: 0019
+- :lmid: LMFA01060020
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060020"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0020'
+- :lmid: LMFA01060021
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060021"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0021'
+- :lmid: LMFA01060022
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060022"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0022'
+- :lmid: LMFA01060023
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060023"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0023'
+- :lmid: LMFA01060024
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060024"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0024'
+- :lmid: LMFA01060025
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060025"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0025'
+- :lmid: LMFA01060026
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060026"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0026'
+- :lmid: LMFA01060028
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060028"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: 0028
+- :lmid: LMFA01060029
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060029"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: 0029
+- :lmid: LMFA01060030
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060030"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0030'
+- :lmid: LMFA01060031
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060031"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0031'
+- :lmid: LMFA01060032
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060032"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0032'
+- :lmid: LMFA01060033
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060033"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0033'
+- :lmid: LMFA01060034
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060034"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0034'
+- :lmid: LMFA01060035
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060035"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0035'
+- :lmid: LMFA01060036
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060036"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0036'
+- :lmid: LMFA01060037
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060037"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0037'
+- :lmid: LMFA01060038
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060038"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: 0038
+- :lmid: LMFA01060039
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060039"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: 0039
+- :lmid: LMFA01060040
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060040"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0040'
+- :lmid: LMFA01060041
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060041"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0041'
+- :lmid: LMFA01060042
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060042"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0042'
+- :lmid: LMFA01060043
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060043"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0043'
+- :lmid: LMFA01060044
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060044"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0044'
+- :lmid: LMFA01060045
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060045"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0045'
+- :lmid: LMFA01060046
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060046"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0046'
+- :lmid: LMFA01060047
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060047"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0047'
+- :lmid: LMFA01060048
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060048"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: 0048
+- :lmid: LMFA01060049
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060049"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: 0049
+- :lmid: LMFA01060050
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060050"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0050'
+- :lmid: LMFA01060051
+  :href: "/data/LMSDRecord.php?LMID=LMFA01060051"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '06'
+    class_level4_code: ''
+    identifier: '0051'
+- :lmid: LMFA01070012
+  :href: "/data/LMSDRecord.php?LMID=LMFA01070012"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '07'
+    class_level4_code: ''
+    identifier: '0012'
+- :lmid: LMFA01070013
+  :href: "/data/LMSDRecord.php?LMID=LMFA01070013"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '07'
+    class_level4_code: ''
+    identifier: '0013'
+- :lmid: LMFA01070014
+  :href: "/data/LMSDRecord.php?LMID=LMFA01070014"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '07'
+    class_level4_code: ''
+    identifier: '0014'
+- :lmid: LMFA01070019
+  :href: "/data/LMSDRecord.php?LMID=LMFA01070019"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '07'
+    class_level4_code: ''
+    identifier: 0019
+- :lmid: LMFA01070020
+  :href: "/data/LMSDRecord.php?LMID=LMFA01070020"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '07'
+    class_level4_code: ''
+    identifier: '0020'
+- :lmid: LMFA01070021
+  :href: "/data/LMSDRecord.php?LMID=LMFA01070021"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '07'
+    class_level4_code: ''
+    identifier: '0021'
+- :lmid: LMFA01080001
+  :href: "/data/LMSDRecord.php?LMID=LMFA01080001"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 08
+    class_level4_code: ''
+    identifier: '0001'
+- :lmid: LMFA01080002
+  :href: "/data/LMSDRecord.php?LMID=LMFA01080002"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 08
+    class_level4_code: ''
+    identifier: '0002'
+- :lmid: LMFA01080003
+  :href: "/data/LMSDRecord.php?LMID=LMFA01080003"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 08
+    class_level4_code: ''
+    identifier: '0003'
+- :lmid: LMFA01080004
+  :href: "/data/LMSDRecord.php?LMID=LMFA01080004"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 08
+    class_level4_code: ''
+    identifier: '0004'
+- :lmid: LMFA01080005
+  :href: "/data/LMSDRecord.php?LMID=LMFA01080005"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 08
+    class_level4_code: ''
+    identifier: '0005'
+- :lmid: LMFA01080006
+  :href: "/data/LMSDRecord.php?LMID=LMFA01080006"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 08
+    class_level4_code: ''
+    identifier: '0006'
+- :lmid: LMFA01080007
+  :href: "/data/LMSDRecord.php?LMID=LMFA01080007"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 08
+    class_level4_code: ''
+    identifier: '0007'
+- :lmid: LMFA01080008
+  :href: "/data/LMSDRecord.php?LMID=LMFA01080008"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 08
+    class_level4_code: ''
+    identifier: 0008
+- :lmid: LMFA01080009
+  :href: "/data/LMSDRecord.php?LMID=LMFA01080009"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 08
+    class_level4_code: ''
+    identifier: 0009
+- :lmid: LMFA01080010
+  :href: "/data/LMSDRecord.php?LMID=LMFA01080010"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 08
+    class_level4_code: ''
+    identifier: '0010'
+- :lmid: LMFA01080011
+  :href: "/data/LMSDRecord.php?LMID=LMFA01080011"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 08
+    class_level4_code: ''
+    identifier: '0011'
+- :lmid: LMFA01080012
+  :href: "/data/LMSDRecord.php?LMID=LMFA01080012"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 08
+    class_level4_code: ''
+    identifier: '0012'
+- :lmid: LMFA01080013
+  :href: "/data/LMSDRecord.php?LMID=LMFA01080013"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 08
+    class_level4_code: ''
+    identifier: '0013'
+- :lmid: LMFA01080014
+  :href: "/data/LMSDRecord.php?LMID=LMFA01080014"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 08
+    class_level4_code: ''
+    identifier: '0014'
+- :lmid: LMFA01080015
+  :href: "/data/LMSDRecord.php?LMID=LMFA01080015"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 08
+    class_level4_code: ''
+    identifier: '0015'
+- :lmid: LMFA01080016
+  :href: "/data/LMSDRecord.php?LMID=LMFA01080016"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 08
+    class_level4_code: ''
+    identifier: '0016'
+- :lmid: LMFA01090001
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090001"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0001'
+- :lmid: LMFA01090002
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090002"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0002'
+- :lmid: LMFA01090003
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090003"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0003'
+- :lmid: LMFA01090004
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090004"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0004'
+- :lmid: LMFA01090005
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090005"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0005'
+- :lmid: LMFA01090006
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090006"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0006'
+- :lmid: LMFA01090007
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090007"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0007'
+- :lmid: LMFA01090008
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090008"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: 0008
+- :lmid: LMFA01090009
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090009"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: 0009
+- :lmid: LMFA01090010
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090010"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0010'
+- :lmid: LMFA01090011
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090011"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0011'
+- :lmid: LMFA01090012
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090012"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0012'
+- :lmid: LMFA01090013
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090013"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0013'
+- :lmid: LMFA01090014
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090014"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0014'
+- :lmid: LMFA01090015
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090015"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0015'
+- :lmid: LMFA01090016
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090016"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0016'
+- :lmid: LMFA01090017
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090017"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0017'
+- :lmid: LMFA01090024
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090024"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0024'
+- :lmid: LMFA01090025
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090025"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0025'
+- :lmid: LMFA01090026
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090026"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0026'
+- :lmid: LMFA01090028
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090028"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: 0028
+- :lmid: LMFA01090029
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090029"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: 0029
+- :lmid: LMFA01090030
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090030"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0030'
+- :lmid: LMFA01090031
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090031"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0031'
+- :lmid: LMFA01090034
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090034"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0034'
+- :lmid: LMFA01090035
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090035"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0035'
+- :lmid: LMFA01090036
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090036"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0036'
+- :lmid: LMFA01090037
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090037"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0037'
+- :lmid: LMFA01090038
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090038"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: 0038
+- :lmid: LMFA01090039
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090039"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: 0039
+- :lmid: LMFA01090040
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090040"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0040'
+- :lmid: LMFA01090041
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090041"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0041'
+- :lmid: LMFA01090042
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090042"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0042'
+- :lmid: LMFA01090044
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090044"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0044'
+- :lmid: LMFA01090045
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090045"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0045'
+- :lmid: LMFA01090046
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090046"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0046'
+- :lmid: LMFA01090047
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090047"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0047'
+- :lmid: LMFA01090048
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090048"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: 0048
+- :lmid: LMFA01090049
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090049"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: 0049
+- :lmid: LMFA01090050
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090050"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0050'
+- :lmid: LMFA01090051
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090051"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0051'
+- :lmid: LMFA01090052
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090052"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0052'
+- :lmid: LMFA01090053
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090053"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0053'
+- :lmid: LMFA01090054
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090054"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0054'
+- :lmid: LMFA01090055
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090055"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0055'
+- :lmid: LMFA01090056
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090056"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0056'
+- :lmid: LMFA01090057
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090057"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0057'
+- :lmid: LMFA01090058
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090058"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: 0058
+- :lmid: LMFA01090059
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090059"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: 0059
+- :lmid: LMFA01090060
+  :href: "/data/LMSDRecord.php?LMID=LMFA01090060"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: 09
+    class_level4_code: ''
+    identifier: '0060'
+- :lmid: LMFA01100001
+  :href: "/data/LMSDRecord.php?LMID=LMFA01100001"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '10'
+    class_level4_code: ''
+    identifier: '0001'
+- :lmid: LMFA01100002
+  :href: "/data/LMSDRecord.php?LMID=LMFA01100002"
+  :classification: !ruby/struct:Classification
+    name: Fatty Acyls
+    category_code: FA
+    class_code: '01'
+    subclass_code: '10'
+    class_level4_code: ''
+    identifier: '0002'

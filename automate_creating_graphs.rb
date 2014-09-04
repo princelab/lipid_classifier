@@ -16,7 +16,7 @@ files.each do |file|
 
   dotfile = file.gsub(File.extname(file), ".dot")
   pdffile = file.gsub(File.extname(file), ".pdf")
-  system "java weka.classifiers.trees.J48 -C 0.25 -M 2 -t #{file} -g > #{dotfile}"
+  system "java weka.classifiers.trees.J48 -C 0.25 -M 1 -t #{file} -g > #{dotfile}"
   system "dot -Tpdf #{dotfile} -o #{pdffile}"
   FileUtils.rm dotfile
 end

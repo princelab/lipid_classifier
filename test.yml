@@ -1,0 +1,8 @@
+---
+:backslash: "\\"
+:fails: "[]\\["
+:works: "/]["
+:ethanolamine:
+  - "[#7][CX4][CX4][OX2][HX1]"
+:Z_config_nonspecif_1:
+  - "[#6]/[#6]=[#6]\\[#6]"
